@@ -22,6 +22,7 @@
    - Mining `data/vlearn-pack/chatlog/chat_history_anonymized_for_hackathon.csv`: 358/1.261 tin nhắn học viên (28,4%) có mẫu "Giải thích đoạn bôi đen", đến từ 159 user.
    - Trong 1.261 câu trả lời tutor, `asked_check_question=True` chỉ 3 lượt (0,2%) và `follow_ups` không có lượt nào khác rỗng; tức tutor gần như không chủ động kiểm tra xem học viên đã hiểu chưa.
    - Ví dụ chatlog: `C0007/T0020/U0035` hỏi: "Giải thích đoạn bôi đen ở Trang 15." Đây là mẫu hỏi lặp lại phù hợp với lát cắt của nhóm.
+   - Khảo sát "Khảo sát Vlearn" (n=22, người ngoài nhóm): câu 3 "Điều bạn mong muốn VLearn cải thiện nhất ở tính năng AI Tutor là gì?" — 14/22 (63,6%) chọn "AI nên hỏi lại/kiểm tra xem mình đã thật sự hiểu chưa, thay vì chỉ giải thích một chiều rồi thôi", còn lại: 4/22 (18,2%) "câu trả lời cần ngắn gọn hơn", 3/22 (13,6%) "cần hiểu đúng trọng tâm câu hỏi hơn", 1/22 (4,5%) "cần trả lời nhanh hơn". 63,6% ≥ 50% → đạt chuẩn A, xác nhận trực tiếp nhu cầu "kiểm tra hiểu" trong lát cắt của nhóm.
 
 5. **Lát cắt MỘT CÂU:** Khi một học viên bôi đen một khái niệm trên VLearn và hỏi giải thích, AI quyết định mức độ chắc của nguồn và tạo câu trả lời ngắn theo 3 tầng kèm 1 câu kiểm tra hiểu, để học viên biết mình đã hiểu đúng trước khi học tiếp.
 
