@@ -6,7 +6,7 @@
 ## Luồng chính (happy path)
 
 1. Học viên đang đọc slide/tài liệu trên VLearn, **bôi đen** một đoạn/khái niệm chưa chắc hiểu.
-2. Menu bôi đen nổi lên nút **"Hỏi AI giải thích"**.
+2. Menu bôi đen nổi lên với nút **"Hỏi AI"** (cạnh các nút có sẵn khác như "Báo bối rối", "Ghi chú").
 3. Bấm nút → AI kiểm tra đoạn này có đủ căn cứ trong slide/transcript buổi học không (quyết định trung tâm).
 4. Nếu **đủ căn cứ** → AI trả lời theo 3 tầng:
    - **Tầng 1:** giải thích ngắn gọn 1-2 câu, đúng trọng tâm đoạn bôi đen.
@@ -19,40 +19,74 @@
 
 3b. Nếu **không đủ căn cứ** / đoạn bôi đen mơ hồ / ngoài phạm vi tài liệu → AI **không bịa**, hiện rõ: *"Mình chưa thấy căn cứ chắc chắn trong tài liệu buổi này cho đoạn bạn chọn"* + 1 hành động tiếp theo (bôi đen lại đoạn rõ hơn / xác nhận vẫn muốn AI thử giải thích ở mức "không chắc"). Nguyên tắc áp dụng: **G10 — thu hẹp phạm vi khi nghi ngờ**.
 
-## Màn hình dựng nhanh (1 màn hình)
+## Màn hình dựng nhanh (2 màn hình nối tiếp)
+
+### Màn hình 1 — Bôi đen trên slide, nút "Hỏi AI" hiện ra
 
 ```
-┌─────────────────────────────────────────────┐
-│  VLearn — Buổi 4: Cấu trúc dữ liệu           │
-│                                               │
-│  ...một hàng đợi ưu tiên (priority queue)    │
-│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ dùng heap để...   │◄── đoạn bôi đen
-│                     ┌───────────────────────┐│
-│                     │ 💬 Hỏi AI giải thích  ││◄── nút nổi lên khi bôi đen
-│                     └───────────────────────┘│
-│  ...phần còn lại của slide...                │
-├─────────────────────────────────────────────┤
-│  🔵 Đủ căn cứ — theo slide trang 12          │◄── badge độ chắc
-│                                               │
-│  Tầng 1: [giải thích ngắn 1-2 câu]           │
-│  Tầng 2: [ví dụ cụ thể hơn]                  │
-│  Tầng 3: [mở rộng/liên hệ, nếu có]           │
-│                                               │
-│  ❓ Kiểm tra hiểu: [1 câu hỏi ngắn]           │
-│  [ Ô trả lời________________ ]  [Gửi]        │
-│                                               │
-│  👍 👎  (feedback nhanh)                     │
-└─────────────────────────────────────────────┘
-
---- Nhánh không đủ căn cứ ---
-┌─────────────────────────────────────────────┐
-│  🟡 Chưa đủ căn cứ trong tài liệu buổi này   │
-│  Mình chưa chắc về đoạn bạn chọn.            │
-│  [ Bôi đen lại đoạn khác ]  [ Vẫn thử giải   │
-│                               thích (không   │
-│                               chắc) ]        │
-└─────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│ ←  VLearn   day05-ai-product-thinking-requirements.pdf   VI 🌙│
+├──────────────────────────────────────────────────────────────┤
+│ [Đọc] [Bút] [Highlight] ···           Trang 4 · 1 note  100% │
+├──────────────────────────────────────────────────────────────┤
+│  Mục tiêu buổi học                                            │
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ AI product ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     │◄── đoạn bôi đen
+│                  ┌─────────────────────────────────┐         │
+│                  │ 💬 Hỏi AI │ ⚠ Báo bối rối │📝 Ghi chú│    │◄── menu nổi khi bôi đen
+│                  └─────────────────────────────────┘         │
+│  Biết cách chuyển user needs thành requirements đo được       │
+│  Viết được PRD dùng chung cho PM, BA, Engineer, Stakeholder    │
+└──────────────────────────────────────────────────────────────┘
 ```
+
+Học viên bôi đen đoạn chưa chắc hiểu → menu nổi lên → bấm **"Hỏi AI"** → chuyển sang Màn hình 2.
+
+### Màn hình 2 — Panel "VLearn Tutor" trả lời
+
+```
+┌───────────────────────────────────┐
+│ 🤖 VLearn Tutor                    │
+│    Trợ lý học theo ngữ cảnh        │
+├───────────────────────────────────┤
+│ Ngữ cảnh: Slide trang 4            │
+│ "AI product vs software feature    │
+│  thông thường"                     │
+│                                     │
+│ Tầng 1: [giải thích ngắn 1-2 câu]  │
+│ Tầng 2: [ví dụ cụ thể hơn]         │
+│ Tầng 3: [mở rộng/liên hệ nếu có]   │
+│                                     │
+│ ❓ Kiểm tra hiểu: [1 câu hỏi ngắn]  │
+│ [ Ô trả lời__________ ]  [Gửi]     │
+│                                     │
+│ Phản hồi này có hữu ích không?     │
+│  👍 👎                             │
+│ ▓▓▓▓▓▓▓▓▓░░ 85% · Rất tin cậy      │
+│                     ● ĐÃ TRẢ LỜI   │
+└───────────────────────────────────┘
+```
+
+### Màn hình 2b — Nhánh "không đủ căn cứ" (hành vi khi sai, bắt buộc ở mức Sketch)
+
+```
+┌───────────────────────────────────┐
+│ 🤖 VLearn Tutor                    │
+├───────────────────────────────────┤
+│ Ngữ cảnh: Slide trang 4            │
+│                                     │
+│ Mình chưa đủ căn cứ chắc chắn      │
+│ trong tài liệu buổi này cho đoạn   │
+│ bạn chọn.                          │
+│                                     │
+│ [ Bôi đen lại đoạn khác ]          │
+│ [ Vẫn thử giải thích (không chắc) ]│
+│                                     │
+│ ▓▓▓▓▓░░░░░ 60% · Trung bình        │
+│                     ● ĐÃ TRẢ LỜI   │
+└───────────────────────────────────┘
+```
+
+Thanh % ở cả hai màn hình 2 chính là hiển thị **mức độ chắc của nguồn** — quyết định trung tâm của lát cắt (theo automation "Conditional" đã chốt ở canvas): ≥ ngưỡng → trả lời đầy đủ 3 tầng + câu kiểm tra; < ngưỡng → chuyển sang nhánh 2b.
 
 ## Ghi chú build (mức Sketch — CP2)
 
