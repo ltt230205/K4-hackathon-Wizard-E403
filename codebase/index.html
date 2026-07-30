@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLearn AI Tutor — CP2 Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="brand">
+            <span class="logo">V</span>
+            <span class="title">VLearn AI Tutor Check</span>
+            <span class="badge">CP2 Prototype</span>
+        </div>
+        <div class="info">Lát cắt: Giải thích 3 tầng + Câu hỏi kiểm tra hiểu</div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Bên trái: Màn hình Slide VLearn -->
+        <section class="doc-viewer">
+            <div class="doc-header">
+                <span>📘 Slide 15: Transformer & Attention Mechanism</span>
+            </div>
+            <div class="slide-content">
+                <h2>2.1 Cơ chế Attention (Chú ý trong Neural Networks)</h2>
+                <p>Trong các mô hình học sâu, xử lý chuỗi văn bản dài luôn là thách thức lớn đối với kiến trúc RNN
+                    truyền thống do hiện tượng trôi mất thông tin.</p>
+
+                <div class="highlight-area">
+                    <p>
+                        Để giải quyết vấn đề này,
+                        <mark id="target-text" class="highlighted">Attention Mechanism (Cơ chế chú ý)</mark>
+                        cho phép mô hình tự động gán trọng số tầm quan trọng cho từng từ trong câu dựa trên ngữ cảnh
+                        toàn cục.
+                    </p>
+                </div>
+
+                <div class="action-box">
+                    <button id="btn-explain" class="btn-primary">✨ Demo 1: Đủ căn cứ (Happy Path)</button>
+                    <button id="btn-explain-low" class="btn-secondary">⚠️ Demo 2: Thiếu căn cứ (HAX G10)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bên phải: Khung Chat VLearn Tutor -->
+        <aside class="tutor-sidebar">
+            <div class="tutor-header">
+                <span class="avatar">🤖</span>
+                <div>
+                    <h3>VLearn Tutor</h3>
+                    <span class="status">Online (Conditional Mode)</span>
+                </div>
+            </div>
+
+            <div id="chat-body" class="chat-body">
+                <!-- State 0: Ban đầu -->
+                <div id="state-welcome" class="welcome-box">
+                    👋 Bạn bấm vào nút <strong>"Giải thích đoạn bôi đen ở Trang 15"</strong> bên trái để bắt đầu dùng
+                    thử flow nhé!
+                </div>
+
+                <!-- State 1: User hỏi (Ẩn ban đầu) -->
+                <div id="state-user-msg" class="user-msg hidden">
+                    Giải thích đoạn bôi đen: <strong>"Attention Mechanism"</strong>
+                </div>
+
+                <!-- State 2: AI Loading (Ẩn ban đầu) -->
+                <div id="state-loading" class="loading-box hidden">
+                    <div class="dots"><span></span><span></span><span></span></div>
+                    <p>AI đang đối chiếu Slide 15 và tạo giải thích 3 tầng...</p>
+                </div>
+
+                <!-- State 3: Thẻ kết quả AI - Đủ căn cứ (Happy Path) -->
+                <div id="state-ai-card" class="ai-card hidden">
+                    <div class="grounding-info success">🎯 Căn cứ: Slide 15 | Độ tin cậy: Cao</div>
+
+                    <div class="tiers">
+                        <div class="tier">
+                            <span class="icon">💡</span>
+                            <div>
+                                <strong>Tầng 1 (Định nghĩa):</strong> Attention Mechanism giúp AI tự động tập trung vào
+                                các từ quan trọng nhất trong câu thay vì đọc tràn lan.
+                            </div>
+                        </div>
+                        <div class="tier">
+                            <span class="icon">🔍</span>
+                            <div>
+                                <strong>Tầng 2 (Ví dụ):</strong> Giống như mắt bạn tự động soi các từ in đậm khi đọc
+                                nhanh một bài báo.
+                            </div>
+                        </div>
+                        <div class="tier">
+                            <span class="icon">📌</span>
+                            <div>
+                                <strong>Tầng 3 (Căn cứ):</strong> Nằm ở mục 2.1 Slide 15 - dùng để giải quyết lỗi tràn
+                                bộ nhớ của RNN.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Câu hỏi kiểm tra hiểu -->
+                    <div class="check-box">
+                        <p class="question">❓ <strong>Câu hỏi kiểm tra hiểu:</strong> Dựa vào giải thích trên, Attention
+                            Mechanism giúp AI làm gì?</p>
+                        <div class="options">
+                            <button class="opt-btn" data-correct="false">A. Đọc lần lượt từng từ với độ quan trọng như
+                                nhau</button>
+                            <button class="opt-btn" data-correct="true">B. Gán trọng số để tập trung vào từ quan trọng
+                                theo ngữ cảnh</button>
+                        </div>
+                    </div>
+
+                    <!-- Kết quả sau khi user trả lời (Ẩn ban đầu) -->
+                    <div id="feedback-result" class="feedback-result hidden"></div>
+                    <button class="btn-reset btn-reset-flow hidden">🔄 Thử lại flow</button>
+                </div>
+
+                <!-- State 4: Thẻ kết quả AI - Thiếu căn cứ (Low-confidence / HAX G10) -->
+                <div id="state-ai-low-confidence" class="ai-card low-confidence hidden">
+                    <div class="grounding-info warning">⚠️ Độ tin cậy: Thấp | Căn cứ: Không tìm thấy trong Slide 15</div>
+                    <div class="warning-msg">
+                        <p><strong>HAX G10 — Thu hẹp phạm vi khi nghi ngờ:</strong></p>
+                        <p>Mình chưa thấy căn cứ chắc chắn trong tài liệu buổi này cho đoạn bạn đã chọn. AI từ chối giải thích khẳng định để tránh đưa tin sai kiến thức.</p>
+                    </div>
+                    <div class="fallback-actions">
+                        <p><strong>Bạn muốn làm gì tiếp theo?</strong></p>
+                        <button id="btn-re-select" class="opt-btn">🔍 Bôi đen lại đoạn khác có nhiều context hơn</button>
+                        <button id="btn-try-anyway" class="opt-btn warning-opt">⚠️ Vẫn thử giải thích (chấp nhận mức "không chắc")</button>
+                    </div>
+                    <button class="btn-reset btn-reset-flow">🔄 Thử lại flow</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
