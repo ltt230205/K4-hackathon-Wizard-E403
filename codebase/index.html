@@ -4,140 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLearn AI Tutor — CP2 Prototype</title>
+    <title>VLearn AI Tutor — JTBD Prototype (CP2)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="app-header">
-        <div class="brand">
-            <span class="logo">V</span>
-            <span class="title">VLearn AI Tutor Check</span>
-            <span class="badge">CP2 Prototype</span>
+    <!-- 1. TOP NAVBAR -->
+    <header class="vlearn-navbar">
+        <div class="nav-left">
+            <button class="icon-btn">‹</button>
+            <div class="vlearn-logo">
+                <span class="logo-icon">V</span>
+                <span class="logo-text">VLearn</span>
+            </div>
+            <div class="doc-badge">
+                <span class="pdf-icon">📖</span>
+                <div class="doc-meta">
+                    <span class="doc-filename">day05-ai-product-thinking-requirements.pdf</span>
+                    <span class="doc-sub">COMP2010 • Core JTBD: Làm rõ chỗ đọc không hiểu tại chỗ</span>
+                </div>
+            </div>
         </div>
-        <div class="info">Lát cắt: Giải thích 3 tầng + Câu hỏi kiểm tra hiểu</div>
+
+        <div class="nav-right">
+            <span class="jtbd-badge">🎯 Job Statement: Tại chỗ không rời trang</span>
+            <button class="lang-btn">VI ▾</button>
+            <button class="theme-btn">🌙</button>
+            <div class="user-avatar">VX</div>
+        </div>
     </header>
 
-    <div class="main-layout">
-        <!-- Bên trái: Màn hình Slide VLearn -->
-        <section class="doc-viewer">
-            <div class="doc-header">
-                <span>📘 Slide 15: Transformer & Attention Mechanism</span>
+    <!-- MAIN 3-COLUMN LAYOUT -->
+    <div class="vlearn-body">
+        <!-- 2. LEFT SIDEBAR: DANH SÁCH BÀI HỌC -->
+        <aside class="left-sidebar">
+            <div class="day-group">
+                <div class="day-header"><span>▷ Day01</span> <small>2 TÀI LIỆU</small></div>
             </div>
-            <div class="slide-content">
-                <h2>2.1 Cơ chế Attention (Chú ý trong Neural Networks)</h2>
-                <p>Trong các mô hình học sâu, xử lý chuỗi văn bản dài luôn là thách thức lớn đối với kiến trúc RNN
-                    truyền thống do hiện tượng trôi mất thông tin.</p>
-
-                <div class="highlight-area">
-                    <p>
-                        Để giải quyết vấn đề này,
-                        <mark id="target-text" class="highlighted">Attention Mechanism (Cơ chế chú ý)</mark>
-                        cho phép mô hình tự động gán trọng số tầm quan trọng cho từng từ trong câu dựa trên ngữ cảnh
-                        toàn cục.
-                    </p>
-                </div>
-
-                <div class="action-box">
-                    <button id="btn-explain" class="btn-primary">✨ Demo 1: Đủ căn cứ (Happy Path)</button>
-                    <button id="btn-explain-low" class="btn-secondary">⚠️ Demo 2: Thiếu căn cứ (HAX G10)</button>
-                </div>
+            <div class="day-group">
+                <div class="day-header"><span>▷ Day02</span> <small>1 TÀI LIỆU</small></div>
             </div>
-        </section>
-
-        <!-- Bên phải: Khung Chat VLearn Tutor -->
-        <aside class="tutor-sidebar">
-            <div class="tutor-header">
-                <span class="avatar">🤖</span>
-                <div>
-                    <h3>VLearn Tutor</h3>
-                    <span class="status">Online (Conditional Mode)</span>
-                </div>
+            <div class="day-group">
+                <div class="day-header"><span>▷ Day03</span> <small>2 TÀI LIỆU</small></div>
+            </div>
+            <div class="day-group">
+                <div class="day-header"><span>▷ Day04</span> <small>3 TÀI LIỆU</small></div>
             </div>
 
-            <div id="chat-body" class="chat-body">
-                <!-- State 0: Ban đầu -->
-                <div id="state-welcome" class="welcome-box">
-                    👋 Bạn bấm vào nút <strong>"Giải thích đoạn bôi đen ở Trang 15"</strong> bên trái để bắt đầu dùng
-                    thử flow nhé!
+            <!-- Day 05 Active -->
+            <div class="day-group active">
+                <div class="day-header expanded">
+                    <span>▽ Day05</span>
+                    <span class="badge-studying">STUDYING</span>
                 </div>
-
-                <!-- State 1: User hỏi (Ẩn ban đầu) -->
-                <div id="state-user-msg" class="user-msg hidden">
-                    Giải thích đoạn bôi đen: <strong>"Attention Mechanism"</strong>
+                <div class="file-list">
+                    <div class="file-item active">
+                        <span class="file-icon">📘</span>
+                        <span class="file-name">day05-ai-product-thinking...</span>
+                        <small>44p</small>
+                        <span class="check-icon">✓</span>
+                    </div>
+                    <div class="file-item">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">day05-lecture-slides-batch...</span>
+                        <small>39p</small>
+                    </div>
+                    <div class="file-item">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">day05-slide-batch03-C401...</span>
+                        <small>62p</small>
+                    </div>
                 </div>
+            </div>
 
-                <!-- State 2: AI Loading (Ẩn ban đầu) -->
-                <div id="state-loading" class="loading-box hidden">
-                    <div class="dots"><span></span><span></span><span></span></div>
-                    <p>AI đang đối chiếu Slide 15 và tạo giải thích 3 tầng...</p>
+            <div class="day-group">
+                <div class="day-header"><span>▷ Day06</span> <small>1 TÀI LIỆU</small></div>
+            </div>
+        </aside>
+
+        <!-- 3. CENTER PANE: SLIDE VIEWER -->
+        <main class="center-viewer">
+            <!-- Toolbar trên slide -->
+            <div class="pdf-toolbar">
+                <div class="tool-group">
+                    <button class="tool-btn">✏️ Đọc</button>
+                    <button class="tool-btn">🖊️ Bút</button>
+                    <button class="tool-btn active">⚡ Highlight</button>
                 </div>
+                <div class="tool-group">
+                    <span class="page-count-badge">Trang 4 / 44</span>
+                </div>
+                <div class="tool-group">
+                    <button class="tool-btn">-</button>
+                    <span class="zoom-text">100%</span>
+                    <button class="tool-btn">+</button>
+                </div>
+            </div>
 
-                <!-- State 3: Thẻ kết quả AI - Đủ căn cứ (Happy Path) -->
-                <div id="state-ai-card" class="ai-card hidden">
-                    <div class="grounding-info success">🎯 Căn cứ: Slide 15 | Độ tin cậy: Cao</div>
+            <!-- Slide Canvas View (Cho phép bôi đen trực tiếp) -->
+            <div class="slide-canvas" id="slide-canvas">
+                <div class="slide-page" id="slide-page">
+                    <div class="page-tag">Trang 4 / 44 • AI Product Thinking</div>
+                    
+                    <div class="slide-card-inner">
+                        <div class="slide-banner">DAY 5 — AI PRODUCT SPECIFICATION</div>
+                        
+                        <h1 class="slide-title">Thiết kế sản phẩm AI cho sự không chắc chắn</h1>
+                        
+                        <p class="slide-desc">
+                            Trong khi phần mềm truyền thống chạy theo logic cố định (Deterministic), sản phẩm AI xử lý theo xác suất (Probabilistic). Do đó, sản phẩm phải được thiết kế để xử lý minh bạch khi AI không chắc chắn.
+                        </p>
 
-                    <div class="tiers">
-                        <div class="tier">
-                            <span class="icon">💡</span>
-                            <div>
-                                <strong>Tầng 1 (Định nghĩa):</strong> Attention Mechanism giúp AI tự động tập trung vào
-                                các từ quan trọng nhất trong câu thay vì đọc tràn lan.
-                            </div>
+                        <div class="slide-section">
+                            <h3>1. Mức độ Automation & Cost-of-error</h3>
+                            <p class="slide-text-block">
+                                Khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức <strong>Conditional Automation</strong>: AI chỉ tự làm case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.
+                            </p>
                         </div>
-                        <div class="tier">
-                            <span class="icon">🔍</span>
-                            <div>
-                                <strong>Tầng 2 (Ví dụ):</strong> Giống như mắt bạn tự động soi các từ in đậm khi đọc
-                                nhanh một bài báo.
-                            </div>
+
+                        <div class="slide-section">
+                            <h3>2. Ví dụ khái niệm ngoài tài liệu bài học</h3>
+                            <p class="slide-text-block warning-block">
+                                Ghi chú tham khảo thêm: Mô hình <strong>Generative Adversarial Networks (GANs)</strong> sinh dữ liệu tổng hợp dựa trên 2 mạng Generator và Discriminator đối kháng.
+                            </p>
                         </div>
-                        <div class="tier">
-                            <span class="icon">📌</span>
-                            <div>
-                                <strong>Tầng 3 (Căn cứ):</strong> Nằm ở mục 2.1 Slide 15 - dùng để giải quyết lỗi tràn
-                                bộ nhớ của RNN.
-                            </div>
+
+                        <div class="instructor-info">
+                            💡 <em>Mẹo: Hãy dùng con trỏ chuột <strong>bôi đen bất kỳ đoạn chữ nào</strong> trên slide này để hiện menu <strong>"Hỏi AI"</strong>!</em>
                         </div>
                     </div>
-
-                    <hr>
-
-                    <!-- Câu hỏi kiểm tra hiểu -->
-                    <div class="check-box">
-                        <p class="question">❓ <strong>Câu hỏi kiểm tra hiểu:</strong> Dựa vào giải thích trên, Attention
-                            Mechanism giúp AI làm gì?</p>
-                        <div class="options">
-                            <button class="opt-btn" data-correct="false">A. Đọc lần lượt từng từ với độ quan trọng như
-                                nhau</button>
-                            <button class="opt-btn" data-correct="true">B. Gán trọng số để tập trung vào từ quan trọng
-                                theo ngữ cảnh</button>
-                        </div>
-                    </div>
-
-                    <!-- Kết quả sau khi user trả lời (Ẩn ban đầu) -->
-                    <div id="feedback-result" class="feedback-result hidden"></div>
-                    <button class="btn-reset btn-reset-flow hidden">🔄 Thử lại flow</button>
                 </div>
 
-                <!-- State 4: Thẻ kết quả AI - Thiếu căn cứ (Low-confidence / HAX G10) -->
-                <div id="state-ai-low-confidence" class="ai-card low-confidence hidden">
-                    <div class="grounding-info warning">⚠️ Độ tin cậy: Thấp | Căn cứ: Không tìm thấy trong Slide 15</div>
-                    <div class="warning-msg">
-                        <p><strong>HAX G10 — Thu hẹp phạm vi khi nghi ngờ:</strong></p>
-                        <p>Mình chưa thấy căn cứ chắc chắn trong tài liệu buổi này cho đoạn bạn đã chọn. AI từ chối giải thích khẳng định để tránh đưa tin sai kiến thức.</p>
-                    </div>
-                    <div class="fallback-actions">
-                        <p><strong>Bạn muốn làm gì tiếp theo?</strong></p>
-                        <button id="btn-re-select" class="opt-btn">🔍 Bôi đen lại đoạn khác có nhiều context hơn</button>
-                        <button id="btn-try-anyway" class="opt-btn warning-opt">⚠️ Vẫn thử giải thích (chấp nhận mức "không chắc")</button>
-                    </div>
-                    <button class="btn-reset btn-reset-flow">🔄 Thử lại flow</button>
+                <!-- Thanh chuyển trang dưới -->
+                <div class="pagination-bar">
+                    <button class="page-arrow">‹</button>
+                    <span>Trang <strong>4</strong> / 44</span>
+                    <button class="page-arrow">›</button>
                 </div>
+            </div>
+
+            <!-- Floating Selection Tooltip (Hiện ra khi bôi đen văn bản) -->
+            <div id="selection-tooltip" class="selection-tooltip hidden">
+                <button id="btn-ask-tooltip" class="tooltip-btn primary">💬 Hỏi AI</button>
+                <span class="tooltip-divider">|</span>
+                <button class="tooltip-btn">⚠️ Báo bối rối</button>
+                <span class="tooltip-divider">|</span>
+                <button class="tooltip-btn">📝 Ghi chú</button>
+            </div>
+        </main>
+
+        <!-- 4. RIGHT SIDEBAR: VLEARN TUTOR PANEL -->
+        <aside class="right-tutor">
+            <div class="tutor-top-bar">
+                <div class="tutor-identity">
+                    <div class="robot-avatar">🤖</div>
+                    <div>
+                        <h3>VLearn Tutor</h3>
+                        <p class="tutor-sub">Trợ lý học theo ngữ cảnh</p>
+                    </div>
+                </div>
+                <div class="tutor-actions">
+                    <span class="slide-context-tag">Slide trang 4</span>
+                </div>
+            </div>
+
+            <!-- Khung chứa tin nhắn Chat -->
+            <div class="chat-history" id="chat-history">
+                <!-- Message 0: Lời chào ban đầu -->
+                <div class="tutor-msg-intro">
+                    👋 <strong>Xin chào!</strong> Bạn hãy <strong>dùng chuột bôi đen bất kỳ từ/đoạn nào</strong> trên Slide bên trái, menu <em>"Hỏi AI"</em> sẽ tự nổi lên!
+                </div>
+
+                <!-- Quick Presets cho demo nhanh -->
+                <div class="quick-preset-area">
+                    <span class="preset-label">Hoặc bấm mẫu demo nhanh:</span>
+                    <button id="btn-preset-happy" class="preset-btn success">
+                        ✨ Mẫu 1: Conditional Automation (Đủ căn cứ • 85%)
+                    </button>
+                    <button id="btn-preset-low" class="preset-btn warning">
+                        ⚠️ Mẫu 2: Generative Adversarial Networks (Thiếu căn cứ • 55%)
+                    </button>
+                </div>
+
+                <!-- Container cho tin nhắn hỏi & thẻ AI phản hồi -->
+                <div id="dynamic-chat-stream"></div>
+            </div>
+
+            <!-- Khung nhập liệu ở dưới cùng -->
+            <div class="chat-input-bar">
+                <input type="text" id="user-input" placeholder="Bôi đen slide hoặc nhập câu hỏi..." readonly>
+                <button class="send-btn" id="btn-send">➤</button>
             </div>
         </aside>
     </div>
