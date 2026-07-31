@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLearn - AI Tutor Check CP3</title>
+    <title>VLearn - AI Tutor Check CP4</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
     <!-- 1. TOP NAVBAR -->
@@ -21,9 +23,11 @@
             <div class="doc-badge">
                 <span class="pdf-icon">📘</span>
                 <div class="doc-meta">
-                    <span class="doc-filename">day05-ai-product-thinking-requirements.pdf</span>
+                    <span class="doc-filename" id="doc-filename">day05-ai-product-thinking-requirements.pdf</span>
                     <span class="doc-sub">COMP2010 • Core JTBD: Làm rõ chỗ không chắc tại chỗ</span>
                 </div>
+                <button class="upload-btn" id="btn-upload-pdf">📤 Tải Slide PDF</button>
+                <input type="file" id="pdf-file-input" accept="application/pdf" style="display:none;">
             </div>
         </div>
         <div class="nav-right">
@@ -52,10 +56,10 @@
             <div class="day-group active">
                 <div class="day-header">▽ Day05 <span class="badge-studying">STUDYING</span></div>
                 <div class="file-list">
-                    <div class="file-item active">
+                    <div class="file-item active" id="file-item-default">
                         <span>📘</span>
-                        <span>day05-ai-product-thinking-...</span>
-                        <small>44p</small>
+                        <span id="sidebar-active-filename">day05-ai-product-thinking-...</span>
+                        <small id="sidebar-page-count">44p</small>
                         <span class="check-icon">✓</span>
                     </div>
                     <div class="file-item">
@@ -83,17 +87,18 @@
                     <button class="tool-btn">🖊️ Bút</button>
                     <button class="tool-btn active">⚡ Highlight</button>
                 </div>
-                <span class="page-count-badge">Trang 4 / 44</span>
+                <span class="page-count-badge">Trang <span id="top-page-num">4</span> / <span id="top-total-num">44</span></span>
                 <div class="tool-group">
-                    <button class="tool-btn">−</button>
-                    <span style="font-size:12px; color:#475569;">100%</span>
-                    <button class="tool-btn">+</button>
+                    <button class="tool-btn" id="btn-zoom-out">−</button>
+                    <span style="font-size:12px; color:#475569;" id="zoom-level-text">100%</span>
+                    <button class="tool-btn" id="btn-zoom-in">+</button>
                 </div>
             </div>
 
             <div class="slide-canvas" id="slide-canvas">
+                <!-- DEFAULT MOCK SLIDE -->
                 <div class="slide-page" id="slide-page">
-                    <div class="page-tag">Trang 4 / 44 • AI Product Thinking</div>
+                    <div class="page-tag" id="page-tag-text">Trang 4 / 44 • AI Product Thinking</div>
                     <div class="slide-card-inner">
                         <div class="slide-banner">DAY 5 — AI PRODUCT SPECIFICATION</div>
                         <h1 class="slide-title">Thiết kế sản phẩm AI cho sự không chắc chắn</h1>
@@ -119,10 +124,16 @@
                     </div>
                 </div>
 
+                <!-- PDF RENDER CONTAINER (FOR UPLOADED PDFS) -->
+                <div id="pdf-render-wrapper" class="pdf-render-wrapper hidden">
+                    <canvas id="pdf-canvas"></canvas>
+                    <div id="pdf-text-layer" class="pdf-text-layer textLayer"></div>
+                </div>
+
                 <div class="pagination-bar">
-                    <button class="page-arrow">‹</button>
-                    <span>Trang <strong>4</strong> / 44</span>
-                    <button class="page-arrow">›</button>
+                    <button class="page-arrow" id="btn-prev-page">‹</button>
+                    <span>Trang <strong id="current-page-num">4</strong> / <span id="total-pages-num">44</span></span>
+                    <button class="page-arrow" id="btn-next-page">›</button>
                 </div>
             </div>
         </main>
@@ -137,7 +148,7 @@
                         <div class="tutor-sub">● Trợ lý học theo ngữ cảnh</div>
                     </div>
                 </div>
-                <span class="slide-context-tag">Slide trang 4</span>
+                <span class="slide-context-tag" id="sidebar-context-tag">Slide trang 4</span>
             </div>
 
             <div class="chat-history" id="dynamic-chat-stream">
@@ -162,9 +173,9 @@
     <div id="selection-tooltip" class="selection-tooltip hidden">
         <button id="btn-ask-tooltip" class="tooltip-btn primary">💬 Hỏi AI</button>
         <span class="tooltip-divider">|</span>
-        <button class="tooltip-btn">🖍️ Highlight</button>
+        <button id="btn-highlight-tooltip" class="tooltip-btn">🖍️ Highlight</button>
         <span class="tooltip-divider">|</span>
-        <button class="tooltip-btn">📋 Copy</button>
+        <button id="btn-copy-tooltip" class="tooltip-btn">📋 Copy</button>
     </div>
 
     <script src="app.js"></script>

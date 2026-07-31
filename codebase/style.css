@@ -293,6 +293,10 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+.slide-page.hidden {
+    display: none !important;
+}
+
 .page-tag {
     font-size: 11px;
     color: #94a3b8;
@@ -940,4 +944,71 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* UPLOAD BUTTON & PDF RENDER CONTAINER */
+.upload-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.2s;
+}
+
+.upload-btn:hover {
+    background: #1d4ed8;
+}
+
+.pdf-render-wrapper {
+    position: relative;
+    width: 92%;
+    max-width: 760px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pdf-render-wrapper.hidden {
+    display: none !important;
+}
+
+#pdf-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pdf-text-layer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    overflow: hidden;
+    line-height: 1.0;
+    user-select: text;
+}
+
+.pdf-text-layer span {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+}
+
+.pdf-text-layer ::selection {
+    background: rgba(37, 99, 235, 0.35);
+    color: transparent;
 }

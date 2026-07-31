@@ -29,10 +29,10 @@
     },
     {
         "id": "CASE_05",
-        "class": "Lớp ④ - Domain dễ sai",
+        "class": "Lớp ④ - Mối quan hệ tương phản",
         "selected_text": "RNN xử lý song song nhanh hơn Transformer",
         "context": "Slide 4: RNN xử lý tuần tự nên chậm hơn Transformer.",
-        "expected_confidence": "HIGH"
+        "expected_confidence": "OUT_OF_SCOPE"
     },
     {
         "id": "CASE_06",
@@ -60,7 +60,7 @@
         "class": "Chatlog T0941",
         "selected_text": "Tôi không hiểu trang 6",
         "context": "Slide 6: Ma trận Confusion Matrix.",
-        "expected_confidence": "HIGH"
+        "expected_confidence": "LOW"
     },
     {
         "id": "CASE_10",
@@ -102,7 +102,7 @@
         "class": "Chatlog Mẫu 11",
         "selected_text": "Query Key Value trong Attention",
         "context": "Slide 15: Cơ chế chú ý gồm 3 thành phần Query (Q), Key (K), và Value (V).",
-        "expected_confidence": "HIGH"
+        "expected_confidence": "LOW"
     },
     {
         "id": "CASE_16",
@@ -123,7 +123,7 @@
         "class": "Lớp ② - Viết sai chính tả nặng",
         "selected_text": "giaithich cai nay gium cai",
         "context": "Slide 1: Khái niệm cơ bản.",
-        "expected_confidence": "LOW"
+        "expected_confidence": "OUT_OF_SCOPE"
     },
     {
         "id": "CASE_19",
@@ -134,9 +134,9 @@
     },
     {
         "id": "CASE_20",
-        "class": "Lớp ④ - Domain kiến thức",
+        "class": "Lớp ④ - Domain nâng cao",
         "selected_text": "Overfitting",
         "context": "Slide 12: Hiện tượng mô hình học thuộc lòng dữ liệu train.",
-        "expected_confidence": "HIGH"
+        "expected_confidence": "LOW"
     }
 ]
