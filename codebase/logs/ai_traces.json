@@ -3388,5 +3388,397 @@
       ],
       "fallback_message": ""
     }
+  },
+  {
+    "timestamp": "2026-07-31T07:25:55.141Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 14053,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ hơn về cơ chế hoạt động của 'Conditional Automation', cụ thể là nguyên tắc HAX G10 hoạt động thế nào và cách thiết kế luồng chuyển giao (handover) cho người dùng trong thực tế.",
+        "context_match": "Khớp hoàn toàn. Đoạn bôi đen nằm ở mục 1 phần 'Mức độ Automation & Cost-of-error' trên slide 4, giải thích cách xử lý khi AI gặp trường hợp không chắc chắn.",
+        "risk_if_answer_directly": "Nếu trả lời thẳng mà không giải thích bối cảnh 'Deterministic vs. Probabilistic' và định nghĩa 'HAX G10', học viên có thể không hiểu tại sao lại cần thu hẹp phạm vi và cách áp dụng nó vào thực tế thiết kế sản phẩm."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen nằm trực tiếp trong nội dung bài học về thiết kế sản phẩm AI khi có sự không chắc chắn, cụ thể là nguyên tắc Conditional Automation và HAX G10. Agent chọn hướng giải thích chi tiết kèm ví dụ thực tế và kiểm tra kiến thức ở mức độ Intermediate.",
+        "level_signal": "Học viên quan tâm đến một nguyên tắc thiết kế cụ thể (HAX G10) và cơ chế xử lý lỗi/bàn giao giữa AI và Người (Human-AI Handover) trong điều kiện không chắc chắn. Đây là tư duy thiết kế sản phẩm AI ở mức độ thực thi chi tiết.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Khi AI không chắc chắn về kết quả (do thiếu dữ liệu hoặc độ tự tin thấp), thay vì đoán bừa và gây ra lỗi nghiêm trọng, hệ thống sẽ tự động thu hẹp phạm vi xử lý (chỉ làm phần chắc chắn) hoặc chủ động chuyển quyền quyết định lại cho con người.",
+        "layer2_example": "Ví dụ: Một ứng dụng AI quét hóa đơn để chuyển tiền. Nếu ảnh chụp hóa đơn bị mờ ở phần số tiền (thiếu thông tin nguồn), thay vì tự đoán một con số ngẫu nhiên (gây lỗi đắt giá), AI sẽ tự điền các thông tin rõ ràng như tên cửa hàng, ngày tháng, và để trống ô 'Số tiền' kèm thông báo: 'Vui lòng tự nhập số tiền do ảnh chụp không rõ nét'.",
+        "layer3_grounding": "Dựa trên Slide 4, phần 'Mức độ Automation & Cost-of-error' chỉ ra rằng khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta không thể để AI tự động hoàn toàn. Thay vào đó, áp dụng 'Conditional Automation' bằng cách kết hợp nguyên tắc HAX G10 (chủ động thu hẹp phạm vi) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn để đảm bảo an toàn cho hệ thống."
+      },
+      "beginner_note": "HAX (Guidelines for Human-AI Interaction) là bộ 18 nguyên tắc thiết kế tương tác giữa Người và AI do Microsoft nghiên cứu và phát triển. Trong đó, G10 (Guideline 10) là 'Scope services when in doubt' (Thu hẹp phạm vi dịch vụ khi nghi ngờ) nhằm hạn chế AI đưa ra các quyết định sai lầm khi độ tin cậy thấp.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Theo nội dung slide, trong trường hợp nào chúng ta nên áp dụng mức độ 'Conditional Automation' (Tự động hóa có điều kiện)?",
+          "options": [
+            {
+              "text": "Khi hệ thống chạy theo logic cố định (Deterministic).",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Khi hậu quả của sai số cao (Cost-of-error đắt)."
+            },
+            {
+              "text": "Khi AI luôn đạt độ chính xác tuyệt đối 100%.",
+              "is_correct": false
+            },
+            {
+              "text": "Khi muốn loại bỏ hoàn toàn sự can thiệp của con người.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide nêu rõ: 'Khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation'."
+        },
+        {
+          "question": "Nguyên tắc HAX G10 ('chủ động thu hẹp phạm vi') giải quyết vấn đề gì trong thiết kế sản phẩm AI?",
+          "options": [
+            {
+              "text": "Tăng tốc độ xử lý phần cứng của hệ thống AI.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Xử lý minh bạch và an toàn khi AI không chắc chắn về kết quả."
+            },
+            {
+              "is_correct": false,
+              "text": "Tự động tạo thêm dữ liệu giả lập để huấn luyện lại mô hình."
+            },
+            {
+              "text": "Ép buộc người dùng phải chấp nhận kết quả dự đoán của AI.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "HAX G10 (Scope services when in doubt) khuyên thiết kế AI chủ động giới hạn hoặc thu hẹp phạm vi dịch vụ khi hệ thống không chắc chắn, nhằm tránh đưa ra các quyết định sai lầm gây hậu quả nghiêm trọng."
+        },
+        {
+          "question": "Đâu là một ví dụ thực tế của việc 'chuyển giao cho người dùng khi thiếu thông tin nguồn' trong thiết kế sản phẩm AI?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "AI tự động phê duyệt khoản vay dù hồ sơ bị thiếu bảng lương."
+            },
+            {
+              "is_correct": true,
+              "text": "Ứng dụng ngân hàng yêu cầu người dùng tự nhập tay số tiền khi ảnh chụp hóa đơn bị mờ."
+            },
+            {
+              "is_correct": false,
+              "text": "Chatbot tự động bịa ra thông tin khi không tìm thấy tài liệu tham khảo."
+            },
+            {
+              "is_correct": false,
+              "text": "Hệ thống tự động khóa tài khoản người dùng mà không đưa ra lý do."
+            }
+          ],
+          "explanation": "Khi ảnh chụp hóa đơn bị mờ (thiếu thông tin nguồn), việc AI dừng lại và yêu cầu người dùng tự nhập tay là hành động chuyển giao quyền quyết định để tránh sai sót (Cost-of-error cao)."
+        },
+        {
+          "question": "Sự khác biệt cốt lõi giữa phần mềm truyền thống (Deterministic) và sản phẩm AI (Probabilistic) ảnh hưởng thế nào đến tư duy thiết kế?",
+          "options": [
+            {
+              "text": "Phần mềm truyền thống cần thiết kế xử lý xác suất, còn AI chạy theo logic cố định.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Sản phẩm AI phải được thiết kế để xử lý minh bạch sự không chắc chắn, thay vì giả định mọi thứ luôn đúng."
+            },
+            {
+              "text": "Không có sự khác biệt nào về mặt thiết kế trải nghiệm người dùng giữa hai loại sản phẩm.",
+              "is_correct": false
+            },
+            {
+              "text": "Sản phẩm AI không bao giờ cần đến sự can thiệp hay giám sát của con người.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Vì AI hoạt động dựa trên xác suất (Probabilistic), nó luôn có tỷ lệ sai số. Do đó, sản phẩm AI phải được thiết kế để xử lý minh bạch và an toàn khi AI không chắc chắn, khác với logic cố định (Deterministic) của phần mềm truyền thống."
+        },
+        {
+          "question": "Trong bối cảnh thiết kế sản phẩm AI, khái niệm 'Cost-of-error' được hiểu là gì?",
+          "options": [
+            {
+              "text": "Chi phí tiền điện để vận hành và tính toán mô hình AI.",
+              "is_correct": false
+            },
+            {
+              "text": "Hậu quả hoặc thiệt hại (về tài chính, an toàn, trải nghiệm) xảy ra khi AI đưa ra dự đoán sai.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Chi phí thuê kỹ sư để sửa lỗi lập trình trong mã nguồn."
+            },
+            {
+              "is_correct": false,
+              "text": "Số lượng lỗi tối đa mà hệ thống được phép gặp phải trong một ngày."
+            }
+          ],
+          "explanation": "Cost-of-error là hậu quả, thiệt hại hoặc chi phí phát sinh khi hệ thống AI đưa ra quyết định hoặc dự đoán sai lệch so với thực tế."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T07:30:17.714Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "e chắc chắn và chủ động",
+    "confidence": "LOW",
+    "route": "Ask to reselect",
+    "level": "Beginner",
+    "latency_ms": 12082,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "e chắc chắn và chủ động",
+        "why_user_may_choose_it": "Học viên muốn tìm hiểu về cơ chế hoạt động chủ động của AI khi gặp các trường hợp chắc chắn, nhưng thao tác bôi đen bị lỗi dẫn đến mất chữ 'cas' trong từ 'case'.",
+        "context_match": "Đoạn bôi đen là một phần bị cắt cụt của câu 'AI tự làm case chắc chắn và chủ động thu hẹp phạm vi...' thuộc mục 1 (Mức độ Automation & Cost-of-error) trên slide.",
+        "risk_if_answer_directly": "Nếu giải thích trực tiếp cụm từ vô nghĩa 'e chắc chắn', học viên có thể không liên kết được với khái niệm 'Conditional Automation' và nguyên tắc thiết kế sản phẩm AI khi đối mặt với sự không chắc chắn."
+      },
+      "agent_decision": {
+        "routing": "Ask to reselect",
+        "reason": "Đoạn bôi đen quá ngắn và bị mất ký tự đầu của từ 'case', gây mơ hồ nếu không đối chiếu kỹ với slide. Agent quyết định hướng dẫn học viên cách chọn lại cho chuẩn xác đồng thời vẫn giải thích dựa trên ngữ cảnh đoán được.",
+        "level_signal": "Học viên bôi đen một cụm từ bị cắt cụt ('e chắc chắn' thay vì 'case chắc chắn') và có độ dài rất ngắn, cho thấy có thể đang thao tác nhanh hoặc chưa quen với việc chọn ngữ cảnh đầy đủ để hỏi AI.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Đoạn bạn chọn là một phần của câu: 'AI tự làm case chắc chắn và chủ động thu hẹp phạm vi'. Ý nói khi AI có độ tự tin cao, nó sẽ tự động thực hiện; khi không chắc chắn, nó sẽ chủ động thu hẹp phạm vi xử lý hoặc hỏi lại con người để tránh gây ra lỗi nghiêm trọng.",
+        "layer2_example": "Ví dụ: Một ứng dụng AI lọc email rác. Với các email cực kỳ rõ ràng là rác (độ tin cậy 99%), AI tự động xóa (Automation). Với email nghi ngờ (độ tin cậy 50%), AI không tự xóa mà chủ động đưa vào thư mục 'Chờ duyệt' để người dùng tự quyết định (chuyển giao khi thiếu thông tin).",
+        "layer3_grounding": "Trên slide trang 4, mục 'Mức độ Automation & Cost-of-error' chỉ ra rằng khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng 'Conditional Automation' (Tự động hóa có điều kiện) dựa trên nguyên tắc HAX G10 để đảm bảo an toàn cho trải nghiệm người dùng."
+      },
+      "beginner_note": "Trong thiết kế sản phẩm AI, sự không chắc chắn (uncertainty) là đặc tính cốt lõi vì AI hoạt động dựa trên xác suất (probabilistic), khác với phần mềm truyền thống chạy theo logic cố định (deterministic). Do đó, việc thiết kế các kịch bản dự phòng khi AI không chắc chắn là cực kỳ quan trọng.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Sự khác biệt cốt lõi giữa phần mềm truyền thống và sản phẩm AI là gì?",
+          "options": [
+            {
+              "text": "Phần mềm truyền thống chạy theo xác suất, AI chạy theo logic cố định.",
+              "is_correct": false
+            },
+            {
+              "text": "Phần mềm truyền thống chạy theo logic cố định (Deterministic), AI chạy theo xác suất (Probabilistic).",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Không có sự khác biệt nào về mặt logic vận hành giữa hai loại sản phẩm này."
+            }
+          ],
+          "explanation": "Phần mềm truyền thống chạy theo logic cố định (Deterministic), trong khi sản phẩm AI xử lý theo xác suất (Probabilistic). Đây là khác biệt cốt lõi được nêu ngay đầu slide."
+        },
+        {
+          "question": "Khi thiết kế sản phẩm AI có 'Cost-of-error' (hậu quả sai số) rất cao, chúng ta nên áp dụng phương án nào?",
+          "options": [
+            {
+              "text": "Tự động hóa hoàn toàn (Full Automation) để tối ưu hóa tốc độ xử lý.",
+              "is_correct": false
+            },
+            {
+              "text": "Tự động hóa có điều kiện (Conditional Automation) và chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Ngừng sử dụng AI và chuyển hoàn toàn sang quy trình thủ công của con người."
+            }
+          ],
+          "explanation": "Khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation (Tự động hóa có điều kiện): AI tự làm case chắc chắn và chủ động chuyển giao cho người dùng khi thiếu thông tin."
+        },
+        {
+          "question": "Nguyên tắc 'HAX G10' được nhắc đến trong slide liên quan đến hành vi nào của AI?",
+          "options": [
+            {
+              "text": "Tự động tăng tốc độ xử lý khi hệ thống quá tải.",
+              "is_correct": false
+            },
+            {
+              "text": "Chủ động thu hẹp phạm vi dịch vụ hoặc hỗ trợ khi AI không chắc chắn.",
+              "is_correct": true
+            },
+            {
+              "text": "Tự động sửa lỗi code của lập trình viên mà không cần hỏi trước.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Theo slide, nguyên tắc HAX G10 tương ứng với việc AI chủ động thu hẹp phạm vi dịch vụ hoặc hỗ trợ khi không chắc chắn."
+        },
+        {
+          "question": "Tại sao việc bôi đen đầy đủ cụm từ (ví dụ: 'case chắc chắn và chủ động') lại quan trọng khi học với AI Tutor?",
+          "options": [
+            {
+              "text": "Để AI Tutor hiểu đúng ngữ cảnh trọn vẹn của slide và đưa ra giải thích chính xác nhất, tránh đoán sai do từ bị cắt cụt.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Để hệ thống tự động cộng điểm chuyên cần cho học viên."
+            },
+            {
+              "is_correct": false,
+              "text": "Không quan trọng, vì AI luôn đoán đúng dù bạn bôi đen bất kỳ ký tự đơn lẻ nào."
+            }
+          ],
+          "explanation": "Bôi đen đầy đủ cụm từ giúp AI Tutor hiểu rõ ngữ cảnh của slide, tránh việc đoán sai do từ ngữ bị cắt cụt hoặc mất nghĩa."
+        },
+        {
+          "question": "Khi AI thiếu thông tin nguồn để đưa ra quyết định chính xác, hệ thống nên xử lý như thế nào?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Đoán bừa một kết quả ngẫu nhiên để trải nghiệm người dùng không bị gián đoạn."
+            },
+            {
+              "is_correct": true,
+              "text": "Chủ động chuyển giao quyền quyết định hoặc yêu cầu thêm thông tin từ người dùng."
+            },
+            {
+              "text": "Hiển thị thông báo lỗi hệ thống nghiêm trọng và yêu cầu tải lại trang.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Khi thiếu thông tin nguồn hoặc độ tự tin thấp, thiết kế sản phẩm AI tốt yêu cầu hệ thống phải minh bạch chuyển giao quyền quyết định cho người dùng thay vì tự ý đưa ra kết quả sai lệch."
+        }
+      ],
+      "fallback_message": "Có vẻ bạn đã bôi đen một đoạn chữ khá ngắn và bị mất chữ ('e chắc chắn và chủ động' thay vì 'case chắc chắn và chủ động...'). Để mình có thể giải thích chính xác nhất, bạn hãy bôi đen trọn vẹn cả câu hoặc cụm từ hoàn chỉnh nhé! Dưới đây là giải thích và bài tập nhanh dựa trên ngữ cảnh mình đoán được từ slide để giúp bạn ôn tập."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T07:34:12.279Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Deterministic",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 11996,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "Deterministic",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ khái niệm 'Deterministic' (logic cố định) là gì và tại sao nó lại được dùng làm hệ quy chiếu để so sánh với sản phẩm AI.",
+        "context_match": "Khớp hoàn toàn. Từ 'Deterministic' nằm ở dòng thứ 2 của nội dung slide, dùng để đối lập với tính chất 'Probabilistic' của AI.",
+        "risk_if_answer_directly": "Nếu chỉ định nghĩa từ 'Deterministic' một cách thuần kỹ thuật mà không đặt trong bối cảnh đối lập với 'Probabilistic' và tư duy thiết kế sản phẩm AI (Product Thinking), học viên sẽ không hiểu được tại sao khái niệm này lại xuất hiện trong bài học thiết kế sản phẩm."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Thuật ngữ này là khái niệm cơ bản để phân biệt phần mềm truyền thống và AI. Giải thích chi tiết sẽ giúp học viên xây dựng tư duy thiết kế sản phẩm AI đúng đắn.",
+        "level_signal": "Học viên bôi đen một thuật ngữ nền tảng duy nhất ('Deterministic') được định nghĩa trực tiếp trên slide để đối lập với sản phẩm AI.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "'Deterministic' (Tính xác định) nghĩa là hệ thống hoạt động theo các quy tắc logic cố định. Với cùng một đầu vào (input), hệ thống sẽ luôn luôn trả về một kết quả đầu ra (output) giống hệt nhau, không bao giờ thay đổi hay có yếu tố ngẫu nhiên.",
+        "layer2_example": "Hãy tưởng tượng một chiếc máy tính bỏ túi: khi bạn bấm '5 + 5', kết quả luôn luôn là '10'. Không bao giờ có chuyện hôm nay ra '10' nhưng ngày mai do 'tâm trạng' máy không tốt nên ra '9.9'. Đó là tính Deterministic của phần mềm truyền thống. Ngược lại, một AI dịch thuật (Probabilistic) có thể dịch một câu theo nhiều cách khác nhau tùy vào ngữ cảnh và dữ liệu huấn luyện.",
+        "layer3_grounding": "Trên slide Trang 4, khái niệm này được dùng để chỉ 'phần mềm truyền thống chạy theo logic cố định (Deterministic)'. Slide đối lập nó với 'sản phẩm AI xử lý theo xác suất (Probabilistic)', từ đó dẫn đến việc chúng ta phải thiết kế sản phẩm AI để xử lý sự không chắc chắn này một cách minh bạch."
+      },
+      "beginner_note": "Trong phát triển phần mềm, việc chuyển từ tư duy 'Deterministic' (mọi thứ phải rõ ràng 1 và 0) sang tư duy 'Probabilistic' (chấp nhận sai số và xác suất) là bước ngoặt quan trọng nhất khi bước vào thế giới AI Product.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Đặc điểm cốt lõi của một hệ thống hoạt động theo cơ chế 'Deterministic' là gì?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Luôn trả về cùng một kết quả duy nhất cho cùng một đầu vào dựa trên logic cố định."
+            },
+            {
+              "text": "Kết quả đầu ra thay đổi ngẫu nhiên sau mỗi lần chạy dù đầu vào giữ nguyên.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Tự động học hỏi từ dữ liệu mới để thay đổi kết quả đầu ra theo thời gian."
+            }
+          ],
+          "explanation": "Hệ thống deterministic hoạt động theo các quy tắc logic cứng nhắc được lập trình sẵn, đảm bảo tính nhất quán tuyệt đối của kết quả đầu ra khi đầu vào không đổi."
+        },
+        {
+          "question": "Theo nội dung trên slide, loại phần mềm nào thường chạy theo logic cố định (Deterministic)?",
+          "options": [
+            {
+              "text": "Phần mềm truyền thống.",
+              "is_correct": true
+            },
+            {
+              "text": "Sản phẩm trí tuệ nhân tạo (AI).",
+              "is_correct": false
+            },
+            {
+              "text": "Mô hình Generative Adversarial Networks (GANs).",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide nêu rõ: 'Trong khi phần mềm truyền thống chạy theo logic cố định (Deterministic), sản phẩm AI xử lý theo xác suất (Probabilistic).'"
+        },
+        {
+          "question": "Tại sao việc thiết kế sản phẩm AI lại đòi hỏi tư duy khác biệt so với phần mềm truyền thống (Deterministic)?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Vì AI hoạt động dựa trên xác suất (Probabilistic), tạo ra sự không chắc chắn trong kết quả."
+            },
+            {
+              "is_correct": false,
+              "text": "Vì AI chạy chậm hơn và tốn nhiều tài nguyên phần cứng hơn phần mềm truyền thống."
+            },
+            {
+              "text": "Vì AI không thể lập trình bằng các ngôn ngữ thông thường.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Vì AI hoạt động theo xác suất (Probabilistic), kết quả đầu ra không hoàn toàn chắc chắn 100%, đòi hỏi người thiết kế phải có phương án xử lý khi AI đưa ra kết quả sai hoặc không chắc chắn."
+        },
+        {
+          "question": "Ví dụ nào sau đây thể hiện rõ nhất tính chất 'Deterministic'?",
+          "options": [
+            {
+              "text": "Một công thức Excel tính tổng SUM luôn trả về một kết quả cố định khi dữ liệu đầu vào không đổi.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Một hệ thống gợi ý phim trên Netflix đưa ra danh sách phim khác nhau cho mỗi người dùng."
+            },
+            {
+              "text": "Một chatbot tự động trả lời câu hỏi của khách hàng bằng ngôn ngữ tự nhiên.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Công thức Excel tính tổng hoạt động theo logic cố định, luôn cho ra một kết quả duy nhất và chính xác với cùng một tập dữ liệu đầu vào. Các phương án còn lại đều có yếu tố xác suất và không chắc chắn của AI."
+        },
+        {
+          "question": "Khi thiết kế sản phẩm AI có hậu quả sai số (Cost-of-error) cao, slide khuyến nghị giải pháp nào?",
+          "options": [
+            {
+              "text": "Áp dụng Conditional Automation (AI làm case chắc chắn, chuyển giao cho người dùng khi thiếu thông tin).",
+              "is_correct": true
+            },
+            {
+              "text": "Để AI tự động quyết định hoàn toàn để tối ưu hóa tốc độ xử lý.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Chuyển toàn bộ hệ thống về dạng logic cố định (Deterministic) để tránh sai sót."
+            }
+          ],
+          "explanation": "Slide ghi rõ: 'Khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ động thu hẹp phạm vi hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.'"
+        }
+      ],
+      "fallback_message": ""
+    }
   }
 ]
