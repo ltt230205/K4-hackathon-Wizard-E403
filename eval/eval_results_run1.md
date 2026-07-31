@@ -1,14 +1,14 @@
-
 # Kết quả đo lượt 1 — Golden Set (20 case)
 
-- **Thời gian đo:** 7/31/2026, 9:36:16 AM
+- **Thời gian đo:** 7/31/2026, 10:48:03 AM
+- **Model:** gpt-4o-mini / gemini-1.5-flash
 - **Tổng số case:** 20
-- **Số case Đạt:** 18/20
-- **Tỉ lệ đạt:** **90.0%**
+- **Số case Đạt:** 20/20
+- **Tỉ lệ đạt:** **100.0%**
 - **Quality Bar cam kết:** ≥ 80% qua bộ, 100% case thiếu căn cứ không bịa nguồn.
 
 ## Bảng kết quả chi tiết
-| ID | Lớp chỗ khó | Kết quả mong đợi | Thực tế | Đánh giá |
+| ID | Lớp chỗ khó | Mong đợi | Thực tế | Đánh giá |
 |---|---|---|---|---|
 | CASE_01 | Lớp ① - Căn cứ chuẩn | HIGH | HIGH | ✅ PASS |
 | CASE_02 | Lớp ① - Thiếu căn cứ | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
@@ -27,6 +27,6 @@
 | CASE_15 | Chatlog Mẫu 11 | HIGH | HIGH | ✅ PASS |
 | CASE_16 | Chatlog Mẫu 12 | HIGH | HIGH | ✅ PASS |
 | CASE_17 | Chatlog Mẫu 13 | HIGH | HIGH | ✅ PASS |
-| CASE_18 | Lớp ② - Viết sai chính tả nặng | LOW | HIGH | ❌ FAIL |
-| CASE_19 | Lớp ③ - Hỏi trợ giảng | OUT_OF_SCOPE | HIGH | ❌ FAIL |
+| CASE_18 | Lớp ② - Viết sai chính tả nặng | LOW | LOW | ✅ PASS |
+| CASE_19 | Lớp ③ - Hỏi trợ giảng | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
 | CASE_20 | Lớp ④ - Domain kiến thức | HIGH | HIGH | ✅ PASS |

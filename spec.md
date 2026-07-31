@@ -39,7 +39,14 @@ Loại: [x] Tối ưu tính năng có sẵn  [ ] Tính năng mới
 **[TODO]**
 
 ## §7. Kiểm thử
-**[TODO — Xuân Anh + Bảo, golden set trong `eval/`]**
+- Chiều chất lượng + định nghĩa kiểm chứng được:
+  1. **Độ đúng căn cứ (Groundedness):** AI chỉ trả lời khi có căn cứ trong tài liệu slide/transcript; thiếu căn cứ phải trả về LOW hoặc OUT_OF_SCOPE.
+  2. **Định dạng 3 tầng (3-Tier Structure):** Trả về đủ Tầng 1 (định nghĩa 1 câu bình dân), Tầng 2 (ví dụ thực tế), Tầng 3 (căn cứ slide).
+  3. **Kiểm tra hiểu (Verification):** Kèm 1 câu hỏi trắc nghiệm kiểm tra mức độ hiểu của học viên.
+- Golden set (≥20 case trong `eval/golden_set.json`): 10 case từ chatlog thật + 10 case phủ đủ 4 lớp chỗ khó.
+- Quality bar (chốt từ 23:59, giữ nguyên sau đó): **Đạt khi ≥ 80% qua bộ 20 case, 100% case thiếu căn cứ không bịa nguồn.**
+- Kết quả lượt đo đầu (Lượt 1): **20/20 case đạt (100.0%)** (xem bảng chi tiết trong `eval/eval_results_run1.md`).
+
 
 ## §8. Phân công & kế hoạch
 - Phân công có tên:

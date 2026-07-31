@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLearn AI Tutor — JTBD Prototype (CP2)</title>
+    <title>VLearn - AI Tutor Check CP3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- 1. TOP NAVBAR -->
     <header class="vlearn-navbar">
@@ -18,190 +16,157 @@
             <button class="icon-btn">‹</button>
             <div class="vlearn-logo">
                 <span class="logo-icon">V</span>
-                <span class="logo-text">VLearn</span>
+                <span>VLearn</span>
             </div>
             <div class="doc-badge">
-                <span class="pdf-icon">📖</span>
+                <span class="pdf-icon">📘</span>
                 <div class="doc-meta">
                     <span class="doc-filename">day05-ai-product-thinking-requirements.pdf</span>
-                    <span class="doc-sub">COMP2010 • Core JTBD: Làm rõ chỗ đọc không hiểu tại chỗ</span>
+                    <span class="doc-sub">COMP2010 • Core JTBD: Làm rõ chỗ không chắc tại chỗ</span>
                 </div>
             </div>
         </div>
-
         <div class="nav-right">
-            <span class="jtbd-badge">🎯 Job Statement: Tại chỗ không rời trang</span>
+            <span class="jtbd-badge">💡 Job Statement: Tại chỗ không rời trang</span>
             <button class="lang-btn">VI ▾</button>
-            <button class="theme-btn">🌙</button>
             <div class="user-avatar">VX</div>
         </div>
     </header>
 
-    <!-- MAIN 3-COLUMN LAYOUT -->
+    <!-- MAIN BODY 3 COLUMNS -->
     <div class="vlearn-body">
-        <!-- 2. LEFT SIDEBAR: DANH SÁCH BÀI HỌC -->
+        <!-- 2. LEFT SIDEBAR -->
         <aside class="left-sidebar">
             <div class="day-group">
-                <div class="day-header"><span>▷ Day01</span> <small>2 TÀI LIỆU</small></div>
+                <div class="day-header">▷ Day01 <small>2 TÀI LIỆU</small></div>
             </div>
             <div class="day-group">
-                <div class="day-header"><span>▷ Day02</span> <small>1 TÀI LIỆU</small></div>
+                <div class="day-header">▷ Day02 <small>1 TÀI LIỆU</small></div>
             </div>
             <div class="day-group">
-                <div class="day-header"><span>▷ Day03</span> <small>2 TÀI LIỆU</small></div>
+                <div class="day-header">▷ Day03 <small>2 TÀI LIỆU</small></div>
             </div>
             <div class="day-group">
-                <div class="day-header"><span>▷ Day04</span> <small>3 TÀI LIỆU</small></div>
+                <div class="day-header">▷ Day04 <small>3 TÀI LIỆU</small></div>
             </div>
-
-            <!-- Day 05 Active -->
             <div class="day-group active">
-                <div class="day-header expanded">
-                    <span>▽ Day05</span>
-                    <span class="badge-studying">STUDYING</span>
-                </div>
+                <div class="day-header">▽ Day05 <span class="badge-studying">STUDYING</span></div>
                 <div class="file-list">
                     <div class="file-item active">
-                        <span class="file-icon">📘</span>
-                        <span class="file-name">day05-ai-product-thinking...</span>
+                        <span>📘</span>
+                        <span>day05-ai-product-thinking-...</span>
                         <small>44p</small>
                         <span class="check-icon">✓</span>
                     </div>
                     <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">day05-lecture-slides-batch...</span>
+                        <span>📄</span>
+                        <span>day05-lecture-slides-batch...</span>
                         <small>39p</small>
                     </div>
                     <div class="file-item">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">day05-slide-batch03-C401...</span>
+                        <span>📄</span>
+                        <span>day05-slide-batch03-C401...</span>
                         <small>62p</small>
                     </div>
                 </div>
             </div>
-
             <div class="day-group">
-                <div class="day-header"><span>▷ Day06</span> <small>1 TÀI LIỆU</small></div>
+                <div class="day-header">▷ Day06 <small>1 TÀI LIỆU</small></div>
             </div>
         </aside>
 
-        <!-- 3. CENTER PANE: SLIDE VIEWER -->
+        <!-- 3. CENTER VIEWER -->
         <main class="center-viewer">
-            <!-- Toolbar trên slide -->
             <div class="pdf-toolbar">
                 <div class="tool-group">
                     <button class="tool-btn">✏️ Đọc</button>
                     <button class="tool-btn">🖊️ Bút</button>
                     <button class="tool-btn active">⚡ Highlight</button>
                 </div>
+                <span class="page-count-badge">Trang 4 / 44</span>
                 <div class="tool-group">
-                    <span class="page-count-badge">Trang 4 / 44</span>
-                </div>
-                <div class="tool-group">
-                    <button class="tool-btn">-</button>
-                    <span class="zoom-text">100%</span>
+                    <button class="tool-btn">−</button>
+                    <span style="font-size:12px; color:#475569;">100%</span>
                     <button class="tool-btn">+</button>
                 </div>
             </div>
 
-            <!-- Slide Canvas View (Cho phép bôi đen trực tiếp) -->
             <div class="slide-canvas" id="slide-canvas">
                 <div class="slide-page" id="slide-page">
                     <div class="page-tag">Trang 4 / 44 • AI Product Thinking</div>
-                    
                     <div class="slide-card-inner">
                         <div class="slide-banner">DAY 5 — AI PRODUCT SPECIFICATION</div>
-                        
                         <h1 class="slide-title">Thiết kế sản phẩm AI cho sự không chắc chắn</h1>
-                        
-                        <p class="slide-desc">
-                            Trong khi phần mềm truyền thống chạy theo logic cố định (Deterministic), sản phẩm AI xử lý theo xác suất (Probabilistic). Do đó, sản phẩm phải được thiết kế để xử lý minh bạch khi AI không chắc chắn.
-                        </p>
+                        <p class="slide-desc">Trong khi phần mềm truyền thống chạy theo logic cố định (Deterministic), sản phẩm AI xử lý theo xác suất (Probabilistic). Do đó, sản phẩm phải được thiết kế để xử lý minh bạch khi AI không chắc chắn.</p>
 
                         <div class="slide-section">
                             <h3>1. Mức độ Automation & Cost-of-error</h3>
-                            <p class="slide-text-block">
-                                Khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức <strong>Conditional Automation</strong>: AI chỉ tự làm case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.
-                            </p>
+                            <div class="slide-text-block">
+                                Khi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức <strong>Conditional Automation</strong>: AI tự làm case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.
+                            </div>
                         </div>
 
-                        <div class="slide-section">
+                        <div class="slide-section warning-block">
                             <h3>2. Ví dụ khái niệm ngoài tài liệu bài học</h3>
-                            <p class="slide-text-block warning-block">
+                            <div class="slide-text-block">
                                 Ghi chú tham khảo thêm: Mô hình <strong>Generative Adversarial Networks (GANs)</strong> sinh dữ liệu tổng hợp dựa trên 2 mạng Generator và Discriminator đối kháng.
-                            </p>
+                            </div>
                         </div>
 
                         <div class="instructor-info">
-                            💡 <em>Mẹo: Hãy dùng con trỏ chuột <strong>bôi đen bất kỳ đoạn chữ nào</strong> trên slide này để hiện menu <strong>"Hỏi AI"</strong>!</em>
+                            💡 Mẹo: Hãy dùng con trỏ chuột <strong>bôi đen bất kỳ đoạn chữ nào</strong> trên slide này để hiện menu "Hỏi AI"!
                         </div>
                     </div>
                 </div>
 
-                <!-- Thanh chuyển trang dưới -->
                 <div class="pagination-bar">
                     <button class="page-arrow">‹</button>
                     <span>Trang <strong>4</strong> / 44</span>
                     <button class="page-arrow">›</button>
                 </div>
             </div>
-
-            <!-- Floating Selection Tooltip (Hiện ra khi bôi đen văn bản) -->
-            <div id="selection-tooltip" class="selection-tooltip hidden">
-                <button id="btn-ask-tooltip" class="tooltip-btn primary">💬 Hỏi AI</button>
-                <span class="tooltip-divider">|</span>
-                <button class="tooltip-btn">⚠️ Báo bối rối</button>
-                <span class="tooltip-divider">|</span>
-                <button class="tooltip-btn">📝 Ghi chú</button>
-            </div>
         </main>
 
-        <!-- 4. RIGHT SIDEBAR: VLEARN TUTOR PANEL -->
+        <!-- 4. RIGHT TUTOR -->
         <aside class="right-tutor">
             <div class="tutor-top-bar">
                 <div class="tutor-identity">
                     <div class="robot-avatar">🤖</div>
                     <div>
                         <h3>VLearn Tutor</h3>
-                        <p class="tutor-sub">Trợ lý học theo ngữ cảnh</p>
+                        <div class="tutor-sub">● Trợ lý học theo ngữ cảnh</div>
                     </div>
                 </div>
-                <div class="tutor-actions">
-                    <span class="slide-context-tag">Slide trang 4</span>
-                </div>
+                <span class="slide-context-tag">Slide trang 4</span>
             </div>
 
-            <!-- Khung chứa tin nhắn Chat -->
-            <div class="chat-history" id="chat-history">
-                <!-- Message 0: Lời chào ban đầu -->
+            <div class="chat-history" id="dynamic-chat-stream">
                 <div class="tutor-msg-intro">
-                    👋 <strong>Xin chào!</strong> Bạn hãy <strong>dùng chuột bôi đen bất kỳ từ/đoạn nào</strong> trên Slide bên trái, menu <em>"Hỏi AI"</em> sẽ tự nổi lên!
+                    Xin chào! Bạn hãy dùng chuột <strong>bôi đen bất kỳ từ/đoạn nào</strong> trên Slide bên trái, menu <em>"Hỏi AI"</em> sẽ tự nổi lên!
+                    <div class="quick-preset-area">
+                        <span class="preset-label">Hoặc bấm mẫu demo nhanh:</span>
+                        <button class="preset-btn success" id="btn-preset-happy">🟢 Mẫu 1: Conditional Automation (Đủ căn cứ > 85%)</button>
+                        <button class="preset-btn warning" id="btn-preset-low">🟡 Mẫu 2: Generative Adversarial Networks (Thiếu căn cứ > 55%)</button>
+                    </div>
                 </div>
-
-                <!-- Quick Presets cho demo nhanh -->
-                <div class="quick-preset-area">
-                    <span class="preset-label">Hoặc bấm mẫu demo nhanh:</span>
-                    <button id="btn-preset-happy" class="preset-btn success">
-                        ✨ Mẫu 1: Conditional Automation (Đủ căn cứ • 85%)
-                    </button>
-                    <button id="btn-preset-low" class="preset-btn warning">
-                        ⚠️ Mẫu 2: Generative Adversarial Networks (Thiếu căn cứ • 55%)
-                    </button>
-                </div>
-
-                <!-- Container cho tin nhắn hỏi & thẻ AI phản hồi -->
-                <div id="dynamic-chat-stream"></div>
             </div>
 
-            <!-- Khung nhập liệu ở dưới cùng -->
             <div class="chat-input-bar">
-                <input type="text" id="user-input" placeholder="Bôi đen slide hoặc nhập câu hỏi..." readonly>
-                <button class="send-btn" id="btn-send">➤</button>
+                <input type="text" placeholder="Bôi đen slide hoặc nhập câu hỏi..." readonly>
+                <button class="send-btn">➤</button>
             </div>
         </aside>
     </div>
 
+    <!-- FLOATING SELECTION TOOLTIP -->
+    <div id="selection-tooltip" class="selection-tooltip hidden">
+        <button id="btn-ask-tooltip" class="tooltip-btn primary">💬 Hỏi AI</button>
+        <span class="tooltip-divider">|</span>
+        <button class="tooltip-btn">🖍️ Highlight</button>
+        <span class="tooltip-divider">|</span>
+        <button class="tooltip-btn">📋 Copy</button>
+    </div>
+
     <script src="app.js"></script>
 </body>
-
 </html>

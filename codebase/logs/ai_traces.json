@@ -484,5 +484,1885 @@
       ],
       "fallback_message": ""
     }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:36.968Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Thiết kế sản phẩm AI cho sự không chắc chắn",
+    "confidence": "HIGH",
+    "latency_ms": 1137,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Thiết kế sản phẩm AI cho sự không chắc chắn\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Thiết kế sản phẩm AI cho sự không chắc chắn\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:37.722Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Cách cài đặt Adobe Photoshop 2026",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 741,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:38.195Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "cái đoạn đó",
+    "confidence": "LOW",
+    "latency_ms": 470,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:38.528Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Mấy giờ hết hạn nộp bài tập",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 331,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:38.853Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+    "confidence": "HIGH",
+    "latency_ms": 321,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"RNN xử lý song song nhanh hơn Transformer\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"RNN xử lý song song nhanh hơn Transformer\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:39.191Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 15",
+    "confidence": "HIGH",
+    "latency_ms": 335,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 15\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích đoạn bôi đen ở Trang 15\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:41.509Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Giải thích biểu đồ ở trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 2316,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích biểu đồ ở trang 6\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích biểu đồ ở trang 6\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:41.747Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "nghĩa chi tiết của trang 4",
+    "confidence": "HIGH",
+    "latency_ms": 235,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"nghĩa chi tiết của trang 4\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"nghĩa chi tiết của trang 4\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:42.146Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Tôi không hiểu trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 395,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tôi không hiểu trang 6\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Tôi không hiểu trang 6\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:42.423Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 17",
+    "confidence": "HIGH",
+    "latency_ms": 274,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 17\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích đoạn bôi đen ở Trang 17\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:42.764Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Giá Bitcoin hôm nay",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 338,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:43.046Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "hả?",
+    "confidence": "LOW",
+    "latency_ms": 280,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:43.490Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Cho mình xin link tải slide pdf",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 442,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:43.715Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Vanishing Gradient",
+    "confidence": "HIGH",
+    "latency_ms": 223,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Vanishing Gradient\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Vanishing Gradient\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:43.965Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Query Key Value trong Attention",
+    "confidence": "HIGH",
+    "latency_ms": 248,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Query Key Value trong Attention\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Query Key Value trong Attention\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:44.188Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Giải thích lại khái niệm HAX G10",
+    "confidence": "HIGH",
+    "latency_ms": 220,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích lại khái niệm HAX G10\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích lại khái niệm HAX G10\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:45.944Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Tại sao dùng Softmax",
+    "confidence": "HIGH",
+    "latency_ms": 1753,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tại sao dùng Softmax\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Tại sao dùng Softmax\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:46.225Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "giaithich cai nay gium cai",
+    "confidence": "LOW",
+    "latency_ms": 278,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:46.647Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Thầy cho em xin nghỉ buổi sau",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 420,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:09:46.935Z",
+    "model": "gpt-4o-mini",
+    "selected_text": "Overfitting",
+    "confidence": "HIGH",
+    "latency_ms": 285,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Overfitting\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Overfitting\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:40:50.260Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Cách cài đặt Adobe Photoshop 2026",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 3871,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Yêu cầu hướng dẫn 'Cách cài đặt Adobe Photoshop 2026' hoàn toàn không liên quan đến nội dung bài học về 'Thiết kế sản phẩm AI cho sự không chắc chắn' trong slide được cung cấp."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:40:56.801Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "cái đoạn đó",
+    "confidence": "LOW",
+    "latency_ms": 4026,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Cụm từ 'cái đoạn đó' quá mơ hồ và không chỉ rõ khái niệm cụ thể nào trong slide để VLearn AI Tutor có thể giải thích chính xác cho bạn. Vui lòng bôi đen cụm từ cụ thể hơn (ví dụ: 'Thuật toán Attention' hoặc 'trọng số')."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:41:03.318Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Mấy giờ hết hạn nộp bài tập",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 4007,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Câu hỏi của bạn liên quan đến thời hạn nộp bài tập (thông tin vận hành/logistics), không liên quan đến nội dung kiến thức về 'Transformer Model' trong Slide 3. Vui lòng liên hệ giáo vụ hoặc kiểm tra thông báo trên hệ thống lớp học để biết thời gian chính xác."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:41:11.447Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+    "confidence": "HIGH",
+    "latency_ms": 5622,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "Đoạn bôi đen này thông tin bị ngược so với tài liệu học tập, thực tế RNN xử lý tuần tự nên chậm hơn Transformer chứ không phải nhanh hơn.",
+        "layer2_example": "Việc RNN xử lý tuần tự giống như bạn phải xếp hàng chờ từng người thanh toán xong mới đến lượt mình, trong khi Transformer có thể thanh toán song song ở nhiều quầy cùng lúc.",
+        "layer3_grounding": "Căn cứ trực tiếp vào Slide 4 có ghi rõ: 'RNN xử lý tuần tự nên chậm hơn Transformer'."
+      },
+      "check_question": "Theo nội dung Slide 4, phát biểu nào sau đây là đúng?",
+      "options": [
+        {
+          "text": "RNN xử lý tuần tự nên chậm hơn Transformer.",
+          "is_correct": true
+        },
+        {
+          "text": "RNN xử lý song song nên nhanh hơn Transformer.",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:41:50.560Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Cho mình xin link tải slide pdf",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 5120,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {},
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Yêu cầu cung cấp link tải slide PDF thuộc về vấn đề kỹ thuật và vận hành lớp học (logistics), không nằm trong nội dung kiến thức của bài học được cung cấp. Bạn vui lòng liên hệ bộ phận hỗ trợ hoặc kiểm tra mục tài liệu đính kèm của hệ thống để tải file."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:41:57.847Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Vanishing Gradient",
+    "confidence": "LOW",
+    "latency_ms": 4777,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Context slide được cung cấp quá ngắn và thiếu thông tin chi tiết. Slide chỉ đề cập đến 'Hiện tượng trôi mất thông tin ngữ cảnh trong mạng RNN' mà không giải thích cụ thể khái niệm 'Vanishing Gradient' (triệt tiêu đạo hàm) là gì, nguyên nhân hay cơ chế hoạt động của nó."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:42:05.714Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Query Key Value trong Attention",
+    "confidence": "LOW",
+    "latency_ms": 5356,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Context slide cung cấp thông tin quá ngắn gọn, chỉ liệt kê Query (Q), Key (K), và Value (V) là 3 thành phần của cơ chế chú ý mà không giải thích chi tiết khái niệm, vai trò hay cách hoạt động của từng thành phần này."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:42:18.076Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Giải thích lại khái niệm HAX G10",
+    "confidence": "LOW",
+    "latency_ms": 9847,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Context slide cung cấp thông tin quá ngắn gọn (\"Nguyên tắc HAX G10: Thu hẹp phạm vi khi nghi ngờ\") và thiếu các chi tiết giải thích cụ thể, ví dụ hoặc ngữ cảnh ứng dụng để có thể giải thích đầy đủ và chính xác khái niệm HAX G10 cho bạn."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:42:25.152Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Tại sao dùng Softmax",
+    "confidence": "HIGH",
+    "latency_ms": 4570,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "Hàm Softmax được sử dụng để chuyển đổi các điểm số (score) chưa chuẩn hóa thành các giá trị xác suất có tổng bằng 1.",
+        "layer2_example": "Nếu mô hình đưa ra điểm số cho ba nhãn là [2.0, 1.0, 0.1], hàm Softmax sẽ biến đổi chúng thành các tỷ lệ phần trăm xác suất tương ứng (ví dụ: [70%, 20%, 10%]) để dễ dàng đưa ra quyết định phân loại.",
+        "layer3_grounding": "Theo thông tin từ Slide 10, hàm Softmax có chức năng cụ thể là 'giúp chuyển đổi score thành xác suất'."
+      },
+      "check_question": "Theo nội dung slide, hàm Softmax có vai trò chính là gì?",
+      "options": [
+        {
+          "text": "Chuyển đổi điểm số (score) thành xác suất",
+          "is_correct": true
+        },
+        {
+          "text": "Tăng tốc độ xử lý dữ liệu của mô hình",
+          "is_correct": false
+        },
+        {
+          "text": "Lưu trữ các điểm số của mô hình",
+          "is_correct": false
+        },
+        {
+          "text": "Xóa bỏ các điểm số không cần thiết",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:42:31.632Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "giaithich cai nay gium cai",
+    "confidence": "LOW",
+    "latency_ms": 3964,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {},
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Yêu cầu 'giaithich cai nay gium cai' quá mơ hồ và slide context ('Slide 1: Khái niệm cơ bản') không cung cấp đủ thông tin chi tiết để giải thích. Vui lòng chỉ rõ cụm từ hoặc khái niệm cụ thể cần giải thích trong bài học."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:42:41.552Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Overfitting",
+    "confidence": "HIGH",
+    "latency_ms": 4782,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "Overfitting là hiện tượng mô hình máy tính học thuộc lòng dữ liệu huấn luyện (train) thay vì tìm ra quy luật chung.",
+        "layer2_example": "Giống như một học sinh học vẹt các câu hỏi trong đề cương ôn tập, khi đi thi gặp câu hỏi thực tế hơi khác một chút là không làm được bài.",
+        "layer3_grounding": "Dựa trên Slide 12, Overfitting được định nghĩa trực tiếp là hiện tượng mô hình học thuộc lòng dữ liệu train."
+      },
+      "check_question": "Theo nội dung bài học, hiện tượng 'Overfitting' xảy ra khi nào?",
+      "options": [
+        {
+          "text": "Khi mô hình học thuộc lòng dữ liệu train",
+          "is_correct": true
+        },
+        {
+          "text": "Khi mô hình không thể ghi nhớ được dữ liệu train",
+          "is_correct": false
+        },
+        {
+          "text": "Khi mô hình dự đoán chính xác trên mọi dữ liệu thực tế mới",
+          "is_correct": false
+        },
+        {
+          "text": "Khi dữ liệu train bị thiếu hụt nghiêm trọng",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:44:56.027Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Thiết kế sản phẩm AI cho sự không chắc chắn",
+    "confidence": "HIGH",
+    "latency_ms": 7707,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "Thiết kế sản phẩm AI cho sự không chắc chắn nghĩa là xây dựng sản phẩm sao cho dù mô hình AI có thể đưa ra kết quả không hoàn hảo, người dùng vẫn có được một trải nghiệm đáng tin cậy.",
+        "layer2_example": "Khi mô hình AI có những giới hạn và không thể đưa ra kết quả chính xác 100% (khả năng của model), thiết kế sản phẩm cần có cách hiển thị hoặc tương tác phù hợp để người dùng không cảm thấy bị lừa dối, từ đó xây dựng lòng tin nơi họ.",
+        "layer3_grounding": "Dựa trên nội dung Slide 1: 'Thiết kế sản phẩm AI cho sự không chắc chắn - Từ khả năng của model đến trải nghiệm đáng tin cậy của người dùng'."
+      },
+      "check_question": "Theo slide được cung cấp, việc thiết kế sản phẩm AI cho sự không chắc chắn hướng tới mục tiêu chuyển đổi nào?",
+      "options": [
+        {
+          "text": "Từ khả năng của model đến trải nghiệm đáng tin cậy của người dùng.",
+          "is_correct": true
+        },
+        {
+          "text": "Từ việc loại bỏ hoàn toàn lỗi của model đến việc tối ưu hóa thuật toán.",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:05.625Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "cái đoạn đó",
+    "confidence": "LOW",
+    "latency_ms": 4287,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Cụm từ bôi đen 'cái đoạn đó' quá mơ hồ và không chỉ rõ phần nội dung cụ thể nào cần giải thích. Bạn vui lòng trích dẫn chính xác đoạn văn bản hoặc thuật ngữ cần làm rõ từ slide nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:10.038Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Mấy giờ hết hạn nộp bài tập",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 3900,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Câu hỏi của bạn liên quan đến thời hạn nộp bài tập (thông tin vận hành/logistics), hoàn toàn không liên quan đến nội dung kiến thức về 'Transformer Model' trong Slide 3. Bạn vui lòng kiểm tra lại thông báo trên hệ thống lớp học hoặc liên hệ trực tiếp với giảng viên/trợ giảng để được hỗ trợ nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:15.292Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+    "confidence": "HIGH",
+    "latency_ms": 4738,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "Phát biểu này hoàn toàn ngược lại với thực tế: RNN xử lý dữ liệu theo tuần tự từng bước nên chậm hơn, chứ không phải song song và nhanh hơn Transformer.",
+        "layer2_example": "Giống như việc xếp hàng mua vé từng người một (RNN - tuần tự, chậm) so với việc nhiều quầy vé cùng mở cửa phục vụ khách hàng cùng lúc (Transformer - song song, nhanh).",
+        "layer3_grounding": "Căn cứ vào Slide 4 có ghi rõ: 'RNN xử lý tuần tự nên chậm hơn Transformer'."
+      },
+      "check_question": "Theo thông tin từ slide, đặc điểm nào khiến RNN có tốc độ xử lý chậm hơn Transformer?",
+      "options": [
+        {
+          "text": "Do RNN xử lý dữ liệu tuần tự",
+          "is_correct": true
+        },
+        {
+          "text": "Do RNN xử lý dữ liệu song song",
+          "is_correct": false
+        },
+        {
+          "text": "Do Transformer không có khả năng xử lý tuần tự",
+          "is_correct": false
+        },
+        {
+          "text": "Do RNN sử dụng quá nhiều bộ nhớ",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:42.388Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Thiết kế sản phẩm AI cho sự không chắc chắn",
+    "confidence": "HIGH",
+    "latency_ms": 1138,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Thiết kế sản phẩm AI cho sự không chắc chắn\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Thiết kế sản phẩm AI cho sự không chắc chắn\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:43.238Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Cách cài đặt Adobe Photoshop 2026",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 328,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:44.053Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "cái đoạn đó",
+    "confidence": "LOW",
+    "latency_ms": 307,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:45.186Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Mấy giờ hết hạn nộp bài tập",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 629,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:45.812Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+    "confidence": "HIGH",
+    "latency_ms": 109,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"RNN xử lý song song nhanh hơn Transformer\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"RNN xử lý song song nhanh hơn Transformer\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:46.411Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 15",
+    "confidence": "HIGH",
+    "latency_ms": 94,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 15\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích đoạn bôi đen ở Trang 15\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:47.003Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích biểu đồ ở trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 89,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích biểu đồ ở trang 6\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích biểu đồ ở trang 6\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:47.620Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "nghĩa chi tiết của trang 4",
+    "confidence": "HIGH",
+    "latency_ms": 109,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"nghĩa chi tiết của trang 4\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"nghĩa chi tiết của trang 4\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:48.228Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Tôi không hiểu trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 98,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tôi không hiểu trang 6\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Tôi không hiểu trang 6\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:48.842Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 17",
+    "confidence": "HIGH",
+    "latency_ms": 106,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 17\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích đoạn bôi đen ở Trang 17\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:49.445Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giá Bitcoin hôm nay",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 99,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:50.104Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "hả?",
+    "confidence": "LOW",
+    "latency_ms": 143,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:50.706Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Cho mình xin link tải slide pdf",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 92,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:51.411Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Vanishing Gradient",
+    "confidence": "HIGH",
+    "latency_ms": 198,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Vanishing Gradient\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Vanishing Gradient\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:52.012Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Query Key Value trong Attention",
+    "confidence": "HIGH",
+    "latency_ms": 96,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Query Key Value trong Attention\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Query Key Value trong Attention\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:52.685Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích lại khái niệm HAX G10",
+    "confidence": "HIGH",
+    "latency_ms": 156,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích lại khái niệm HAX G10\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích lại khái niệm HAX G10\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:53.480Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Tại sao dùng Softmax",
+    "confidence": "HIGH",
+    "latency_ms": 282,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tại sao dùng Softmax\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Tại sao dùng Softmax\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:54.094Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "giaithich cai nay gium cai",
+    "confidence": "LOW",
+    "latency_ms": 108,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:54.785Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Thầy cho em xin nghỉ buổi sau",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 185,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:45:55.395Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Overfitting",
+    "confidence": "HIGH",
+    "latency_ms": 101,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Overfitting\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Overfitting\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:50.245Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Thiết kế sản phẩm AI cho sự không chắc chắn",
+    "confidence": "HIGH",
+    "latency_ms": 287,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Thiết kế sản phẩm AI cho sự không chắc chắn\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Thiết kế sản phẩm AI cho sự không chắc chắn\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:50.854Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Cách cài đặt Adobe Photoshop 2026",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 89,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:51.514Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "cái đoạn đó",
+    "confidence": "LOW",
+    "latency_ms": 153,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:52.130Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Mấy giờ hết hạn nộp bài tập",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 110,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:52.780Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+    "confidence": "HIGH",
+    "latency_ms": 139,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"RNN xử lý song song nhanh hơn Transformer\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"RNN xử lý song song nhanh hơn Transformer\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:53.475Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 15",
+    "confidence": "HIGH",
+    "latency_ms": 180,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 15\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích đoạn bôi đen ở Trang 15\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:54.100Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích biểu đồ ở trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 118,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích biểu đồ ở trang 6\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích biểu đồ ở trang 6\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:54.733Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "nghĩa chi tiết của trang 4",
+    "confidence": "HIGH",
+    "latency_ms": 128,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"nghĩa chi tiết của trang 4\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"nghĩa chi tiết của trang 4\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:55.403Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Tôi không hiểu trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 165,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tôi không hiểu trang 6\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Tôi không hiểu trang 6\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:56.278Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 17",
+    "confidence": "HIGH",
+    "latency_ms": 359,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 17\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích đoạn bôi đen ở Trang 17\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:56.882Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giá Bitcoin hôm nay",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 97,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:57.610Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "hả?",
+    "confidence": "LOW",
+    "latency_ms": 220,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:58.653Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Cho mình xin link tải slide pdf",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 530,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:47:59.428Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Vanishing Gradient",
+    "confidence": "HIGH",
+    "latency_ms": 257,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Vanishing Gradient\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Vanishing Gradient\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:48:00.152Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Query Key Value trong Attention",
+    "confidence": "HIGH",
+    "latency_ms": 215,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Query Key Value trong Attention\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Query Key Value trong Attention\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:48:00.789Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích lại khái niệm HAX G10",
+    "confidence": "HIGH",
+    "latency_ms": 124,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích lại khái niệm HAX G10\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Giải thích lại khái niệm HAX G10\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:48:01.395Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Tại sao dùng Softmax",
+    "confidence": "HIGH",
+    "latency_ms": 90,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tại sao dùng Softmax\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Tại sao dùng Softmax\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:48:02.005Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "giaithich cai nay gium cai",
+    "confidence": "LOW",
+    "latency_ms": 100,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bạn chọn hơi ngắn hoặc chưa rõ ý. Bạn vui lòng bôi đen cụm từ đầy đủ hơn nhé."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:48:02.675Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Thầy cho em xin nghỉ buổi sau",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 162,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi tài liệu bài học Slide. Bạn vui lòng liên hệ Ban giảng huấn hoặc hỗ trợ kỹ thuật."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T03:48:03.525Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Overfitting",
+    "confidence": "HIGH",
+    "latency_ms": 336,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Overfitting\" là nội dung trọng tâm được giải thích trực tiếp trong tài liệu bài học.",
+        "layer2_example": "Giống như việc bạn áp dụng quy tắc này vào thực tế bài tập của khoá học.",
+        "layer3_grounding": "Căn cứ cụ thể tại nội dung Slide được cung cấp."
+      },
+      "check_question": "Dựa trên bài học, khái niệm \"Overfitting\" có vai trò gì?",
+      "options": [
+        {
+          "text": "A. Giúp hệ thống xử lý thông tin chính xác theo ngữ cảnh",
+          "is_correct": true
+        },
+        {
+          "text": "B. Không có tác dụng trong bài học",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:17:44.776Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "i số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ động thu h",
+    "confidence": "HIGH",
+    "latency_ms": 474,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"i số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ động thu h\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:18:58.552Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Conditional Automation",
+    "confidence": "HIGH",
+    "latency_ms": 217,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Conditional Automation\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:20:17.166Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ động thu hẹp phạm vi (",
+    "confidence": "HIGH",
+    "latency_ms": 402,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ động thu hẹp phạm vi (\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:22:17.756Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Khi hậu quả",
+    "confidence": "HIGH",
+    "latency_ms": 272,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Khi hậu quả\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:23:08.992Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Ví dụ khái niệm ngoài tài liệu bài học\nGhi chú tham khảo thêm: M",
+    "confidence": "HIGH",
+    "latency_ms": 221,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Ví dụ khái niệm ngoài tài liệu bài học\nGhi chú tham khảo thêm: M\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
   }
 ]
