@@ -1,71 +1,106 @@
-// eval/run_eval.js - Chạy đo Golden Set 20 case với delay chống rate limit
+// eval/run_eval.js - Chay do Golden Set gon 10-15 case voi delay chong rate limit.
 const fs = require('fs');
 const path = require('path');
 
-const SERVER_URL = 'http://localhost:3000/api/explain';
-const DELAY_MS = 500; // Chờ 0.5s giữa mỗi request
+function loadEnv() {
+    const envPath = path.join(__dirname, '../.env');
+    if (!fs.existsSync(envPath)) return;
 
-function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    fs.readFileSync(envPath, 'utf8').split(/\r?\n/).forEach(line => {
+        const trimmed = line.trim();
+        if (!trimmed || trimmed.startsWith('#')) return;
+        const idx = trimmed.indexOf('=');
+        if (idx === -1) return;
+        process.env[trimmed.slice(0, idx).trim()] = trimmed.slice(idx + 1).trim();
+    });
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function resultLabel(isPass) {
+    return isPass ? 'PASS' : 'FAIL';
+}
 
 async function runEval() {
-    console.log("🚀 Bắt đầu đo lượt 1 trọn bộ Golden Set (có delay chống rate limit)...\n");
+    loadEnv();
+
+    const port = process.env.PORT || 3001;
+    const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+    const serverUrl = `http://localhost:${port}/api/explain`;
+    const delayMs = 500;
     const goldenSet = JSON.parse(fs.readFileSync(path.join(__dirname, 'golden_set.json'), 'utf8'));
 
+    console.log(`Bat dau do Golden Set (${goldenSet.length} case) voi ${model}...\n`);
+
     let passed = 0;
-    let results = [];
+    const results = [];
 
     for (let i = 0; i < goldenSet.length; i++) {
         const testCase = goldenSet[i];
-        process.stdout.write(`[${i+1}/${goldenSet.length}] ${testCase.id} - ${testCase.class}... `);
+        process.stdout.write(`[${i + 1}/${goldenSet.length}] ${testCase.id} - ${testCase.class}... `);
 
         try {
-            const res = await fetch(SERVER_URL, {
+            const res = await fetch(serverUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ selectedText: testCase.selected_text, slideContext: testCase.context })
+                body: JSON.stringify({
+                    selectedText: testCase.selected_text,
+                    slideContext: testCase.context
+                })
             }).then(r => r.json());
 
-            if (res.error) {
-                console.log(`⚠️ API Error: ${res.error.substring(0, 60)}...`);
-                results.push({ ID: testCase.id, Class: testCase.class, Expected: testCase.expected_confidence, Actual: 'API_ERROR', Result: '⚠️ ERROR' });
-            } else {
-                const actual = res.confidence_level || 'UNKNOWN';
-                const isPass = (actual === testCase.expected_confidence);
-                if (isPass) passed++;
-                console.log(`${isPass ? '✅' : '❌'} Expected: ${testCase.expected_confidence} | Got: ${actual}`);
-                results.push({ ID: testCase.id, Class: testCase.class, Expected: testCase.expected_confidence, Actual: actual, Result: isPass ? '✅ PASS' : '❌ FAIL' });
-            }
-        } catch (e) {
-            console.log(`❌ Connection Error`);
-            results.push({ ID: testCase.id, Class: testCase.class, Expected: testCase.expected_confidence, Actual: 'CONN_ERROR', Result: '❌ ERROR' });
+            const actual = res.confidence_level || 'UNKNOWN';
+            const isPass = actual === testCase.expected_confidence;
+            if (isPass) passed++;
+
+            console.log(`${resultLabel(isPass)} Expected: ${testCase.expected_confidence} | Got: ${actual}`);
+            results.push({
+                ID: testCase.id,
+                Class: testCase.class,
+                Expected: testCase.expected_confidence,
+                Actual: actual,
+                Result: resultLabel(isPass)
+            });
+        } catch (err) {
+            console.log('ERROR Connection/API error');
+            results.push({
+                ID: testCase.id,
+                Class: testCase.class,
+                Expected: testCase.expected_confidence,
+                Actual: 'CONN_ERROR',
+                Result: 'ERROR'
+            });
         }
 
-        if (i < goldenSet.length - 1) await sleep(DELAY_MS);
+        if (i < goldenSet.length - 1) await sleep(delayMs);
     }
 
     const passRate = ((passed / goldenSet.length) * 100).toFixed(1);
-    console.log(`\n${'='.repeat(60)}`);
-    console.log(`📊 KẾT QUẢ: ${passed}/${goldenSet.length} Case Đạt (${passRate}%)`);
-    console.log(`${'='.repeat(60)}\n`);
+    console.log(`\nKET QUA: ${passed}/${goldenSet.length} case dat (${passRate}%)\n`);
     console.table(results);
 
-    // Xuất file markdown
-    const md = `# Kết quả đo lượt 1 — Golden Set (${goldenSet.length} case)
+    const failedRows = results.filter(r => r.Result !== 'PASS');
+    const md = `# Kết quả đo lượt 1 - Golden Set (${goldenSet.length} case)
 
 - **Thời gian đo:** ${new Date().toLocaleString()}
-- **Model:** gpt-4o-mini / gemini-1.5-flash
+- **Model:** ${model}
 - **Tổng số case:** ${goldenSet.length}
-- **Số case Đạt:** ${passed}/${goldenSet.length}
+- **Số case đạt:** ${passed}/${goldenSet.length}
 - **Tỉ lệ đạt:** **${passRate}%**
-- **Quality Bar cam kết:** ≥ 80% qua bộ, 100% case thiếu căn cứ không bịa nguồn.
+- **Quality bar:** Đạt khi ≥ 80% qua bộ case, 100% case thiếu căn cứ không bịa nguồn.
+- **Case chưa đạt:** ${failedRows.length ? failedRows.map(r => `${r.ID} (${r.Expected} -> ${r.Actual})`).join(', ') : 'Không có'}
 
 ## Bảng kết quả chi tiết
+
 | ID | Lớp chỗ khó | Mong đợi | Thực tế | Đánh giá |
 |---|---|---|---|---|
 ${results.map(r => `| ${r.ID} | ${r.Class} | ${r.Expected} | ${r.Actual} | ${r.Result} |`).join('\n')}
 `;
+
     fs.writeFileSync(path.join(__dirname, 'eval_results_run1.md'), md, 'utf8');
-    console.log("📝 Đã lưu kết quả vào eval/eval_results_run1.md");
+    console.log('Da luu ket qua vao eval/eval_results_run1.md');
 }
 
 runEval();

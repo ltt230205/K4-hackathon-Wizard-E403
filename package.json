@@ -1,0 +1,10 @@
+{
+  "name": "vlearn-ai-tutor-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node codebase/server.js",
+    "eval": "node eval/run_eval.js"
+  }
+}

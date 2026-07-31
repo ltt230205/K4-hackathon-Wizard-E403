@@ -1,32 +1,26 @@
-# Kết quả đo lượt 1 — Golden Set (20 case)
+# Kết quả đo lượt 1 - Golden Set (12 case)
 
-- **Thời gian đo:** 7/31/2026, 11:43:00 AM
-- **Model:** gpt-4o-mini / gemini-1.5-flash
-- **Tổng số case:** 20
-- **Số case Đạt:** 20/20
-- **Tỉ lệ đạt:** **100.0%**
-- **Quality Bar cam kết:** ≥ 80% qua bộ, 100% case thiếu căn cứ không bịa nguồn.
+- **Thời gian đo:** 7/31/2026, 12:51:36 PM
+- **Model:** gemini-3.5-flash
+- **Tổng số case:** 12
+- **Số case đạt:** 0/12
+- **Tỉ lệ đạt:** **0.0%**
+- **Quality bar:** Đạt khi ≥ 80% qua bộ case, 100% case thiếu căn cứ không bịa nguồn.
+- **Case chưa đạt:** CASE_01 (HIGH -> CONN_ERROR), CASE_02 (OUT_OF_SCOPE -> CONN_ERROR), CASE_03 (LOW -> CONN_ERROR), CASE_04 (OUT_OF_SCOPE -> CONN_ERROR), CASE_05 (HIGH -> CONN_ERROR), CASE_06 (HIGH -> CONN_ERROR), CASE_07 (HIGH -> CONN_ERROR), CASE_08 (LOW -> CONN_ERROR), CASE_09 (OUT_OF_SCOPE -> CONN_ERROR), CASE_10 (HIGH -> CONN_ERROR), CASE_11 (LOW -> CONN_ERROR), CASE_12 (HIGH -> CONN_ERROR)
 
 ## Bảng kết quả chi tiết
+
 | ID | Lớp chỗ khó | Mong đợi | Thực tế | Đánh giá |
 |---|---|---|---|---|
-| CASE_01 | Lớp ① - Căn cứ chuẩn | HIGH | HIGH | ✅ PASS |
-| CASE_02 | Lớp ① - Thiếu căn cứ | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
-| CASE_03 | Lớp ② - Input mơ hồ | LOW | LOW | ✅ PASS |
-| CASE_04 | Lớp ③ - Logistics ngoài phạm vi | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
-| CASE_05 | Lớp ④ - Domain dễ sai | HIGH | HIGH | ✅ PASS |
-| CASE_06 | Chatlog T0020 | HIGH | HIGH | ✅ PASS |
-| CASE_07 | Chatlog T0399 | HIGH | HIGH | ✅ PASS |
-| CASE_08 | Chatlog T0769 | HIGH | HIGH | ✅ PASS |
-| CASE_09 | Chatlog T0941 | HIGH | HIGH | ✅ PASS |
-| CASE_10 | Chatlog T1053 | HIGH | HIGH | ✅ PASS |
-| CASE_11 | Lớp ① - Thiếu nguồn | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
-| CASE_12 | Lớp ② - Câu hỏi ngắn cụt | LOW | LOW | ✅ PASS |
-| CASE_13 | Lớp ③ - Xin link download | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
-| CASE_14 | Lớp ④ - Domain kiến thức | HIGH | HIGH | ✅ PASS |
-| CASE_15 | Chatlog Mẫu 11 | HIGH | HIGH | ✅ PASS |
-| CASE_16 | Chatlog Mẫu 12 | HIGH | HIGH | ✅ PASS |
-| CASE_17 | Chatlog Mẫu 13 | HIGH | HIGH | ✅ PASS |
-| CASE_18 | Lớp ② - Viết sai chính tả nặng | LOW | LOW | ✅ PASS |
-| CASE_19 | Lớp ③ - Hỏi trợ giảng | OUT_OF_SCOPE | OUT_OF_SCOPE | ✅ PASS |
-| CASE_20 | Lớp ④ - Domain kiến thức | HIGH | HIGH | ✅ PASS |
+| CASE_01 | HIGH - Căn cứ trực tiếp | HIGH | CONN_ERROR | ERROR |
+| CASE_02 | OUT_OF_SCOPE - Công cụ ngoài bài học | OUT_OF_SCOPE | CONN_ERROR | ERROR |
+| CASE_03 | LOW - Input mơ hồ | LOW | CONN_ERROR | ERROR |
+| CASE_04 | OUT_OF_SCOPE - Logistics | OUT_OF_SCOPE | CONN_ERROR | ERROR |
+| CASE_05 | HIGH - Domain dễ nhầm | HIGH | CONN_ERROR | ERROR |
+| CASE_06 | HIGH - Attention | HIGH | CONN_ERROR | ERROR |
+| CASE_07 | HIGH - HAX G10 | HIGH | CONN_ERROR | ERROR |
+| CASE_08 | LOW - Câu hỏi ngắn cụt | LOW | CONN_ERROR | ERROR |
+| CASE_09 | OUT_OF_SCOPE - Xin tài liệu | OUT_OF_SCOPE | CONN_ERROR | ERROR |
+| CASE_10 | HIGH - Khái niệm ML | HIGH | CONN_ERROR | ERROR |
+| CASE_11 | LOW - Viết sai chính tả nặng | LOW | CONN_ERROR | ERROR |
+| CASE_12 | HIGH - Softmax | HIGH | CONN_ERROR | ERROR |

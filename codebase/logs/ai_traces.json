@@ -2872,5 +2872,521 @@
       ],
       "fallback_message": ""
     }
+  },
+  {
+    "timestamp": "2026-07-31T05:36:18.550Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "ase chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 12224,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "ase chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ cơ chế hoạt động của \"Conditional Automation\" (Tự động hóa có điều kiện) và nguyên tắc thiết kế HAX G10 khi AI đối mặt với sự không chắc chắn.",
+        "context_match": "Khớp hoàn toàn với mục số 1 trên slide về \"Mức độ Automation & Cost-of-error\" trong thiết kế sản phẩm AI.",
+        "risk_if_answer_directly": "Nếu giải thích trực tiếp bằng thuật ngữ kỹ thuật hoặc lý thuyết suông, học viên khó hình dung được cách áp dụng thực tế của nguyên tắc HAX G10 và cơ chế chuyển giao (handover) giữa AI và người dùng."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen chứa các khái niệm cốt lõi về thiết kế sản phẩm AI dưới điều kiện không chắc chắn, có đầy đủ ngữ cảnh trên slide để giải thích sâu sắc.",
+        "level_signal": "Học viên quan tâm đến chi tiết thiết kế tương tác Người-AI (HAX G10) và quản trị rủi ro sản phẩm (Cost-of-error), phù hợp với trình độ Intermediate.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Khi hậu quả của một lỗi sai là quá đắt (Cost-of-error cao), AI không nên tự ý quyết định thay con người nếu nó không chắc chắn. Thay vào đó, AI chỉ tự động xử lý những ca mà nó có độ tự tin cực kỳ cao. Với những ca nghi ngờ, AI sẽ thu hẹp phạm vi gợi ý hoặc chuyển quyền quyết định lại cho con người xử lý.",
+        "layer2_example": "Ví dụ: Một ứng dụng AI hỗ trợ bác sĩ kê đơn thuốc. Nếu AI nhận diện triệu chứng rõ ràng 100%, nó tự động đề xuất đơn thuốc chuẩn. Nhưng nếu triệu chứng mơ hồ hoặc thiếu lịch sử bệnh án (thiếu thông tin nguồn), AI sẽ không tự ý kê đơn mà chỉ đưa ra danh sách 3 nhóm bệnh khả nghi nhất (thu hẹp phạm vi) và yêu cầu bác sĩ tự tay chọn lựa (chuyển giao cho người dùng).",
+        "layer3_grounding": "Dựa trên slide Trang 4, phần '1. Mức độ Automation & Cost-of-error' chỉ ra rằng khi hậu quả sai số cao, chúng ta áp dụng 'Conditional Automation'. Cụ thể, slide nhắc đến 'HAX G10' - đây là Guideline số 10 trong bộ nguyên tắc thiết kế tương tác Người-AI của Microsoft (Human-AI Experience Guidelines): 'Helpfully limit services' (Chủ động giới hạn dịch vụ/thu hẹp phạm vi khi không chắc chắn) để đảm bảo an toàn cho người dùng."
+      },
+      "beginner_note": "Dành cho bạn mới bắt đầu: HAX (Human-AI Experience) là bộ 18 nguyên tắc thiết kế do Microsoft nghiên cứu nhằm giúp các nhà phát triển tạo ra các sản phẩm AI thân thiện, minh bạch và đáng tin cậy hơn đối với con người.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Khi thiết kế một sản phẩm AI có 'Cost-of-error' (chi phí/hậu quả của sai số) rất cao, chiến lược tự động hóa nào sau đây là an toàn nhất?",
+          "options": [
+            {
+              "text": "Full Automation (Tự động hóa hoàn toàn để tối ưu tốc độ)",
+              "is_correct": false
+            },
+            {
+              "text": "Conditional Automation (Tự động hóa có điều kiện, chỉ tự động khi chắc chắn)",
+              "is_correct": true
+            },
+            {
+              "text": "No Automation (Không tự động hóa, bắt người dùng làm thủ công hoàn toàn)",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Khi hậu quả sai số cao, Conditional Automation giúp tận dụng sức mạnh của AI ở những ca an toàn, đồng thời giảm thiểu rủi ro bằng cách chuyển giao cho con người ở những ca phức tạp."
+        },
+        {
+          "question": "Nguyên tắc HAX G10 ('Helpfully limit services') khuyên hệ thống AI nên làm gì khi độ tự tin (confidence score) của nó dưới ngưỡng an toàn?",
+          "options": [
+            {
+              "text": "Tiếp tục đưa ra dự đoán tốt nhất có thể để không làm gián đoạn trải nghiệm",
+              "is_correct": false
+            },
+            {
+              "text": "Chủ động thu hẹp phạm vi lựa chọn hoặc gợi ý các phương án an toàn thay vì đưa ra một kết luận duy nhất",
+              "is_correct": true
+            },
+            {
+              "text": "Tự động tắt ứng dụng và yêu cầu người dùng khởi động lại",
+              "is_correct": false
+            }
+          ],
+          "explanation": "HAX G10 khuyên AI nên chủ động giới hạn dịch vụ một cách có ích (ví dụ: gợi ý danh mục thay vì chọn hộ một kết quả cụ thể) khi không chắc chắn."
+        },
+        {
+          "question": "Trong thiết kế sản phẩm AI, hành động 'chuyển giao cho người dùng' (handover) thường được kích hoạt khi nào?",
+          "options": [
+            {
+              "text": "Khi hệ thống AI bị quá tải máy chủ",
+              "is_correct": false
+            },
+            {
+              "text": "Khi AI thiếu thông tin nguồn hoặc độ tự tin của mô hình thấp hơn ngưỡng cho phép",
+              "is_correct": true
+            },
+            {
+              "text": "Khi người dùng yêu cầu tắt tính năng AI trong phần cài đặt",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Theo slide, khi thiếu thông tin nguồn hoặc gặp ca không chắc chắn, hệ thống sẽ chuyển giao quyền quyết định cho người dùng để tránh đưa ra quyết định sai lầm."
+        },
+        {
+          "question": "Sự khác biệt cốt lõi giữa phần mềm truyền thống (Deterministic) và sản phẩm AI (Probabilistic) ảnh hưởng thế nào đến tư duy thiết kế sản phẩm?",
+          "options": [
+            {
+              "text": "Sản phẩm AI cần được thiết kế để xử lý minh bạch và an toàn khi xảy ra sai số hoặc không chắc chắn",
+              "is_correct": true
+            },
+            {
+              "text": "Sản phẩm AI không cần thiết kế giao diện xử lý lỗi vì AI có khả năng tự sửa lỗi",
+              "is_correct": false
+            },
+            {
+              "text": "Sản phẩm AI hoạt động theo logic cố định nên thiết kế giống hệt phần mềm truyền thống",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Vì AI hoạt động theo xác suất (Probabilistic), sai số là không thể tránh khỏi. Do đó, thiết kế sản phẩm AI bắt buộc phải có phương án xử lý minh bạch khi AI không chắc chắn."
+        },
+        {
+          "question": "Một ứng dụng AI phê duyệt khoản vay tự động quyết định từ chối ngay lập tức một hồ sơ chỉ vì thiếu số điện thoại tham chiếu. Thiết kế này đã vi phạm nguyên tắc nào được đề cập trên slide?",
+          "options": [
+            {
+              "text": "Chưa tối ưu hóa mô hình GANs đối kháng",
+              "is_correct": false
+            },
+            {
+              "text": "Chưa áp dụng Conditional Automation (lẽ ra phải chuyển giao cho con người duyệt thủ công khi thiếu thông tin nguồn)",
+              "is_correct": true
+            },
+            {
+              "text": "Lạm dụng quá nhiều quyền can thiệp của con người",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Khi thiếu thông tin nguồn (số điện thoại tham chiếu), thay vì tự ý đưa ra quyết định từ chối (gây Cost-of-error cao cho khách hàng), AI nên chuyển giao hồ sơ đó cho nhân viên tín dụng xử lý thủ công."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T06:47:19.218Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": ". Mức độ Automation & Cost-of-error\nKhi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ độ",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 13516,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "\". Mức độ Automation & Cost-of-error\\nKhi hậu quả của sai số cao (Cost-of-error đắt), chúng ta áp dụng mức Conditional Automation: AI tự làm case chắc chắn và chủ độ\"",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ cơ chế hoạt động của 'Conditional Automation' và cách thiết kế sản phẩm khi đối mặt với rủi ro sai số cao của AI.",
+        "context_match": "Khớp hoàn toàn với nội dung mục số 1 trên Slide 4 về 'Mức độ Automation & Cost-of-error'.",
+        "risk_if_answer_directly": "Nếu chỉ giải thích định nghĩa mà không đưa ra ví dụ thực tế về 'Cost-of-error' và 'Conditional Automation', học viên sẽ khó hình dung cách áp dụng vào thiết kế sản phẩm thực tế."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen nằm ở phần nội dung cốt lõi của slide về thiết kế sản phẩm AI khi đối mặt với sự không chắc chắn. Agent sẽ giải thích chi tiết khái niệm này và cung cấp ví dụ thực tế.",
+        "level_signal": "Học viên bôi đen phần kiến thức về quản trị rủi ro (Cost-of-error) và thiết kế luồng tự động hóa có điều kiện (Conditional Automation), thể hiện sự quan tâm đến tư duy thiết kế sản phẩm AI thực tế.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Khi hậu quả của một lỗi sai do AI gây ra là quá lớn hoặc đắt giá (Cost-of-error cao), chúng ta không nên để AI tự quyết định hoàn toàn. Thay vào đó, ta áp dụng 'Tự động hóa có điều kiện' (Conditional Automation): AI chỉ tự động xử lý những trường hợp nó cực kỳ chắc chắn, còn những trường hợp nghi ngờ thì sẽ chuyển giao cho con người quyết định hoặc thu hẹp phạm vi lại để đảm bảo an toàn.",
+        "layer2_example": "Ví dụ: Một AI duyệt hồ sơ cho vay tiền. Với hồ sơ cực tốt hoặc cực xấu (AI tự tin 99%), AI sẽ tự động duyệt hoặc từ chối. Nhưng với hồ sơ nằm ở vùng nhạy cảm (AI chỉ tự tin 60%), AI sẽ không tự quyết định mà chuyển hồ sơ đó cho nhân viên ngân hàng (con người) thẩm định thủ công để tránh rủi ro mất tiền.",
+        "layer3_grounding": "Theo Slide 4, khi 'Cost-of-error đắt', hệ thống áp dụng 'Conditional Automation'. Điều này được thực hiện bằng cách: AI tự làm các trường hợp chắc chắn, chủ động thu hẹp phạm vi hoạt động (theo nguyên lý HAX G10) hoặc chuyển giao quyền kiểm soát cho người dùng khi thiếu thông tin đầu vào."
+      },
+      "beginner_note": "Trong phần mềm truyền thống, mọi thứ hoạt động theo logic cố định (đúng hoặc sai). Nhưng với AI, mọi kết quả đều dựa trên xác suất (độ tự tin %). Do đó, thiết kế sản phẩm AI luôn cần có phương án dự phòng cho những trường hợp AI đoán sai.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Khái niệm 'Cost-of-error' trong thiết kế sản phẩm AI được hiểu là gì?",
+          "options": [
+            {
+              "text": "Chi phí tiền điện để vận hành mô hình AI khi xảy ra lỗi phần cứng.",
+              "is_correct": false
+            },
+            {
+              "text": "Hậu quả hoặc thiệt hại xảy ra khi AI đưa ra dự đoán hoặc quyết định sai.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Chi phí để thuê lập trình viên sửa lỗi code của hệ thống AI."
+            }
+          ],
+          "explanation": "Cost-of-error là mức độ nghiêm trọng của hậu quả (về tài chính, uy tín, an toàn) khi AI đưa ra dự đoán hoặc quyết định sai lệch."
+        },
+        {
+          "question": "Khi 'Cost-of-error' của một tính năng AI cực kỳ cao (ví dụ: chẩn đoán y khoa), thiết kế nào sau đây là phù hợp nhất?",
+          "options": [
+            {
+              "text": "Cho phép AI tự động đưa ra quyết định điều trị mà không cần bác sĩ can thiệp.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Áp dụng Conditional Automation: AI gợi ý và hỗ trợ, quyết định cuối cùng thuộc về bác sĩ."
+            },
+            {
+              "is_correct": false,
+              "text": "Tắt hoàn toàn tính năng AI và chỉ sử dụng phương pháp thủ công truyền thống."
+            }
+          ],
+          "explanation": "Với Cost-of-error cao, Conditional Automation giúp tận dụng sức mạnh của AI ở những ca rõ ràng, đồng thời giảm thiểu rủi ro bằng cách chuyển giao ca khó cho con người (bác sĩ) quyết định."
+        },
+        {
+          "question": "Theo nội dung slide, 'Conditional Automation' (Tự động hóa có điều kiện) hoạt động theo cơ chế nào?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "AI chỉ hoạt động khi có kết nối mạng internet tốc độ cao."
+            },
+            {
+              "is_correct": true,
+              "text": "AI tự động xử lý các trường hợp có độ chắc chắn cao, và chủ động chuyển giao hoặc thu hẹp phạm vi khi không chắc chắn."
+            },
+            {
+              "text": "AI tự động sửa lỗi code của chính nó khi phát hiện hệ thống chạy chậm.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide nêu rõ: 'AI tự làm case chắc chắn và chủ động thu hẹp phạm vi hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn'."
+        },
+        {
+          "question": "Nguyên lý HAX G10 được nhắc đến trong slide liên quan đến hành động nào của AI khi gặp ca không chắc chắn?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Tự động tăng độ chính xác của mô hình bằng cách tự học lại."
+            },
+            {
+              "is_correct": true,
+              "text": "Chủ động thu hẹp phạm vi dịch vụ hoặc hỗ trợ khi AI không chắc chắn."
+            },
+            {
+              "is_correct": false,
+              "text": "Yêu cầu người dùng trả thêm phí khi AI gặp ca khó."
+            }
+          ],
+          "explanation": "HAX G10 (thuộc bộ hướng dẫn thiết kế AI của Microsoft) khuyên hệ thống nên chủ động giảm bớt phạm vi dịch vụ một cách khéo léo khi độ tin cậy của AI thấp."
+        },
+        {
+          "question": "Tại sao sản phẩm AI lại cần tư duy thiết kế khác biệt so với phần mềm truyền thống?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Vì phần mềm truyền thống chạy theo logic cố định (Deterministic), còn AI xử lý theo xác suất (Probabilistic) nên luôn có sai số."
+            },
+            {
+              "text": "Vì sản phẩm AI tốn nhiều dung lượng lưu trữ hơn phần mềm truyền thống.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Vì người dùng phần mềm truyền thống không quan tâm đến lỗi sai của hệ thống."
+            }
+          ],
+          "explanation": "Do AI hoạt động dựa trên xác suất (Probabilistic), kết quả không bao giờ chính xác 100%. Thiết kế sản phẩm AI bắt buộc phải có phương án xử lý sự không chắc chắn này, khác với logic cố định (Deterministic) của phần mềm truyền thống."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T06:58:12.827Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "cao (Cost-of-error",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 364,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "cao (Cost-of-error",
+        "why_user_may_choose_it": "Đây là cụm có khả năng gây khó hiểu vì liên quan đến cách thiết kế AI khi không chắc chắn.",
+        "context_match": "Có căn cứ trực tiếp trong slide trang 4.",
+        "risk_if_answer_directly": "Nếu không phân tầng, người học có thể nhớ ví dụ nhưng không hiểu điều kiện áp dụng."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn chọn đủ cụ thể để giải thích theo 3 tầng.",
+        "level_signal": "Người học chọn một khái niệm trung tâm thay vì hỏi chung chung.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "cao (Cost-of-error là cách để AI chỉ tự xử lý khi đủ chắc chắn, còn trường hợp rủi ro thì thu hẹp phạm vi hoặc chuyển cho người dùng.",
+        "layer2_example": "Giống xe tự lái: đường rõ thì xe tự chạy, gặp sương mù dày thì yêu cầu người lái tiếp quản.",
+        "layer3_grounding": "Slide trang 4 nêu rằng khi cost-of-error cao, hệ thống nên dùng Conditional Automation và HAX G10 để tránh xử lý thiếu căn cứ."
+      },
+      "beginner_note": "Điểm cần nhớ: AI không phải lúc nào cũng nên tự động 100%. Thiết kế tốt là biết khi nào cần dừng, hỏi lại hoặc chuyển giao.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Áp dụng: Khi cost-of-error cao, AI nên tự động hóa theo cách nào?",
+          "options": [
+            {
+              "text": "Chỉ tự làm case chắc chắn và chuyển giao khi thiếu căn cứ",
+              "is_correct": true
+            },
+            {
+              "text": "Luôn tự động hóa 100%",
+              "is_correct": false
+            },
+            {
+              "text": "Bỏ qua mức độ tin cậy",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Conditional Automation giảm rủi ro khi hậu quả sai số cao."
+        },
+        {
+          "question": "Áp dụng: Vì sao Agent cần xem context slide trước khi trả lời?",
+          "options": [
+            {
+              "text": "Để tránh bịa kiến thức ngoài bài học",
+              "is_correct": true
+            },
+            {
+              "text": "Để trả lời dài hơn",
+              "is_correct": false
+            },
+            {
+              "text": "Để bỏ qua đoạn người học chọn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Căn cứ slide giúp Agent biết nội dung nào được phép khẳng định."
+        },
+        {
+          "question": "Áp dụng: LOW confidence thường xảy ra khi nào?",
+          "options": [
+            {
+              "text": "Đoạn chọn quá ngắn hoặc thiếu ngữ cảnh",
+              "is_correct": true
+            },
+            {
+              "text": "Slide có căn cứ trực tiếp",
+              "is_correct": false
+            },
+            {
+              "text": "Câu trả lời đã chắc chắn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Đoạn mơ hồ nên được hỏi lại hoặc yêu cầu chọn rõ hơn."
+        },
+        {
+          "question": "Áp dụng: Tầng grounding trong câu trả lời dùng để làm gì?",
+          "options": [
+            {
+              "text": "Chỉ ra căn cứ cụ thể trên slide",
+              "is_correct": true
+            },
+            {
+              "text": "Kể chuyện ngoài bài học",
+              "is_correct": false
+            },
+            {
+              "text": "Thay thế ví dụ minh họa",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Grounding nối câu trả lời với nguồn học tập."
+        },
+        {
+          "question": "Áp dụng: Nếu chọn một khái niệm ngoài phạm vi bài học, Agent nên làm gì?",
+          "options": [
+            {
+              "text": "Nói rõ ngoài phạm vi và gợi ý chọn lại",
+              "is_correct": true
+            },
+            {
+              "text": "Bịa một lời giải thích nghe hợp lý",
+              "is_correct": false
+            },
+            {
+              "text": "Đánh dấu HIGH confidence",
+              "is_correct": false
+            }
+          ],
+          "explanation": "OUT_OF_SCOPE cần từ chối an toàn để người học không học sai."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T07:01:09.422Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 11963,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "case chắc chắn và chủ động thu hẹp phạm vi (HAX G10) hoặc chuyển giao cho người dùng khi thiếu thông tin nguồn.",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ hơn về cơ chế hoạt động thực tế của 'Conditional Automation' và cách áp dụng nguyên lý HAX G10 khi thiết kế sản phẩm AI.",
+        "context_match": "Đoạn bôi đen khớp hoàn toàn với mục số 1 'Mức độ Automation & Cost-of-error' trên slide trang 4, nói về cách thiết kế sản phẩm khi AI không chắc chắn.",
+        "risk_if_answer_directly": "Nếu trả lời trực tiếp mà không phân tích bối cảnh, học viên có thể chỉ hiểu máy móc định nghĩa HAX G10 mà không nắm được tư duy cốt lõi: tại sao phải thiết kế như vậy (mối quan hệ giữa Cost-of-error và mức độ tự động hóa)."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen nằm trực tiếp trong nội dung cốt lõi của slide về thiết kế sản phẩm AI dưới điều kiện không chắc chắn. Agent sẽ giải thích chi tiết theo 3 tầng và cung cấp bộ câu hỏi trắc nghiệm mức độ Trung cấp để kiểm tra khả năng áp dụng thực tế.",
+        "level_signal": "Học viên bôi đen một nguyên lý thiết kế cụ thể (HAX G10, Conditional Automation) liên quan đến việc xử lý sự không chắc chắn của AI, cho thấy họ đang quan tâm sâu đến cách thiết kế luồng tương tác (interaction design) của sản phẩm AI.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Khi AI không chắc chắn 100% về kết quả, thay vì đoán bừa và gây ra lỗi nghiêm trọng (hậu quả đắt giá), hệ thống nên áp dụng cơ chế 'Tự động hóa có điều kiện'. Nghĩa là AI chỉ tự làm những phần nó chắc chắn, chủ động thu hẹp phạm vi lựa chọn, hoặc chuyển giao quyền quyết định lại cho con người (Human-in-the-loop).",
+        "layer2_example": "Ví dụ: Một ứng dụng AI hỗ trợ bác sĩ chẩn đoán bệnh qua hình ảnh X-quang. Nếu ảnh rõ ràng, AI tự động phân loại. Nhưng nếu ảnh mờ hoặc có dấu hiệu phức tạp (AI không chắc chắn), AI sẽ không tự đưa ra kết luận cuối cùng mà sẽ khoanh vùng khu vực nghi ngờ (thu hẹp phạm vi) và chuyển tiếp hình ảnh đó cho bác sĩ chuyên khoa duyệt lại (chuyển giao cho người dùng).",
+        "layer3_grounding": "Theo slide Trang 4, đây chính là nguyên lý thiết kế khi 'Cost-of-error' (hậu quả của sai số) cao. Khái niệm 'HAX G10' (thuộc bộ hướng dẫn thiết kế tương tác Human-AI của Microsoft) nhấn mạnh việc 'Chủ động thu hẹp phạm vi dịch vụ khi không chắc chắn' nhằm đảm bảo tính minh bạch và an toàn cho trải nghiệm người dùng."
+      },
+      "beginner_note": "Trong phần mềm truyền thống (Deterministic), hệ thống hoạt động theo các quy tắc 'Nếu-Thì' cố định. Trong sản phẩm AI (Probabilistic), kết quả đầu ra mang tính xác suất. Do đó, thiết kế sản phẩm AI luôn phải tính đến trường hợp AI đoán sai hoặc không đủ độ tin cậy để tự đưa ra quyết định.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Khi thiết kế một sản phẩm AI có 'Cost-of-error' (hậu quả sai số) rất cao, mức độ tự động hóa nào sau đây là phù hợp nhất để đảm bảo an toàn?",
+          "options": [
+            {
+              "text": "Conditional Automation (Tự động hóa có điều kiện)",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Full Automation (Tự động hóa hoàn toàn)"
+            },
+            {
+              "text": "No Automation (Không tự động hóa)",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Deterministic Automation (Tự động hóa cố định)"
+            }
+          ],
+          "explanation": "Khi hậu quả của sai số (Cost-of-error) cao, việc tự động hóa hoàn toàn rất nguy hiểm. Do đó, sản phẩm cần áp dụng Conditional Automation (Tự động hóa có điều kiện) để AI chỉ tự quyết định khi có độ tự tin cao, còn lại sẽ chuyển giao cho con người."
+        },
+        {
+          "question": "Theo nguyên lý HAX G10 được đề cập trong slide, AI nên xử lý thế nào khi thiếu thông tin nguồn hoặc không chắc chắn?",
+          "options": [
+            {
+              "text": "AI tự động đưa ra quyết định ngẫu nhiên để không làm gián đoạn trải nghiệm.",
+              "is_correct": false
+            },
+            {
+              "text": "AI chủ động thu hẹp phạm vi gợi ý hoặc chuyển giao quyền quyết định cho người dùng.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "AI dừng hoạt động hoàn toàn và yêu cầu người dùng khởi động lại ứng dụng."
+            },
+            {
+              "is_correct": false,
+              "text": "AI tự động tìm kiếm dữ liệu giả lập để thay thế mà không báo cho người dùng."
+            }
+          ],
+          "explanation": "HAX G10 (nằm trong bộ hướng dẫn thiết kế Human-AI của Microsoft) khuyên hệ thống nên chủ động thu hẹp phạm vi dịch vụ hoặc chuyển giao quyền kiểm soát cho người dùng khi AI không chắc chắn về thông tin nguồn hoặc kết quả."
+        },
+        {
+          "question": "Sự khác biệt cốt lõi giữa phần mềm truyền thống và sản phẩm AI trong việc xử lý logic là gì?",
+          "options": [
+            {
+              "text": "Phần mềm truyền thống xử lý theo xác suất, sản phẩm AI xử lý theo logic cố định.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Phần mềm truyền thống xử lý theo logic cố định (Deterministic), sản phẩm AI xử lý theo xác suất (Probabilistic)."
+            },
+            {
+              "text": "Cả hai đều xử lý theo logic cố định nhưng AI có tốc độ nhanh hơn.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Cả hai đều xử lý theo xác suất nhưng phần mềm truyền thống chính xác hơn."
+            }
+          ],
+          "explanation": "Phần mềm truyền thống chạy theo logic cố định (Deterministic) - cùng một đầu vào luôn cho một đầu ra duy nhất. Trong khi đó, sản phẩm AI xử lý theo xác suất (Probabilistic) - kết quả đầu ra có độ không chắc chắn và có thể thay đổi tùy theo mô hình và dữ liệu."
+        },
+        {
+          "question": "Bạn đang thiết kế tính năng AI quét hóa đơn để tự động chuyển tiền ngân hàng. Đây là case có Cost-of-error cao. Thiết kế nào dưới đây tuân thủ đúng nguyên lý thiết kế cho sự không chắc chắn?",
+          "options": [
+            {
+              "text": "AI tự động thực hiện giao dịch chuyển tiền ngay khi quét xong hóa đơn để tối ưu tốc độ.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "AI tự động điền thông tin giao dịch nhưng yêu cầu người dùng xác nhận lại trước khi chuyển tiền."
+            },
+            {
+              "text": "Không sử dụng AI, bắt buộc người dùng nhập tay toàn bộ thông tin từ đầu.",
+              "is_correct": false
+            },
+            {
+              "text": "AI tự động chuyển tiền, nếu sai sót thì hệ thống sẽ tự động hoàn tiền sau 24h.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trong trường hợp này, hậu quả của việc AI tự động chuyển tiền sai tài khoản là cực kỳ nghiêm trọng (Cost-of-error rất cao). Do đó, thiết kế tối ưu là AI tự điền thông tin dựa trên quét hóa đơn, nhưng bắt buộc người dùng phải kiểm tra và nhấn nút xác nhận cuối cùng (chuyển giao bước quyết định cho người dùng)."
+        },
+        {
+          "question": "Tại sao sản phẩm AI cần phải được thiết kế để xử lý một cách 'minh bạch' khi AI không chắc chắn?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Giúp AI trông có vẻ thông minh và không bao giờ mắc lỗi trước mặt người dùng."
+            },
+            {
+              "text": "Để giảm thiểu chi phí vận hành hệ thống máy chủ.",
+              "is_correct": false
+            },
+            {
+              "text": "Để xử lý minh bạch khi AI không chắc chắn, giúp người dùng đưa ra quyết định đúng đắn và duy trì lòng tin.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Để chuyển toàn bộ trách nhiệm pháp lý sang cho người dùng cuối."
+            }
+          ],
+          "explanation": "Khi AI không chắc chắn, việc âm thầm đưa ra kết quả sai mà không cảnh báo sẽ làm mất lòng tin của người dùng. Thiết kế tốt cần phải minh bạch về độ không chắc chắn của AI để người dùng có sự chuẩn bị hoặc kiểm chứng lại thông tin."
+        }
+      ],
+      "fallback_message": ""
+    }
   }
 ]

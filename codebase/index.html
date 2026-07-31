@@ -82,13 +82,18 @@
                     <button class="tool-btn">✏️ Đọc</button>
                     <button class="tool-btn">🖊️ Bút</button>
                     <button class="tool-btn active">⚡ Highlight</button>
+                    <button class="tool-btn upload-btn" id="btn-upload-slide">⬆️ Tải PDF</button>
+                    <input type="file" id="slide-file-input" accept="application/pdf,.pdf" hidden>
                 </div>
-                <span class="page-count-badge">Trang 4 / 44</span>
+                <span class="page-count-badge" id="page-count-badge">Trang 4 / 44</span>
                 <div class="tool-group">
                     <button class="tool-btn">−</button>
                     <span style="font-size:12px; color:#475569;">100%</span>
                     <button class="tool-btn">+</button>
                 </div>
+            </div>
+            <div class="upload-status" id="upload-status">
+                Đang dùng slide demo. Bạn có thể tải PDF thật lên để bôi đen trực tiếp trên nội dung slide.
             </div>
 
             <div class="slide-canvas" id="slide-canvas">

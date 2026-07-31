@@ -1,97 +1,154 @@
-// codebase/app.js - Real Mouse Text Selection & Adaptive LLM Proficiency Evaluation + Summary Quiz Generator
-
+// codebase/app.js - UI flow for layered agent reasoning and level-based quiz.
 document.addEventListener('DOMContentLoaded', () => {
     const slideCanvas = document.getElementById('slide-canvas');
+    const slidePage = document.getElementById('slide-page');
     const tooltip = document.getElementById('selection-tooltip');
     const btnAskTooltip = document.getElementById('btn-ask-tooltip');
     const chatStream = document.getElementById('dynamic-chat-stream');
     const btnPresetHappy = document.getElementById('btn-preset-happy');
     const btnPresetLow = document.getElementById('btn-preset-low');
+    const btnUploadSlide = document.getElementById('btn-upload-slide');
+    const slideFileInput = document.getElementById('slide-file-input');
+    const uploadStatus = document.getElementById('upload-status');
+    const pageCountBadge = document.getElementById('page-count-badge');
+    const sendBtn = document.querySelector('.send-btn');
+    const input = document.querySelector('.chat-input-bar input');
 
-    let currentSelectedText = "";
-    let quizNotebook = []; // Lưu trữ các câu hỏi đã tương tác để tổng hợp bài Quiz
+    let currentSelectedText = '';
+    let uploadedDeckText = '';
+    let pdfjsLibPromise = null;
 
-    // 1. LỰA CHỌN BÔI ĐEN VĂN BẢN THỰC TẾ (REAL MOUSE SELECTION)
-    slideCanvas.addEventListener('mouseup', handleTextSelection);
+    function escapeHtml(value) {
+        return String(value ?? '')
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;')
+            .replaceAll("'", '&#039;');
+    }
 
-    function handleTextSelection(e) {
+    function scrollToBottom() {
+        chatStream.scrollTop = chatStream.scrollHeight;
+    }
+
+    function hideTooltip() {
+        tooltip.classList.add('hidden');
+    }
+
+    function getSlideContext() {
+        return uploadedDeckText || (slideCanvas ? slideCanvas.innerText : '');
+    }
+
+    function getSelectedText() {
         const selection = window.getSelection();
-        const text = selection.toString().trim();
+        const text = selection ? selection.toString().trim() : '';
+        if (!text || !slideCanvas || !slideCanvas.contains(selection.anchorNode)) return '';
+        return text;
+    }
 
-        if (text.length > 0) {
-            currentSelectedText = text;
-            const range = selection.getRangeAt(0);
-            const rect = range.getBoundingClientRect();
-
-            tooltip.style.left = `${rect.left + rect.width / 2}px`;
-            tooltip.style.top = `${rect.top - 48}px`;
-            tooltip.classList.remove('hidden');
-        } else {
-            setTimeout(() => {
-                if (!tooltip.contains(document.activeElement)) {
-                    tooltip.classList.add('hidden');
-                }
-            }, 200);
+    function showTooltipForSelection() {
+        const text = getSelectedText();
+        if (!text) {
+            hideTooltip();
+            return;
         }
+
+        currentSelectedText = text;
+        input.value = text;
+        const range = window.getSelection().getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + rect.width / 2}px`;
+        tooltip.style.top = `${Math.max(58, rect.top - 48)}px`;
+        tooltip.classList.remove('hidden');
     }
 
-    btnAskTooltip.addEventListener('click', () => {
-        if (currentSelectedText) {
-            triggerAIAskFlow(currentSelectedText);
-            tooltip.classList.add('hidden');
-            window.getSelection().removeAllRanges();
+    function setUploadStatus(message, state = 'info') {
+        if (!uploadStatus) return;
+        uploadStatus.textContent = message;
+        uploadStatus.className = `upload-status ${state}`;
+    }
+
+    async function loadPdfJs() {
+        if (!pdfjsLibPromise) {
+            pdfjsLibPromise = import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs')
+                .then(module => {
+                    module.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
+                    return module;
+                });
         }
-    });
-
-    if (btnPresetHappy) {
-        btnPresetHappy.addEventListener('click', () => {
-            triggerAIAskFlow("Conditional Automation");
-        });
+        return pdfjsLibPromise;
     }
 
-    if (btnPresetLow) {
-        btnPresetLow.addEventListener('click', () => {
-            triggerAIAskFlow("Generative Adversarial Networks (GANs)");
-        });
+    function createPdfPageShell(pageNumber) {
+        const pageWrapper = document.createElement('div');
+        pageWrapper.className = 'pdf-render-page';
+        pageWrapper.dataset.page = String(pageNumber);
+
+        const pageLabel = document.createElement('div');
+        pageLabel.className = 'pdf-page-label';
+        pageLabel.textContent = `Trang ${pageNumber}`;
+
+        const canvas = document.createElement('canvas');
+        canvas.className = 'pdf-page-canvas';
+
+        const textLayer = document.createElement('div');
+        textLayer.className = 'textLayer';
+
+        pageWrapper.append(pageLabel, canvas, textLayer);
+        slideCanvas.appendChild(pageWrapper);
+        return { pageWrapper, canvas, textLayer };
     }
 
-    // 2. LUỒNG XỬ LÝ AI CALL THẬT VÀ ĐÁNH GIÁ TRÌNH ĐỘ LLM
-    async function triggerAIAskFlow(text) {
-        appendUserMessage(text);
-        const loadingId = appendLoadingState();
+    async function renderUploadedPdf(file) {
+        if (!file) return;
+        if (file.type && file.type !== 'application/pdf') {
+            setUploadStatus('Hiện prototype chỉ hỗ trợ PDF slide. Hãy chọn file .pdf.', 'error');
+            return;
+        }
+
+        setUploadStatus(`Đang tải "${file.name}" và dựng text layer để bôi đen...`, 'loading');
 
         try {
-            const slideContext = document.getElementById('slide-page').innerText;
-            const response = await fetch('http://localhost:3000/api/explain', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ selectedText: text, slideContext: slideContext })
-            }).then(r => r.json());
+            const pdfjs = await loadPdfJs();
+            const buffer = await file.arrayBuffer();
+            const pdf = await pdfjs.getDocument({ data: buffer }).promise;
+            const allText = [];
 
-            removeLoadingState(loadingId);
+            slideCanvas.innerHTML = '';
+            uploadedDeckText = '';
+            if (pageCountBadge) pageCountBadge.textContent = `1 / ${pdf.numPages} trang`;
 
-            if (response.confidence_level === 'HIGH') {
-                renderHappyPathAICard(text, response);
-            } else {
-                renderLowConfidenceHAX10Card(text, response);
+            for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                const page = await pdf.getPage(pageNumber);
+                const viewport = page.getViewport({ scale: 1.35 });
+                const { pageWrapper, canvas, textLayer } = createPdfPageShell(pageNumber);
+                const context = canvas.getContext('2d');
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                canvas.style.width = `${viewport.width}px`;
+                canvas.style.height = `${viewport.height}px`;
+                pageWrapper.style.width = `${viewport.width}px`;
+                pageWrapper.style.height = `${viewport.height}px`;
+
+                await page.render({ canvasContext: context, viewport }).promise;
+                const textContent = await page.getTextContent();
+                allText.push(`Trang ${pageNumber}:\n${textContent.items.map(item => item.str).join(' ')}`);
+
+                await pdfjs.renderTextLayer({
+                    textContentSource: textContent,
+                    container: textLayer,
+                    viewport,
+                    textDivs: []
+                }).promise;
             }
+
+            uploadedDeckText = allText.join('\n\n');
+            setUploadStatus(`Đã tải "${file.name}" (${pdf.numPages} trang). Bôi đen chữ trực tiếp trên PDF rồi bấm "Hỏi AI".`, 'success');
+            if (pageCountBadge) pageCountBadge.textContent = `${pdf.numPages} trang PDF`;
         } catch (err) {
-            removeLoadingState(loadingId);
-            renderHappyPathAICard(text, {
-                confidence_level: 'HIGH',
-                explanation_layers: {
-                    layer1_simple: `"${text}" là khái niệm xử lý tự động có điều kiện khi hậu quả sai số cao.`,
-                    layer2_example: `Ví dụ: Xe tự lái chỉ tự đi ở tốc độ an toàn, gặp thời tiết xấu sẽ báo tài xế nhận lái.`,
-                    layer3_grounding: `Căn cứ cụ thể tại Mục 1 - Slide trang 4.`
-                },
-                beginner_note: "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic).",
-                proficiency_level: "Intermediate",
-                check_question: `Theo bài học, khi Cost-of-error cao, sản phẩm AI nên chọn cơ chế nào?`,
-                options: [
-                    { text: "A. Conditional Automation (Chỉ tự làm case chắc chắn)", is_correct: true },
-                    { text: "B. Tự động làm 100% không cần con người", is_correct: false }
-                ]
-            });
+            console.error(err);
+            setUploadStatus('Không dựng được PDF text layer. Kiểm tra kết nối mạng để tải PDF.js hoặc thử file PDF khác có text thật.', 'error');
         }
     }
 
@@ -99,21 +156,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const wrapper = document.createElement('div');
         wrapper.className = 'user-bubble-wrapper';
         wrapper.innerHTML = `
-            <div class="context-label">📍 Đã bôi đen trên Slide 4</div>
-            <div class="user-bubble">Giải thích đoạn: <strong>"${text}"</strong></div>
+            <div class="context-label">Đoạn đã chọn trên Slide 4</div>
+            <div class="user-bubble">"${escapeHtml(text)}"</div>
         `;
         chatStream.appendChild(wrapper);
         scrollToBottom();
     }
 
     function appendLoadingState() {
-        const id = 'loading-' + Date.now();
+        const id = `loading-${Date.now()}`;
         const div = document.createElement('div');
         div.id = id;
         div.className = 'tutor-msg-loading';
         div.innerHTML = `
             <div class="spinner"></div>
-            <span>VLearn Tutor đang kiểm tra căn cứ Slide & Đánh giá trình độ...</span>
+            <span>Agent đang đối chiếu slide, phân tầng câu trả lời và tạo quiz theo level...</span>
         `;
         chatStream.appendChild(div);
         scrollToBottom();
@@ -125,205 +182,203 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) el.remove();
     }
 
-    // 3. RENDER HAPPY PATH (ĐỦ CĂN CỨ + ĐÁNH GIÁ TRÌNH ĐỘ & NOTE CHO NGƯỜI MỚI)
-    function renderHappyPathAICard(text, data) {
-        const card = document.createElement('div');
-        card.className = 'ai-card-wrapper';
+    async function triggerAIAskFlow(text) {
+        const selectedText = text.trim();
+        if (!selectedText) return;
 
-        const layers = data.explanation_layers;
-        const beginnerNote = data.beginner_note || "💡 Ghi chú người mới: Hãy đọc kĩ ví dụ để hiểu rõ bản chất bài học.";
-        const profLevel = data.proficiency_level || "Intermediate";
+        hideTooltip();
+        input.value = selectedText;
+        appendUserMessage(selectedText);
+        const loadingId = appendLoadingState();
+
+        try {
+            const response = await fetch('/api/explain', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ selectedText, slideContext: getSlideContext() })
+            });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+            const data = await response.json();
+            removeLoadingState(loadingId);
+            renderAgentCard(selectedText, data);
+        } catch (err) {
+            removeLoadingState(loadingId);
+            renderConnectionError();
+        }
+    }
+
+    function renderConnectionError() {
+        const card = document.createElement('div');
+        card.className = 'ai-card-wrapper low-confidence';
+        card.innerHTML = `
+            <div class="grounding-tag warning">Không kết nối được server</div>
+            <div class="hax-warning-box">
+                <div class="hax-title">Cách xử lý</div>
+                <div class="hax-body">Chạy <strong>npm run start</strong>, sau đó mở đúng URL server in ra trong terminal.</div>
+            </div>
+        `;
+        chatStream.appendChild(card);
+        scrollToBottom();
+    }
+
+    function confidencePercent(confidence) {
+        if (confidence === 'HIGH') return 85;
+        if (confidence === 'LOW') return 55;
+        return 30;
+    }
+
+    function renderAgentCard(text, data) {
+        const confidence = data.confidence_level || 'LOW';
+        const percent = confidencePercent(confidence);
+        const level = data.agent_decision?.proficiency_level || data.proficiency_level || 'Beginner';
+        const isHigh = confidence === 'HIGH';
+        const card = document.createElement('div');
+        card.className = `ai-card-wrapper ${isHigh ? '' : 'low-confidence'}`;
 
         card.innerHTML = `
-            <div class="grounding-tag success">🎯 Mức độ chắc nguồn: 85% • ĐỦ CĂN CỨ (Slide trang 4)</div>
+            <div class="grounding-tag ${isHigh ? 'success' : 'warning'}">
+                ${confidence} confidence - Agent route: ${escapeHtml(data.agent_decision?.routing || 'Explain')}
+            </div>
             <div class="confidence-bar-wrapper">
-                <div class="confidence-bar-inner success-bar" style="width: 85%;"></div>
+                <div class="confidence-bar-inner ${isHigh ? 'success-bar' : 'warning-bar'}" style="width:${percent}%;"></div>
             </div>
-            
-            <div class="ai-tiers">
-                <div class="tier-item">
-                    <strong>Tầng 1 (Định nghĩa ngắn):</strong> ${layers.layer1_simple}
-                </div>
-                <div class="tier-item">
-                    <strong>Tầng 2 (Ví dụ minh họa):</strong> ${layers.layer2_example}
-                </div>
-                <div class="tier-item">
-                    <strong>Tầng 3 (Căn cứ trích dẫn):</strong> ${layers.layer3_grounding}
+
+            <div class="agent-section">
+                <div class="section-title">Vì sao bạn có thể chọn đoạn này?</div>
+                <div class="decision-grid">
+                    <div><strong>Đoạn chọn</strong><span>${escapeHtml(data.selection_analysis?.selected_text || text)}</span></div>
+                    <div><strong>Lý do có thể gây vướng</strong><span>${escapeHtml(data.selection_analysis?.why_user_may_choose_it)}</span></div>
+                    <div><strong>Độ khớp với slide</strong><span>${escapeHtml(data.selection_analysis?.context_match)}</span></div>
+                    <div><strong>Rủi ro nếu trả lời thẳng</strong><span>${escapeHtml(data.selection_analysis?.risk_if_answer_directly)}</span></div>
                 </div>
             </div>
 
-            <!-- GHI CHÚ BỔ SUNG CHO NGƯỜI MỚI (ACCORDING TO IMAGE 2) -->
-            <div class="beginner-note-box">
-                ${beginnerNote}
+            <div class="agent-section">
+                <div class="section-title">Agent phân tầng để trả lời hợp lý</div>
+                <div class="route-card">
+                    <div><strong>Quyết định:</strong> ${escapeHtml(data.agent_decision?.routing)}</div>
+                    <div><strong>Vì sao:</strong> ${escapeHtml(data.agent_decision?.reason)}</div>
+                    <div><strong>Tín hiệu level:</strong> ${escapeHtml(data.agent_decision?.level_signal)}</div>
+                    <div><strong>Level hiện tại:</strong> <span class="prof-badge">${escapeHtml(level)}</span></div>
+                </div>
             </div>
 
-            <!-- CÂU HỎI KIỂM TRA HIỂU & ĐÁNH GIÁ TRÌNH ĐỘ LLM -->
-            <div class="check-container">
-                <div class="check-header">
-                    <span class="check-q">❓ Câu hỏi kiểm tra hiểu:</span>
-                    <span class="prof-badge">Trình độ: ${profLevel}</span>
-                </div>
-                <p class="quiz-title-text">${data.check_question}</p>
-                <div class="check-opts">
-                    ${data.options.map((opt, idx) => `
-                        <button class="opt-btn" data-correct="${opt.is_correct}">${opt.text}</button>
-                    `).join('')}
-                </div>
-                <div class="quiz-result-area hidden"></div>
-            </div>
+            ${renderExplanationLayers(data)}
+            ${renderFallbackIfNeeded(data)}
+            ${renderQuiz(data.quiz_items || [], level)}
         `;
 
         chatStream.appendChild(card);
+        bindQuizEvents(card);
         scrollToBottom();
+    }
 
-        // Xử lý sự kiện bấm chọn Quiz & Đánh giá trình độ LLM
-        const optBtns = card.querySelectorAll('.opt-btn');
-        const resultArea = card.querySelector('.quiz-result-area');
+    function renderExplanationLayers(data) {
+        const layers = data.explanation_layers || {};
+        if (!layers.layer1_simple && !layers.layer2_example && !layers.layer3_grounding) return '';
 
-        optBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const isCorrect = btn.getAttribute('data-correct') === 'true';
-                optBtns.forEach(b => b.disabled = true);
+        return `
+            <div class="agent-section">
+                <div class="section-title">Câu trả lời 3 tầng</div>
+                <div class="ai-tiers">
+                    <div class="tier-item"><strong>Tầng 1 - Nói đơn giản:</strong> ${escapeHtml(layers.layer1_simple)}</div>
+                    <div class="tier-item"><strong>Tầng 2 - Ví dụ:</strong> ${escapeHtml(layers.layer2_example)}</div>
+                    <div class="tier-item"><strong>Tầng 3 - Căn cứ slide:</strong> ${escapeHtml(layers.layer3_grounding)}</div>
+                </div>
+                ${data.beginner_note ? `<div class="beginner-note-box">${escapeHtml(data.beginner_note)}</div>` : ''}
+            </div>
+        `;
+    }
 
-                // Lưu vào Quiz Notebook để làm bài kiểm tra tổng hợp
-                quizNotebook.push({
-                    topic: text,
-                    question: data.check_question,
-                    selectedOption: btn.innerText,
-                    isCorrect: isCorrect,
-                    note: beginnerNote
+    function renderFallbackIfNeeded(data) {
+        if (!data.fallback_message) return '';
+        return `
+            <div class="hax-warning-box">
+                <div class="hax-title">Thông điệp an toàn</div>
+                <div class="hax-body">${escapeHtml(data.fallback_message)}</div>
+            </div>
+        `;
+    }
+
+    function renderQuiz(quizItems, level) {
+        const items = quizItems.slice(0, Math.max(5, quizItems.length));
+        return `
+            <div class="check-container level-quiz">
+                <div class="check-header">
+                    <span class="check-q">Quiz tối thiểu 5 câu theo level</span>
+                    <span class="prof-badge">${escapeHtml(level)}</span>
+                </div>
+                <div class="quiz-questions-list">
+                    ${items.map((item, idx) => `
+                        <div class="quiz-item interactive-quiz-item">
+                            <div class="quiz-item-head">Câu ${idx + 1}</div>
+                            <p class="quiz-item-q">${escapeHtml(item.question)}</p>
+                            <div class="check-opts">
+                                ${(item.options || []).map(option => `
+                                    <button class="opt-btn" data-correct="${Boolean(option.is_correct)}" data-explain="${escapeHtml(item.explanation)}">
+                                        ${escapeHtml(option.text)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="quiz-result-area hidden"></div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="quiz-score-panel hidden"></div>
+            </div>
+        `;
+    }
+
+    function bindQuizEvents(card) {
+        const quizItems = card.querySelectorAll('.interactive-quiz-item');
+        const scorePanel = card.querySelector('.quiz-score-panel');
+
+        quizItems.forEach(item => {
+            const buttons = item.querySelectorAll('.opt-btn');
+            const result = item.querySelector('.quiz-result-area');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isCorrect = button.dataset.correct === 'true';
+                    buttons.forEach(btn => {
+                        btn.disabled = true;
+                        if (btn.dataset.correct === 'true') btn.classList.add('correct-answer');
+                    });
+                    button.classList.add(isCorrect ? 'picked-correct' : 'picked-wrong');
+                    result.classList.remove('hidden');
+                    result.innerHTML = `
+                        <div class="result-badge ${isCorrect ? 'success' : 'error'}">
+                            ${isCorrect ? 'Đúng.' : 'Chưa đúng.'} ${escapeHtml(button.dataset.explain || '')}
+                        </div>
+                    `;
+                    updateQuizScore(quizItems, scorePanel);
+                    scrollToBottom();
                 });
-
-                if (isCorrect) {
-                    btn.style.background = '#dcfce7';
-                    btn.style.borderColor = '#16a34a';
-                    resultArea.innerHTML = `
-                        <div class="result-badge success">
-                            🎉 <strong>Chính xác 100%!</strong> <br>
-                            <small>🤖 <strong>LLM Đánh giá trình độ:</strong> Đã nắm vững khái niệm (${profLevel}).</small>
-                        </div>
-                    `;
-                } else {
-                    btn.style.background = '#fee2e2';
-                    btn.style.borderColor = '#dc2626';
-                    resultArea.innerHTML = `
-                        <div class="result-badge error">
-                            ❌ <strong>Chưa chính xác!</strong> <br>
-                            <small>🤖 <strong>LLM Đánh giá trình độ:</strong> Người mới (Need Review) — Đã thêm Note củng cố vào bộ Quiz cuối buổi.</small>
-                        </div>
-                    `;
-                }
-                resultArea.classList.remove('hidden');
-
-                // Hiển thị Nút Tổng hợp Bài Quiz Cá nhân hóa
-                renderSummaryQuizButton();
-                scrollToBottom();
             });
         });
     }
 
-    // 4. RENDER LOW CONFIDENCE CARD (HAX G10)
-    function renderLowConfidenceHAX10Card(text, data) {
-        const card = document.createElement('div');
-        card.className = 'ai-card-wrapper low-confidence';
+    function updateQuizScore(items, scorePanel) {
+        const answered = [...items].filter(item => item.querySelector('.picked-correct, .picked-wrong')).length;
+        const correct = [...items].filter(item => item.querySelector('.picked-correct')).length;
+        if (!answered) return;
 
-        card.innerHTML = `
-            <div class="grounding-tag warning">⚠️ Mức độ chắc nguồn: 55% • THIẾU CĂN CỨ IN SLIDE</div>
-            <div class="confidence-bar-wrapper">
-                <div class="confidence-bar-inner warning-bar" style="width: 55%;"></div>
-            </div>
-
-            <div class="hax-warning-box">
-                <div class="hax-title">⚠️ HAX G10: Thu hẹp phạm vi khi nghi ngờ</div>
-                <div class="hax-body">
-                    VLearn Tutor không tìm thấy căn cứ khẳng định cho đoạn <strong>"${text}"</strong> trong Slide bài học. Để tránh cung cấp kiến thức sai lệch, AI từ chối đưa ra kết luận.
-                </div>
-            </div>
-
-            <div class="fallback-options">
-                <span class="fallback-title">Gợi ý lựa chọn tiếp theo cho học viên:</span>
-                <button class="opt-action-btn" id="btn-re-select">
-                    🔍 Bôi đen đoạn chữ khác có nhiều context hơn
-                </button>
-                <button class="opt-action-btn warning-btn" id="btn-force-explain">
-                    ⚠️ Vẫn muốn giải thích (Chấp nhận thông tin ngoài Slide)
-                </button>
-            </div>
-        `;
-
-        chatStream.appendChild(card);
-        scrollToBottom();
-
-        card.querySelector('#btn-re-select').addEventListener('click', () => {
-            alert('Bạn hãy dùng chuột bôi đen đoạn chữ mới trên Slide trang 4 nhé!');
-        });
-
-        card.querySelector('#btn-force-explain').addEventListener('click', () => {
-            triggerAIAskFlow("Conditional Automation");
-        });
+        scorePanel.classList.remove('hidden');
+        scorePanel.innerHTML = `Đã trả lời ${answered}/${items.length} câu. Đúng ${correct}/${answered}.`;
     }
 
-    // 5. NÚT TỔNG HỢP BỘ QUIZ CÁ NHÂN HÓA (ACCORDING TO IMAGE 2)
-    function renderSummaryQuizButton() {
-        let existingBtn = document.getElementById('btn-generate-summary-quiz');
-        if (!existingBtn) {
-            const container = document.createElement('div');
-            container.className = 'summary-quiz-trigger-area';
-            container.innerHTML = `
-                <button id="btn-generate-summary-quiz" class="summary-quiz-btn">
-                    📝 Đưa ra 1 bộ câu hỏi tổng hợp để làm 1 bài Quizz (${quizNotebook.length} câu)
-                </button>
-            `;
-            chatStream.appendChild(container);
-
-            document.getElementById('btn-generate-summary-quiz').addEventListener('click', generateSummaryQuizCard);
-        } else {
-            existingBtn.innerText = `📝 Đưa ra 1 bộ câu hỏi tổng hợp để làm 1 bài Quizz (${quizNotebook.length} câu)`;
-        }
-    }
-
-    // 6. TẠO BÀI QUIZ TỔNG HỢP THEO TRÌNH ĐỘ (SUMMARY QUIZ GENERATOR)
-    function generateSummaryQuizCard() {
-        const card = document.createElement('div');
-        card.className = 'summary-quiz-card';
-
-        const passedCount = quizNotebook.filter(q => q.isCorrect).length;
-        const totalCount = quizNotebook.length;
-
-        card.innerHTML = `
-            <div class="quiz-card-header">
-                <span class="quiz-card-title">📚 BÀI QUIZ TỔNG HỢP CÁ NHÂN HÓA</span>
-                <span class="quiz-badge">LLM Evaluated</span>
-            </div>
-            
-            <div class="quiz-summary-stats">
-                <p>📊 <strong>Kết quả tương tác:</strong> Trả lời đúng ${passedCount}/${totalCount} câu hỏi.</p>
-                <p>🎓 <strong>Đánh giá trình độ chung:</strong> ${passedCount === totalCount ? 'Xuất sắc (Advanced)' : 'Cần củng cố thêm (Beginner / Intermediate)'}</p>
-            </div>
-
-            <div class="quiz-questions-list">
-                ${quizNotebook.map((item, idx) => `
-                    <div class="quiz-item">
-                        <div class="quiz-item-head">Câu ${idx + 1}: Chủ đề "${item.topic}"</div>
-                        <p class="quiz-item-q">${item.question}</p>
-                        <div class="quiz-item-note">${item.note}</div>
-                        <div class="quiz-item-status ${item.isCorrect ? 'correct' : 'wrong'}">
-                            ${item.isCorrect ? '✅ Bạn đã trả lời đúng' : '❌ Đã thêm Note ôn tập cho câu này'}
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
-            
-            <div class="quiz-card-footer">
-                🎉 <em>Đã lưu bộ Quiz này vào sổ tay VLearn của học viên!</em>
-            </div>
-        `;
-
-        chatStream.appendChild(card);
-        scrollToBottom();
-    }
-
-    function scrollToBottom() {
-        chatStream.scrollTop = chatStream.scrollHeight;
-    }
+    slideCanvas.addEventListener('mouseup', () => setTimeout(showTooltipForSelection, 0));
+    document.addEventListener('mousedown', event => {
+        if (!tooltip.contains(event.target)) hideTooltip();
+    });
+    btnAskTooltip.addEventListener('click', () => {
+        triggerAIAskFlow(currentSelectedText || getSelectedText());
+        window.getSelection().removeAllRanges();
+    });
+    btnPresetHappy?.addEventListener('click', () => triggerAIAskFlow('Conditional Automation'));
+    btnPresetLow?.addEventListener('click', () => triggerAIAskFlow('Generative Adversarial Networks (GANs)'));
+    sendBtn?.addEventListener('click', () => triggerAIAskFlow(input.value || 'Conditional Automation'));
+    btnUploadSlide?.addEventListener('click', () => slideFileInput?.click());
+    slideFileInput?.addEventListener('change', event => renderUploadedPdf(event.target.files?.[0]));
 });
