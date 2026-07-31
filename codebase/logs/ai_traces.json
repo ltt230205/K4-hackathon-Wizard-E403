@@ -2364,5 +2364,513 @@
       ],
       "fallback_message": ""
     }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:48.674Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Thiết kế sản phẩm AI cho sự không chắc chắn",
+    "confidence": "HIGH",
+    "latency_ms": 515,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Thiết kế sản phẩm AI cho sự không chắc chắn\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:49.290Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Cách cài đặt Adobe Photoshop 2026",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 102,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi bài học Slide. Bạn vui lòng liên hệ trợ giảng."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:49.930Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "cái đoạn đó",
+    "confidence": "LOW",
+    "latency_ms": 130,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bôi đen quá ngắn hoặc mơ hồ. Vui lòng bôi đen cụm từ đầy đủ hơn."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:50.544Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Mấy giờ hết hạn nộp bài tập",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 109,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi bài học Slide. Bạn vui lòng liên hệ trợ giảng."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:51.151Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+    "confidence": "HIGH",
+    "latency_ms": 91,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"RNN xử lý song song nhanh hơn Transformer\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:51.854Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 15",
+    "confidence": "HIGH",
+    "latency_ms": 193,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 15\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:52.499Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích biểu đồ ở trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 131,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích biểu đồ ở trang 6\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:53.257Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "nghĩa chi tiết của trang 4",
+    "confidence": "HIGH",
+    "latency_ms": 253,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"nghĩa chi tiết của trang 4\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:53.878Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Tôi không hiểu trang 6",
+    "confidence": "HIGH",
+    "latency_ms": 109,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tôi không hiểu trang 6\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:54.515Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích đoạn bôi đen ở Trang 17",
+    "confidence": "HIGH",
+    "latency_ms": 131,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích đoạn bôi đen ở Trang 17\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:55.129Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giá Bitcoin hôm nay",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 108,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi bài học Slide. Bạn vui lòng liên hệ trợ giảng."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:55.875Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "hả?",
+    "confidence": "LOW",
+    "latency_ms": 239,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bôi đen quá ngắn hoặc mơ hồ. Vui lòng bôi đen cụm từ đầy đủ hơn."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:56.490Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Cho mình xin link tải slide pdf",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 103,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi bài học Slide. Bạn vui lòng liên hệ trợ giảng."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:57.160Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Vanishing Gradient",
+    "confidence": "HIGH",
+    "latency_ms": 155,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Vanishing Gradient\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:57.769Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Query Key Value trong Attention",
+    "confidence": "HIGH",
+    "latency_ms": 99,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Query Key Value trong Attention\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:58.395Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Giải thích lại khái niệm HAX G10",
+    "confidence": "HIGH",
+    "latency_ms": 106,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Giải thích lại khái niệm HAX G10\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:59.033Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Tại sao dùng Softmax",
+    "confidence": "HIGH",
+    "latency_ms": 128,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Tại sao dùng Softmax\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:42:59.652Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "giaithich cai nay gium cai",
+    "confidence": "LOW",
+    "latency_ms": 115,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Đoạn bôi đen quá ngắn hoặc mơ hồ. Vui lòng bôi đen cụm từ đầy đủ hơn."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:43:00.258Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Thầy cho em xin nghỉ buổi sau",
+    "confidence": "OUT_OF_SCOPE",
+    "latency_ms": 102,
+    "ai_response": {
+      "confidence_level": "OUT_OF_SCOPE",
+      "explanation_layers": {
+        "layer1_simple": "",
+        "layer2_example": "",
+        "layer3_grounding": ""
+      },
+      "beginner_note": "",
+      "proficiency_level": "Beginner",
+      "check_question": "",
+      "options": [],
+      "fallback_message": "Nội dung này nằm ngoài phạm vi bài học Slide. Bạn vui lòng liên hệ trợ giảng."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T04:43:00.893Z",
+    "model": "gemini-1.5-flash",
+    "selected_text": "Overfitting",
+    "confidence": "HIGH",
+    "latency_ms": 122,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "explanation_layers": {
+        "layer1_simple": "\"Overfitting\" là phương thức xử lý tự động có điều kiện dựa trên mức độ tin cậy.",
+        "layer2_example": "Giống như xe tự lái chỉ tự đi khi đường quang, gặp sương mù dày sẽ yêu cầu tài xế cầm lái.",
+        "layer3_grounding": "Căn cứ cụ thể tại Mục 1 - Slide trang 4."
+      },
+      "beginner_note": "💡 Ghi chú cho người mới: Đừng nhầm lẫn giữa Cố định (Deterministic) và Xác suất (Probabilistic). Muốn dùng AI an toàn phải hiểu Cost-of-error!",
+      "proficiency_level": "Intermediate",
+      "check_question": "Theo bài học, khi Cost-of-error cao, sản phẩm AI nên áp dụng cơ chế nào?",
+      "options": [
+        {
+          "text": "A. Conditional Automation (Chỉ tự làm case chắc chắn)",
+          "is_correct": true
+        },
+        {
+          "text": "B. Tự động hóa 100% không cần con người kiểm tra",
+          "is_correct": false
+        }
+      ],
+      "fallback_message": ""
+    }
   }
 ]
