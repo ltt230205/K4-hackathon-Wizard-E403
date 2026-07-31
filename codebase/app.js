@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSelectedText = '';
     let uploadedDeckText = '';
     let pdfjsLibPromise = null;
+    const learnerProfile = {
+        level: 'Beginner',
+        completedSets: 0,
+        lastScore: null
+    };
 
     function escapeHtml(value) {
         return String(value ?? '')
@@ -235,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isHigh = confidence === 'HIGH';
         const card = document.createElement('div');
         card.className = `ai-card-wrapper ${isHigh ? '' : 'low-confidence'}`;
+        card.dataset.topic = text;
 
         card.innerHTML = `
             <div class="grounding-tag ${isHigh ? 'success' : 'warning'}">
@@ -270,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         chatStream.appendChild(card);
-        bindQuizEvents(card);
+        bindQuizEvents(card, text);
         scrollToBottom();
     }
 
@@ -304,10 +310,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderQuiz(quizItems, level) {
         const items = quizItems.slice(0, Math.max(5, quizItems.length));
         return `
-            <div class="check-container level-quiz">
+            <div class="check-container level-quiz" data-quiz-round="1" data-adaptive-level="${escapeHtml(level)}">
                 <div class="check-header">
                     <span class="check-q">Quiz tối thiểu 5 câu theo level</span>
                     <span class="prof-badge">${escapeHtml(level)}</span>
+                </div>
+                <div class="quiz-actions">
+                    <button class="stop-quiz-btn" type="button">Dừng quiz</button>
                 </div>
                 <div class="quiz-questions-list">
                     ${items.map((item, idx) => `
@@ -330,11 +339,16 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    function bindQuizEvents(card) {
-        const quizItems = card.querySelectorAll('.interactive-quiz-item');
-        const scorePanel = card.querySelector('.quiz-score-panel');
+    function bindQuizEvents(scope, topic) {
+        const quizItems = scope.querySelectorAll('.interactive-quiz-item');
+        const scorePanel = scope.querySelector('.quiz-score-panel');
+        const stopButton = scope.querySelector('.stop-quiz-btn');
+
+        stopButton?.addEventListener('click', () => stopQuiz(scope, quizItems, scorePanel));
 
         quizItems.forEach(item => {
+            if (item.dataset.bound === 'true') return;
+            item.dataset.bound = 'true';
             const buttons = item.querySelectorAll('.opt-btn');
             const result = item.querySelector('.quiz-result-area');
 
@@ -352,20 +366,295 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${isCorrect ? 'Đúng.' : 'Chưa đúng.'} ${escapeHtml(button.dataset.explain || '')}
                         </div>
                     `;
-                    updateQuizScore(quizItems, scorePanel);
+                    updateQuizScore(quizItems, scorePanel, scope, topic);
                     scrollToBottom();
                 });
             });
         });
     }
 
-    function updateQuizScore(items, scorePanel) {
+    function stopQuiz(scope, items, scorePanel) {
+        scope.dataset.stopped = 'true';
+        scope.querySelectorAll('.opt-btn').forEach(button => {
+            button.disabled = true;
+        });
+
+        const stopButton = scope.querySelector('.stop-quiz-btn');
+        if (stopButton) {
+            stopButton.disabled = true;
+            stopButton.textContent = 'Đã dừng quiz';
+        }
+
+        const answered = [...items].filter(item => item.querySelector('.picked-correct, .picked-wrong')).length;
+        const correct = [...items].filter(item => item.querySelector('.picked-correct')).length;
+        scorePanel.className = 'quiz-score-panel assessment stopped';
+        scorePanel.classList.remove('hidden');
+        scorePanel.innerHTML = `
+            <div class="assessment-header">
+                <span>Quiz đã dừng</span>
+                <strong>${correct}/${answered || 0} đúng</strong>
+            </div>
+            <div class="assessment-level">Chưa cập nhật level</div>
+            <div class="assessment-body">Bạn đã dừng trước khi hoàn thành bộ câu hỏi, nên hệ thống chưa thay đổi mức độ học hiện tại.</div>
+            <div class="assessment-next">Bạn có thể bôi đen đoạn khác để hỏi AI, hoặc tải slide khác lên học tiếp.</div>
+        `;
+        scrollToBottom();
+    }
+
+    function updateQuizScore(items, scorePanel, scope, topic) {
         const answered = [...items].filter(item => item.querySelector('.picked-correct, .picked-wrong')).length;
         const correct = [...items].filter(item => item.querySelector('.picked-correct')).length;
         if (!answered) return;
+        if (scope.dataset.stopped === 'true') return;
 
         scorePanel.classList.remove('hidden');
-        scorePanel.innerHTML = `Đã trả lời ${answered}/${items.length} câu. Đúng ${correct}/${answered}.`;
+        if (answered < items.length) {
+            scorePanel.innerHTML = `Đã trả lời ${answered}/${items.length} câu. Đúng ${correct}/${answered}. Hoàn thành tất cả câu để nhận đánh giá level.`;
+            return;
+        }
+
+        const assessment = getLearnerAssessment(correct, items.length);
+        learnerProfile.level = assessment.nextLevel;
+        learnerProfile.completedSets += 1;
+        learnerProfile.lastScore = `${correct}/${items.length}`;
+
+        scorePanel.className = `quiz-score-panel assessment ${assessment.className}`;
+        scorePanel.innerHTML = `
+            <div class="assessment-header">
+                <span>Đánh giá sau quiz</span>
+                <strong>${correct}/${items.length} đúng</strong>
+            </div>
+            <div class="assessment-level">${assessment.level}</div>
+            <div class="assessment-body">${assessment.message}</div>
+            <div class="assessment-next">${assessment.nextStep}</div>
+            <div class="adaptive-state">Level dùng cho câu hỏi tiếp theo: <strong>${assessment.nextLevel}</strong></div>
+        `;
+
+        if (scope.dataset.nextGenerated !== 'true') {
+            scope.dataset.nextGenerated = 'true';
+            const nextQuiz = renderAdaptiveNextQuiz(topic, assessment.nextLevel, learnerProfile.completedSets + 1);
+            scope.insertAdjacentHTML('afterend', nextQuiz);
+            const nextScope = scope.nextElementSibling;
+            bindQuizEvents(nextScope, topic);
+        }
+    }
+
+    function getLearnerAssessment(correct, total) {
+        const rate = total ? correct / total : 0;
+
+        if (rate === 1) {
+            return {
+                level: 'Advanced - có thể học tiếp',
+                className: 'advanced',
+                nextLevel: 'Advanced',
+                message: 'Bạn trả lời đúng toàn bộ câu hỏi, cho thấy đã nắm chắc khái niệm và biết áp dụng trong tình huống chính.',
+                nextStep: 'Gợi ý: hệ thống sẽ đẩy câu hỏi tiếp theo lên mức phân tích tình huống và rủi ro.'
+            };
+        }
+
+        if (rate >= 0.6) {
+            return {
+                level: 'Intermediate - hiểu ý chính',
+                className: 'intermediate',
+                nextLevel: 'Intermediate',
+                message: 'Bạn đã hiểu phần lớn nội dung, nhưng vẫn còn một vài điểm cần củng cố để tránh nhầm khi áp dụng.',
+                nextStep: 'Gợi ý: hệ thống sẽ giữ câu hỏi tiếp theo ở mức áp dụng, tập trung vào điều kiện dùng đúng.'
+            };
+        }
+
+        return {
+            level: 'Beginner - cần ôn lại',
+            className: 'beginner',
+            nextLevel: 'Beginner',
+            message: 'Bạn mới nắm được một phần nhỏ nội dung. Nếu học tiếp ngay, khả năng cao sẽ mang theo lỗ hổng hiểu sai.',
+            nextStep: 'Gợi ý: hệ thống sẽ hạ câu hỏi tiếp theo về mức nhận biết và ôn lại khái niệm nền.'
+        };
+    }
+
+    function renderAdaptiveNextQuiz(topic, level, round) {
+        const items = buildAdaptiveQuizItems(topic, level);
+        return `
+            <div class="check-container level-quiz adaptive-next-quiz" data-quiz-round="${round}" data-adaptive-level="${escapeHtml(level)}">
+                <div class="check-header">
+                    <span class="check-q">Bộ câu hỏi tiếp theo - tự điều chỉnh theo mức độ học</span>
+                    <span class="prof-badge">${escapeHtml(level)}</span>
+                </div>
+                <div class="quiz-actions">
+                    <button class="stop-quiz-btn" type="button">Dừng quiz</button>
+                </div>
+                <div class="adaptive-note">
+                    Hệ thống đã tự chọn level <strong>${escapeHtml(level)}</strong> dựa trên kết quả 5 câu vừa rồi. Bộ câu hỏi này dùng để củng cố hoặc tăng độ khó phù hợp.
+                </div>
+                <div class="quiz-questions-list">
+                    ${items.map((item, idx) => `
+                        <div class="quiz-item interactive-quiz-item">
+                            <div class="quiz-item-head">Câu tiếp theo ${idx + 1}</div>
+                            <p class="quiz-item-q">${escapeHtml(item.question)}</p>
+                            <div class="check-opts">
+                                ${item.options.map(option => `
+                                    <button class="opt-btn" data-correct="${Boolean(option.is_correct)}" data-explain="${escapeHtml(item.explanation)}">
+                                        ${escapeHtml(option.text)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="quiz-result-area hidden"></div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="quiz-score-panel hidden"></div>
+            </div>
+        `;
+    }
+
+    function buildAdaptiveQuizItems(topic, level) {
+        const cleanTopic = topic || 'khái niệm vừa học';
+        if (level === 'Advanced') {
+            return [
+                {
+                    question: `Trong tình huống nào nên KHÔNG để AI tự xử lý hoàn toàn với "${cleanTopic}"?`,
+                    options: [
+                        { text: 'Khi hậu quả sai cao và context thiếu căn cứ', is_correct: true },
+                        { text: 'Khi người học muốn câu trả lời nhanh hơn', is_correct: false },
+                        { text: 'Khi slide có nhiều màu sắc', is_correct: false }
+                    ],
+                    explanation: 'Mức Advanced cần nhận ra rủi ro vận hành và điều kiện dừng tự động.'
+                },
+                {
+                    question: `Nếu phải thiết kế guardrail cho "${cleanTopic}", ưu tiên nào hợp lý nhất?`,
+                    options: [
+                        { text: 'Kiểm tra căn cứ slide trước khi giải thích', is_correct: true },
+                        { text: 'Luôn trả lời dù không có nguồn', is_correct: false },
+                        { text: 'Ẩn confidence khỏi người học', is_correct: false }
+                    ],
+                    explanation: 'Guardrail tốt giúp câu trả lời có căn cứ và minh bạch.'
+                },
+                {
+                    question: `Dấu hiệu nào cho thấy câu trả lời về "${cleanTopic}" cần chuyển từ Explain sang Ask to reselect?`,
+                    options: [
+                        { text: 'Đoạn bôi đen quá ngắn hoặc mơ hồ', is_correct: true },
+                        { text: 'Đoạn bôi đen nằm đúng trong slide', is_correct: false },
+                        { text: 'Quiz có 5 câu', is_correct: false }
+                    ],
+                    explanation: 'Mơ hồ thì nên hỏi lại để tránh đoán sai.'
+                },
+                {
+                    question: `Một câu trả lời Advanced tốt cần thêm yếu tố nào ngoài định nghĩa?`,
+                    options: [
+                        { text: 'Điều kiện áp dụng và rủi ro nếu áp dụng sai', is_correct: true },
+                        { text: 'Nhiều thuật ngữ hơn', is_correct: false },
+                        { text: 'Ít căn cứ hơn để ngắn gọn', is_correct: false }
+                    ],
+                    explanation: 'Advanced tập trung vào áp dụng có điều kiện và phân tích rủi ro.'
+                },
+                {
+                    question: `Khi người học trả lời đúng 5/5, câu hỏi tiếp theo nên thay đổi thế nào?`,
+                    options: [
+                        { text: 'Tăng lên tình huống phân tích và ra quyết định', is_correct: true },
+                        { text: 'Lặp lại câu hỏi nhận biết', is_correct: false },
+                        { text: 'Bỏ quiz', is_correct: false }
+                    ],
+                    explanation: 'Đúng toàn bộ là tín hiệu có thể tăng độ khó.'
+                }
+            ];
+        }
+
+        if (level === 'Intermediate') {
+            return [
+                {
+                    question: `Khi áp dụng "${cleanTopic}", điều gì cần kiểm tra trước?`,
+                    options: [
+                        { text: 'Có căn cứ trực tiếp trong slide hay không', is_correct: true },
+                        { text: 'Câu trả lời có dài không', is_correct: false },
+                        { text: 'Có emoji hay không', is_correct: false }
+                    ],
+                    explanation: 'Intermediate cần biết áp dụng dựa trên căn cứ.'
+                },
+                {
+                    question: `Nếu AI phân loại LOW, người học nên làm gì?`,
+                    options: [
+                        { text: 'Bôi đen lại cụm rõ hơn', is_correct: true },
+                        { text: 'Tin luôn câu trả lời đoán', is_correct: false },
+                        { text: 'Chọn đoạn ngắn hơn', is_correct: false }
+                    ],
+                    explanation: 'LOW nghĩa là cần thêm context.'
+                },
+                {
+                    question: `Tầng ví dụ giúp gì khi học "${cleanTopic}"?`,
+                    options: [
+                        { text: 'Biến định nghĩa thành tình huống dễ hiểu', is_correct: true },
+                        { text: 'Thay thế căn cứ slide', is_correct: false },
+                        { text: 'Ẩn đi phần chưa chắc chắn', is_correct: false }
+                    ],
+                    explanation: 'Ví dụ giúp hiểu cách áp dụng nhưng không thay thế grounding.'
+                },
+                {
+                    question: `Khi câu trả lời có grounding tốt, người học biết được gì?`,
+                    options: [
+                        { text: 'Câu trả lời dựa vào phần nào của slide', is_correct: true },
+                        { text: 'AI chắc chắn đúng trong mọi ngữ cảnh', is_correct: false },
+                        { text: 'Không cần làm quiz nữa', is_correct: false }
+                    ],
+                    explanation: 'Grounding làm rõ nguồn của câu trả lời.'
+                },
+                {
+                    question: `Mục tiêu của quiz sau giải thích là gì?`,
+                    options: [
+                        { text: 'Kiểm tra hiểu thật, không chỉ đọc lướt', is_correct: true },
+                        { text: 'Làm giao diện dài hơn', is_correct: false },
+                        { text: 'Thay slide bài học', is_correct: false }
+                    ],
+                    explanation: 'Quiz xác nhận người học hiểu đúng trước khi học tiếp.'
+                }
+            ];
+        }
+
+        return [
+            {
+                question: `"${cleanTopic}" nên được hiểu trước hết là gì?`,
+                options: [
+                    { text: 'Một khái niệm cần giải thích dựa trên context slide', is_correct: true },
+                    { text: 'Một câu hỏi ngoài phạm vi bất kỳ', is_correct: false },
+                    { text: 'Một phần không cần căn cứ', is_correct: false }
+                ],
+                explanation: 'Beginner cần bắt đầu từ nhận biết khái niệm và nguồn căn cứ.'
+            },
+            {
+                question: `Nếu chưa hiểu một đoạn, thao tác đúng là gì?`,
+                options: [
+                    { text: 'Bôi đen cụm đầy đủ rồi hỏi AI', is_correct: true },
+                    { text: 'Chọn một chữ bất kỳ', is_correct: false },
+                    { text: 'Hỏi chuyện ngoài bài học', is_correct: false }
+                ],
+                explanation: 'Chọn cụm đầy đủ giúp Agent hiểu đúng ý.'
+            },
+            {
+                question: `HIGH confidence nghĩa là gì?`,
+                options: [
+                    { text: 'Có căn cứ đủ rõ trong slide', is_correct: true },
+                    { text: 'AI trả lời dài', is_correct: false },
+                    { text: 'Người học đã chắc chắn hiểu', is_correct: false }
+                ],
+                explanation: 'HIGH nói về độ chắc của căn cứ, không phải độ dài câu trả lời.'
+            },
+            {
+                question: `LOW confidence nghĩa là gì?`,
+                options: [
+                    { text: 'Cần thêm context hoặc chọn lại đoạn rõ hơn', is_correct: true },
+                    { text: 'Chắc chắn sai', is_correct: false },
+                    { text: 'Không cần làm gì thêm', is_correct: false }
+                ],
+                explanation: 'LOW là tín hiệu cần làm rõ trước khi tin câu trả lời.'
+            },
+            {
+                question: `Vì sao cần 3 tầng giải thích?`,
+                options: [
+                    { text: 'Để đi từ dễ hiểu đến ví dụ rồi căn cứ', is_correct: true },
+                    { text: 'Để làm câu trả lời rối hơn', is_correct: false },
+                    { text: 'Để bỏ qua slide', is_correct: false }
+                ],
+                explanation: '3 tầng giúp người mới hiểu mà vẫn kiểm tra được nguồn.'
+            }
+        ];
     }
 
     slideCanvas.addEventListener('mouseup', () => setTimeout(showTooltipForSelection, 0));
