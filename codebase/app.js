@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSelectedText = '';
     let uploadedDeckText = '';
     let pdfjsLibPromise = null;
+    let currentPdfDoc = null;
+    let currentPdfJsModule = null;
+    let currentPageNum = 1;
+    let totalPdfPages = 1;
+
     const learnerProfile = {
         level: 'Beginner',
         completedSets: 0,
@@ -33,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function scrollToBottom() {
-        chatStream.scrollTop = chatStream.scrollHeight;
+        if (chatStream) chatStream.scrollTop = chatStream.scrollHeight;
     }
 
     function hideTooltip() {
-        tooltip.classList.add('hidden');
+        if (tooltip) tooltip.classList.add('hidden');
     }
 
     function getSlideContext() {
@@ -59,12 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         currentSelectedText = text;
-        input.value = text;
+        if (input) input.value = text;
         const range = window.getSelection().getRangeAt(0);
         const rect = range.getBoundingClientRect();
-        tooltip.style.left = `${rect.left + rect.width / 2}px`;
-        tooltip.style.top = `${Math.max(58, rect.top - 48)}px`;
-        tooltip.classList.remove('hidden');
+        if (tooltip) {
+            tooltip.style.left = `${rect.left + rect.width / 2}px`;
+            tooltip.style.top = `${Math.max(58, rect.top - 48)}px`;
+            tooltip.classList.remove('hidden');
+        }
     }
 
     function setUploadStatus(message, state = 'info') {
@@ -100,60 +107,148 @@ document.addEventListener('DOMContentLoaded', () => {
         textLayer.className = 'textLayer';
 
         pageWrapper.append(pageLabel, canvas, textLayer);
-        slideCanvas.appendChild(pageWrapper);
+        if (slideCanvas) slideCanvas.appendChild(pageWrapper);
         return { pageWrapper, canvas, textLayer };
     }
 
-    async function renderUploadedPdf(file) {
-        if (!file) return;
-        if (file.type && file.type !== 'application/pdf') {
+    function updatePaginationUI() {
+        const currentPageEl = document.getElementById('current-page-num');
+        const totalPagesEl = document.getElementById('total-pages-num');
+        const pageCountBadge = document.getElementById('page-count-badge');
+        const btnPrev = document.getElementById('btn-prev-page');
+        const btnNext = document.getElementById('btn-next-page');
+
+        if (currentPageEl) currentPageEl.textContent = String(currentPageNum);
+        if (totalPagesEl) totalPagesEl.textContent = String(totalPdfPages);
+        if (pageCountBadge) pageCountBadge.textContent = `Trang ${currentPageNum} / ${totalPdfPages}`;
+
+        if (btnPrev) btnPrev.disabled = currentPageNum <= 1;
+        if (btnNext) btnNext.disabled = currentPageNum >= totalPdfPages;
+
+        const tutorContextTag = document.querySelector('.slide-context-tag');
+        if (tutorContextTag) tutorContextTag.textContent = `Slide trang ${currentPageNum}`;
+    }
+
+    let currentRenderTask = null;
+
+    async function renderSinglePage(pageNumber) {
+        if (!currentPdfDoc) return;
+        if (pageNumber < 1) pageNumber = 1;
+        if (pageNumber > totalPdfPages) pageNumber = totalPdfPages;
+        currentPageNum = pageNumber;
+
+        if (currentRenderTask) {
+            try {
+                currentRenderTask.cancel();
+            } catch (e) {}
+            currentRenderTask = null;
+        }
+
+        slideCanvas.innerHTML = '';
+
+        try {
+            const page = await currentPdfDoc.getPage(pageNumber);
+            const containerWidth = Math.min(slideCanvas.clientWidth || 800, 800);
+            const unscaledViewport = page.getViewport({ scale: 1.0 });
+            const scale = containerWidth > 0 ? (containerWidth / unscaledViewport.width) : 1.2;
+            const viewport = page.getViewport({ scale: Math.max(0.5, Math.min(scale, 1.4)) });
+
+            const { pageWrapper, canvas, textLayer } = createPdfPageShell(pageNumber);
+            const context = canvas.getContext('2d');
+
+            canvas.width = Math.floor(viewport.width);
+            canvas.height = Math.floor(viewport.height);
+            canvas.style.width = `${Math.floor(viewport.width)}px`;
+            canvas.style.height = `${Math.floor(viewport.height)}px`;
+            pageWrapper.style.width = `${Math.floor(viewport.width)}px`;
+            pageWrapper.style.height = `${Math.floor(viewport.height)}px`;
+
+            // Pre-fill canvas with white background
+            context.save();
+            context.fillStyle = '#ffffff';
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.restore();
+
+            currentRenderTask = page.render({
+                canvasContext: context,
+                viewport: viewport
+            });
+            await currentRenderTask.promise;
+            currentRenderTask = null;
+
+            const textContent = await page.getTextContent();
+            textLayer.innerHTML = '';
+            const pdfjs = currentPdfJsModule;
+            if (pdfjs && pdfjs.Util && textContent.items) {
+                for (const item of textContent.items) {
+                    if (!item.str || !item.str.trim()) continue;
+                    const tx = pdfjs.Util.transform(viewport.transform, item.transform);
+                    const span = document.createElement('span');
+                    span.textContent = item.str;
+                    span.style.left = `${tx[4]}px`;
+                    span.style.top = `${Math.max(0, tx[5] - (item.height || 12))}px`;
+                    span.style.fontSize = `${Math.abs(tx[0]) || 12}px`;
+                    textLayer.appendChild(span);
+                }
+            }
+
+            updatePaginationUI();
+        } catch (err) {
+            if (err?.name !== 'RenderingCancelledException') {
+                console.error('Error rendering single page:', err);
+            }
+        }
+    }
+
+    async function renderPdf(source, fileName) {
+        if (!source) return;
+        if (source instanceof File && source.type && source.type !== 'application/pdf') {
             setUploadStatus('Hiện prototype chỉ hỗ trợ PDF slide. Hãy chọn file .pdf.', 'error');
             return;
         }
 
-        setUploadStatus(`Đang tải "${file.name}" và dựng text layer để bôi đen...`, 'loading');
+        const displayName = fileName || (typeof source === 'string' ? source.split('/').pop() : source.name || 'Slide.pdf');
+        setUploadStatus(`Đang nạp file slide "${displayName}"...`, 'loading');
 
         try {
             const pdfjs = await loadPdfJs();
-            const buffer = await file.arrayBuffer();
-            const pdf = await pdfjs.getDocument({ data: buffer }).promise;
-            const allText = [];
+            currentPdfJsModule = pdfjs;
 
-            slideCanvas.innerHTML = '';
-            uploadedDeckText = '';
-            if (pageCountBadge) pageCountBadge.textContent = `1 / ${pdf.numPages} trang`;
-
-            for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
-                const page = await pdf.getPage(pageNumber);
-                const viewport = page.getViewport({ scale: 1.35 });
-                const { pageWrapper, canvas, textLayer } = createPdfPageShell(pageNumber);
-                const context = canvas.getContext('2d');
-
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
-                canvas.style.width = `${viewport.width}px`;
-                canvas.style.height = `${viewport.height}px`;
-                pageWrapper.style.width = `${viewport.width}px`;
-                pageWrapper.style.height = `${viewport.height}px`;
-
-                await page.render({ canvasContext: context, viewport }).promise;
-                const textContent = await page.getTextContent();
-                allText.push(`Trang ${pageNumber}:\n${textContent.items.map(item => item.str).join(' ')}`);
-
-                await pdfjs.renderTextLayer({
-                    textContentSource: textContent,
-                    container: textLayer,
-                    viewport,
-                    textDivs: []
-                }).promise;
+            let pdfInput;
+            if (typeof source === 'string') {
+                const res = await fetch(source);
+                if (!res.ok) throw new Error(`HTTP ${res.status} khi tải PDF từ ${source}`);
+                const arrayBuffer = await res.arrayBuffer();
+                pdfInput = { data: new Uint8Array(arrayBuffer) };
+            } else if (source instanceof File) {
+                const buffer = await source.arrayBuffer();
+                pdfInput = { data: new Uint8Array(buffer.slice(0)) };
+            } else if (source instanceof ArrayBuffer) {
+                pdfInput = { data: new Uint8Array(source.slice(0)) };
+            } else {
+                pdfInput = source;
             }
 
-            uploadedDeckText = allText.join('\n\n');
-            setUploadStatus(`Đã tải "${file.name}" (${pdf.numPages} trang). Bôi đen chữ trực tiếp trên PDF rồi bấm "Hỏi AI".`, 'success');
-            if (pageCountBadge) pageCountBadge.textContent = `${pdf.numPages} trang PDF`;
+            const loadingParams = typeof pdfInput === 'object' && pdfInput.data ? pdfInput : { data: pdfInput };
+            const loadingTask = pdfjs.getDocument({
+                ...loadingParams,
+                cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/',
+                cMapPacked: true
+            });
+            currentPdfDoc = await loadingTask.promise;
+            totalPdfPages = currentPdfDoc.numPages;
+            currentPageNum = 1;
+            uploadedDeckText = '';
+
+            // Render page 1
+            await renderSinglePage(1);
+            setUploadStatus(`Đã tải "${displayName}" (${totalPdfPages} trang). Dùng nút ‹ › để chuyển trang. Bôi đen chữ trên slide rồi bấm "Hỏi AI".`, 'success');
+
+            const docFilename = document.querySelector('.doc-filename');
+            if (docFilename) docFilename.textContent = displayName;
         } catch (err) {
-            console.error(err);
-            setUploadStatus('Không dựng được PDF text layer. Kiểm tra kết nối mạng để tải PDF.js hoặc thử file PDF khác có text thật.', 'error');
+            console.error('renderPdf error:', err);
+            setUploadStatus(`Không dựng được PDF. Vui lòng kiểm tra file. Error: ${err.message}`, 'error');
         }
     }
 
@@ -669,5 +764,53 @@ document.addEventListener('DOMContentLoaded', () => {
     btnPresetLow?.addEventListener('click', () => triggerAIAskFlow('Generative Adversarial Networks (GANs)'));
     sendBtn?.addEventListener('click', () => triggerAIAskFlow(input.value || 'Conditional Automation'));
     btnUploadSlide?.addEventListener('click', () => slideFileInput?.click());
-    slideFileInput?.addEventListener('change', event => renderUploadedPdf(event.target.files?.[0]));
+    slideFileInput?.addEventListener('change', event => {
+        const file = event.target.files?.[0];
+        if (file) {
+            document.querySelectorAll('.file-item').forEach(f => {
+                f.classList.remove('active');
+                const check = f.querySelector('.check-icon');
+                if (check) check.remove();
+            });
+            renderPdf(file, file.name);
+            slideFileInput.value = '';
+        }
+    });
+
+    // Bind sidebar file item click events
+    document.querySelectorAll('.file-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const url = item.dataset.pdfUrl;
+            const name = item.dataset.pdfName;
+            document.querySelectorAll('.file-item').forEach(f => {
+                f.classList.remove('active');
+                const check = f.querySelector('.check-icon');
+                if (check) check.remove();
+            });
+            item.classList.add('active');
+            if (!item.querySelector('.check-icon')) {
+                const check = document.createElement('span');
+                check.className = 'check-icon';
+                check.textContent = '✓';
+                item.appendChild(check);
+            }
+            if (url) {
+                renderPdf(url, name);
+            }
+        });
+    });
+
+    // Bind pagination buttons
+    document.getElementById('btn-prev-page')?.addEventListener('click', () => {
+        if (currentPageNum > 1) renderSinglePage(currentPageNum - 1);
+    });
+    document.getElementById('btn-next-page')?.addEventListener('click', () => {
+        if (currentPageNum < totalPdfPages) renderSinglePage(currentPageNum + 1);
+    });
+
+    // Auto-load default active PDF on startup
+    const activeFileItem = document.querySelector('.file-item.active');
+    if (activeFileItem && activeFileItem.dataset.pdfUrl) {
+        renderPdf(activeFileItem.dataset.pdfUrl, activeFileItem.dataset.pdfName);
+    }
 });

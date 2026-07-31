@@ -3780,5 +3780,253 @@
       ],
       "fallback_message": ""
     }
+  },
+  {
+    "timestamp": "2026-07-31T07:52:58.106Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Conditional Automation",
+    "confidence": "LOW",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 23388,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "Conditional Automation",
+        "why_user_may_choose_it": "Học viên có thể đang cố gắng liên hệ kiến thức về các cấp độ tự động hóa truyền thống (như các cấp độ tự lái SAE, trong đó Cấp độ 3 là Conditional Automation) với các cấp độ phát triển của AI Agents (từ Level 0 đến Level 3) được trình bày trong slide.",
+        "context_match": "Cụm từ này không xuất hiện trực tiếp trong slide. Tuy nhiên, nó liên quan mật thiết đến nội dung Trang 10 ('Từ LLM đến AI Agents') và Trang 11 ('Tại sao cần AI Agents?'), mô tả quá trình AI chuyển từ việc chỉ phản hồi thông tin sang tự động thực hiện hành động dựa trên điều kiện và công cụ.",
+        "risk_if_answer_directly": "Nếu trả lời trực tiếp mà không liên hệ với slide, học viên có thể bị lạc đề sang lý thuyết điều khiển tự động hoặc kỹ thuật ô tô, thay vì tập trung vào kiến trúc LLM và Agentic AI của khóa học."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Mặc dù thuật ngữ không có sẵn trong slide (LOW), việc giải thích và bắc cầu (bridge) khái niệm này sang 'AI Agents Level 1 & 2' trong slide sẽ giúp học viên hệ thống hóa kiến thức tốt hơn.",
+        "level_signal": "Học viên sử dụng thuật ngữ hệ thống phân loại tự động hóa nâng cao để đối chiếu với AI.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "\"Conditional Automation\" (Tự động hóa có điều kiện) là trạng thái hệ thống có thể tự thực hiện toàn bộ tác vụ trong một số điều kiện nhất định, nhưng vẫn cần con người giám sát và sẵn sàng can thiệp khi hệ thống yêu cầu hoặc gặp lỗi.",
+        "layer2_example": "Ví dụ: Một AI Agent chăm sóc khách hàng có thể tự động duyệt hoàn tiền cho các đơn hàng dưới 200.000đ (tự động hóa có điều kiện). Nhưng nếu đơn hàng trị giá 2.000.000đ, AI sẽ dừng lại và chuyển yêu cầu cho quản lý (con người) phê duyệt.",
+        "layer3_grounding": "Trong slide Trang 10, khái niệm này tương ứng với ranh giới giữa Level 1 (Connected Solver - kết nối công cụ, gọi API) và Level 2 (Strategic Problem-Solver - tự lập kế hoạch). Ở các cấp độ này, AI Agent hoạt động dựa trên mục tiêu (Goal) và công cụ (Tools) được cung cấp (Trang 12), tự đưa ra quyết định trong phạm vi quyền hạn được thiết lập trước."
+      },
+      "beginner_note": "Để hiểu cách AI tự động hóa hành động, hãy nhớ công thức ở Trang 12: Agent = Goal + Reasoning + Tools + Memory + Action. AI không chỉ trả lời mà còn biết dùng công cụ để hoàn thành mục tiêu.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Theo Trang 10, sự khác biệt lớn nhất giữa Level 0 (Core reasoning engine) và Level 1 (Connected Solver) là gì?",
+          "options": [
+            {
+              "text": "Level 1 có khả năng kết nối với công cụ bên ngoài, truy xuất dữ liệu và gọi API.",
+              "is_correct": true
+            },
+            {
+              "text": "Level 1 có khả năng tự lập kế hoạch nhiều bước phức tạp mà không cần con người.",
+              "is_correct": false
+            },
+            {
+              "text": "Level 1 có khả năng phối hợp giữa nhiều agent chuyên biệt với nhau.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trang 10 định nghĩa Level 1 (Connected Solver) là LLM trở thành agent, có khả năng kết nối với công cụ bên ngoài, truy xuất dữ liệu, tìm kiếm, gọi API."
+        },
+        {
+          "question": "Trong các thành phần của AI Agent ở Trang 12, yếu tố nào đóng vai trò lưu trữ trạng thái và lịch sử để Agent đưa ra quyết định phù hợp?",
+          "options": [
+            {
+              "text": "Memory",
+              "is_correct": true
+            },
+            {
+              "text": "Tools",
+              "is_correct": false
+            },
+            {
+              "text": "Reasoning",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Theo Trang 12, 'Memory' chịu trách nhiệm lưu trữ trạng thái và lịch sử hoạt động của Agent."
+        },
+        {
+          "question": "Một hệ thống AI tự động quét email khách hàng, phân loại ý định, tự gọi API kiểm tra database và chỉ gửi email phản hồi sau khi được nhân viên duyệt. Hệ thống này tương ứng tốt nhất với cấp độ nào trong slide?",
+          "options": [
+            {
+              "text": "Level 1 - Connected Solver (kết hợp kiểm soát của con người)",
+              "is_correct": true
+            },
+            {
+              "text": "Level 0 - Core reasoning engine",
+              "is_correct": false
+            },
+            {
+              "text": "Level 3 - Collaborative AI Agents",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Hệ thống này biết kết nối công cụ (quét email, gọi API database) để giải quyết vấn đề nhưng vẫn có sự giám sát, tương ứng với Connected Solver (Level 1)."
+        },
+        {
+          "question": "Tại sao khi thiết kế các hệ thống tự động hóa bằng AI (AI Agents), chúng ta vẫn cần bước 'Human review' (con người kiểm tra) như đề cập ở Trang 70?",
+          "options": [
+            {
+              "text": "Vì LLM có giới hạn bẩm sinh là Hallucination (ảo tưởng) và tối ưu theo xác suất chứ không phải sự thật tuyệt đối.",
+              "is_correct": true
+            },
+            {
+              "text": "Vì LLM không thể xử lý quá 100 tokens trong một lần gọi API.",
+              "is_correct": false
+            },
+            {
+              "text": "Vì chi phí gọi API của các model lớn luôn đắt hơn lương của nhân sự vận hành.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trang 38 và Trang 40 chỉ ra rằng LLM có thể tự tin đưa ra thông tin sai (hallucination) vì nó tối ưu xác suất token, không phải sự thật. Do đó, nguyên tắc thứ 3 của Vibe Coding (Trang 70) luôn yêu cầu 'Human review' để đảm bảo an toàn."
+        },
+        {
+          "question": "Theo Trang 11, điểm hạn chế lớn nhất của một 'Prompt tĩnh' so với 'AI Agent' khi giải quyết một mục tiêu hoàn chỉnh là gì?",
+          "options": [
+            {
+              "text": "Prompt tĩnh chỉ xử lý 1 bước (Prompt -> Response), không truy cập được dữ liệu mới và không tự hành động được.",
+              "is_correct": true
+            },
+            {
+              "text": "Prompt tĩnh luôn tốn nhiều token hơn AI Agent.",
+              "is_correct": false
+            },
+            {
+              "text": "Prompt tĩnh bắt buộc phải sử dụng kiến trúc Encoder-Decoder cũ kỹ.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trang 11 nêu rõ Prompt tĩnh chỉ giải quyết 1 câu hỏi (1 bước), không truy cập dữ liệu mới và không hành động được; trong khi AI Agent giải quyết mục tiêu hoàn chỉnh (Goal -> Plan -> Action)."
+        }
+      ],
+      "fallback_message": "Thuật ngữ 'Conditional Automation' không xuất hiện trực tiếp trong slide bài học này. Tuy nhiên, VLearn AI Tutor đã kết nối khái niệm này với nội dung 'Từ LLM đến AI Agents' (Trang 10) để giúp bạn hiểu cách áp dụng tư duy tự động hóa vào việc thiết kế AI Agent."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T07:54:15.922Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Nội",
+    "confidence": "LOW",
+    "route": "Ask to reselect",
+    "level": "Beginner",
+    "latency_ms": 18210,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "Nội",
+        "why_user_may_choose_it": "Học viên có thể đã vô tình bôi đen thiếu khi định chọn cụm từ \"Nội dung bài học\" ở Trang 3 hoặc từ \"Hà Nội\" trong ví dụ về Next-Token Prediction ở Trang 38.",
+        "context_match": "Từ \"Nội\" xuất hiện ở Trang 3 (\"Nội dung bài học\") và Trang 38 (\"Hà Nội là thủ đô...\"). Do quá ngắn, hệ thống không thể tự động xác định chính xác học viên đang muốn hỏi về mục lục bài học hay cơ chế dự đoán từ tiếp theo.",
+        "risk_if_answer_directly": "Nếu Agent tự ý giải thích sâu về một trong hai hướng (mục lục hoặc cơ chế dự đoán) mà không hỏi lại, có thể sẽ trả lời sai lệch hoàn toàn so với thắc mắc thực tế của học viên."
+      },
+      "agent_decision": {
+        "routing": "Ask to reselect",
+        "reason": "Từ được chọn quá ngắn (chỉ có 1 âm tiết) và mơ hồ, cần hướng dẫn học viên cách bôi đen lại để có ngữ cảnh rõ ràng hơn.",
+        "level_signal": "Học viên bôi đen một từ đơn lẻ cực ngắn, có thể là thao tác lỗi của người mới bắt đầu sử dụng công cụ.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Từ \"Nội\" bạn chọn có thể thuộc về hai phần khác nhau trong slide: mục \"Nội dung bài học\" (Trang 3) hoặc ví dụ \"Hà Nội\" (Trang 38) giải thích cách AI dự đoán từ tiếp theo.",
+        "layer2_example": "Ví dụ: Nếu bạn muốn hỏi về cách AI hoạt động, từ \"Hà\" ghép với \"Nội\" tạo thành token [Hà Nội]. Dựa vào ngữ cảnh này, AI sẽ dự đoán từ tiếp theo có xác suất cao nhất là \"là\" (p = 0.94) để tạo thành câu \"Hà Nội là thủ đô của Việt Nam\".",
+        "layer3_grounding": "Trong slide Trang 3, \"Nội dung bài học\" giới thiệu 6 phần chính của buổi học. Trong khi đó, Trang 38 sử dụng cụm từ \"Hà Nội\" để minh họa trực quan cho cơ chế Next-Token Prediction (Dự đoán token tiếp theo) - nguyên lý hoạt động cốt lõi của LLM."
+      },
+      "beginner_note": "Mẹo nhỏ: Để nhận được câu trả lời chính xác nhất từ AI Tutor, bạn nên bôi đen trọn vẹn một cụm từ hoặc thuật ngữ (ví dụ: \"Token Economy\", \"Next-Token Prediction\", hoặc \"Vibe Coding\").",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Trong Trang 38, ví dụ \"Hà Nội là thủ đô của Việt Nam\" được dùng để minh họa cho cơ chế cốt lõi nào của LLM?",
+          "options": [
+            {
+              "text": "Next-Token Prediction (Dự đoán token tiếp theo)",
+              "is_correct": true
+            },
+            {
+              "text": "Fine-tuning (Tinh chỉnh mô hình)",
+              "is_correct": false
+            },
+            {
+              "text": "Reinforcement Learning (Học tăng cường)",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trang 38 chỉ rõ LLM dự đoán token tiếp theo dựa trên xác suất (ví dụ từ 'Hà Nội là thủ đô của' sẽ có xác suất cao đi kèm với 'Việt Nam')."
+        },
+        {
+          "question": "Đơn vị nhỏ nhất mà LLM xử lý và dùng để tính toán chi phí API được gọi là gì?",
+          "options": [
+            {
+              "text": "Ký tự (Character)",
+              "is_correct": false
+            },
+            {
+              "text": "Từ nguyên bản (Word)",
+              "is_correct": false
+            },
+            {
+              "text": "Token",
+              "is_correct": true
+            }
+          ],
+          "explanation": "Theo Trang 37 và Trang 42, Token là đơn vị nhỏ nhất mà LLM xử lý (subword units) và được dùng để tính chi phí API."
+        },
+        {
+          "question": "Khi sử dụng AI Tutor, cách bôi đen nào dưới đây giúp bạn nhận được lời giải thích tốt nhất?",
+          "options": [
+            {
+              "text": "Bôi đen một từ cực ngắn hoặc bị mất chữ (ví dụ: 'Nội', 'Transfo')",
+              "is_correct": false
+            },
+            {
+              "text": "Bôi đen trọn vẹn thuật ngữ hoặc câu chứa khái niệm cần hỏi (ví dụ: 'Transformer', 'Token Economy')",
+              "is_correct": true
+            },
+            {
+              "text": "Bôi đen toàn bộ tất cả các trang slide cùng một lúc",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Bôi đen trọn vẹn thuật ngữ giúp AI Tutor xác định đúng ngữ cảnh trong slide để giải thích chính xác và cung cấp quiz phù hợp."
+        },
+        {
+          "question": "Tại sao tiếng Việt thường tốn nhiều token hơn tiếng Anh khi gọi API?",
+          "options": [
+            {
+              "text": "Vì tiếng Việt sử dụng ký tự Unicode và các dấu thanh khiến từ bị tách nhỏ thành nhiều subword tokens hơn",
+              "is_correct": true
+            },
+            {
+              "text": "Vì các mô hình LLM không hỗ trợ dịch tiếng Việt",
+              "is_correct": false
+            },
+            {
+              "text": "Vì tiếng Việt có nhiều từ đồng âm khác nghĩa hơn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trang 37 giải thích tiếng Việt tốn nhiều token hơn do dấu và ký tự Unicode làm hệ thống tokenization chia nhỏ từ ra nhiều phần hơn."
+        },
+        {
+          "question": "Theo Trang 3, nội dung nào sau đây nằm trong chương trình học của Ngày 1?",
+          "options": [
+            {
+              "text": "Multi-Agent Systems nâng cao",
+              "is_correct": false
+            },
+            {
+              "text": "Token Economy và Gọi API lần đầu",
+              "is_correct": true
+            },
+            {
+              "text": "Deploy và Evaluate mô hình trên Cloud",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trang 3 (Nội dung bài học) liệt kê các phần của Ngày 1 bao gồm: Bức tranh AI 2026, LLM, Token Economy, Gọi API lần đầu, Vibe Coding và Thực hành."
+        }
+      ],
+      "fallback_message": "Từ 'Nội' bạn chọn quá ngắn và chưa rõ ngữ cảnh. Bạn đang muốn tìm hiểu về 'Nội dung bài học' (Trang 3) hay ví dụ 'Hà Nội' trong cơ chế Next-Token Prediction (Trang 38)? Hãy bôi đen cụm từ đầy đủ hơn để mình hỗ trợ tốt nhất nhé!"
+    }
   }
 ]

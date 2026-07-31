@@ -394,28 +394,52 @@ const MIME = {
     '.html': 'text/html',
     '.css': 'text/css',
     '.js': 'application/javascript',
-    '.json': 'application/json'
+    '.json': 'application/json',
+    '.pdf': 'application/pdf',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.svg': 'image/svg+xml'
 };
 
 function serveStatic(req, res) {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-    const relativePath = url.pathname === '/' ? 'index.html' : decodeURIComponent(url.pathname.slice(1));
-    const resolvedPath = path.resolve(__dirname, relativePath);
-    const rootPath = path.resolve(__dirname);
+    const decodedPath = decodeURIComponent(url.pathname);
+    let relativePath = decodedPath === '/' ? 'index.html' : decodedPath.slice(1);
+    
+    if (relativePath.startsWith('data/')) {
+        relativePath = relativePath.slice(5);
+    }
 
-    if (resolvedPath !== rootPath && !resolvedPath.startsWith(rootPath + path.sep)) {
+    const codebaseRoot = path.resolve(__dirname);
+    const projectRoot = path.resolve(__dirname, '..');
+    
+    let resolvedPath = path.resolve(codebaseRoot, relativePath);
+
+    if (!fs.existsSync(resolvedPath) || !fs.statSync(resolvedPath).isFile()) {
+        const altData = path.resolve(projectRoot, 'data', relativePath);
+        if (fs.existsSync(altData) && fs.statSync(altData).isFile()) {
+            resolvedPath = altData;
+        } else {
+            const altProject = path.resolve(projectRoot, relativePath);
+            if (fs.existsSync(altProject) && fs.statSync(altProject).isFile()) {
+                resolvedPath = altProject;
+            } else {
+                res.writeHead(404);
+                res.end('Not found');
+                return;
+            }
+        }
+    }
+
+    if (!resolvedPath.startsWith(projectRoot)) {
         res.writeHead(403);
         res.end('Forbidden');
         return;
     }
 
-    if (!fs.existsSync(resolvedPath) || !fs.statSync(resolvedPath).isFile()) {
-        res.writeHead(404);
-        res.end('Not found');
-        return;
-    }
-
-    res.writeHead(200, { 'Content-Type': `${MIME[path.extname(resolvedPath)] || 'text/plain'}; charset=utf-8` });
+    const mime = MIME[path.extname(resolvedPath).toLowerCase()] || 'application/octet-stream';
+    const isText = mime.startsWith('text/') || mime === 'application/javascript' || mime === 'application/json';
+    res.writeHead(200, { 'Content-Type': isText ? `${mime}; charset=utf-8` : mime });
     fs.createReadStream(resolvedPath).pipe(res);
 }
 

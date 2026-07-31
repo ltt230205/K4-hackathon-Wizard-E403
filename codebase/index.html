@@ -21,8 +21,8 @@
             <div class="doc-badge">
                 <span class="pdf-icon">📘</span>
                 <div class="doc-meta">
-                    <span class="doc-filename">day05-ai-product-thinking-requirements.pdf</span>
-                    <span class="doc-sub">COMP2010 • Core JTBD: Làm rõ chỗ không chắc tại chỗ</span>
+                    <span class="doc-filename">day01-AICB_Ngày_1.pdf</span>
+                    <span class="doc-sub">AICB • Core JTBD: Làm rõ chỗ không chắc tại chỗ</span>
                 </div>
             </div>
         </div>
@@ -37,8 +37,26 @@
     <div class="vlearn-body">
         <!-- 2. LEFT SIDEBAR -->
         <aside class="left-sidebar">
-            <div class="day-group">
-                <div class="day-header">▷ Day01 <small>2 TÀI LIỆU</small></div>
+            <div class="day-group active">
+                <div class="day-header">▽ Day01 <span class="badge-studying">STUDYING</span></div>
+                <div class="file-list">
+                    <div class="file-item active" data-pdf-url="/vlearn-pack/slides/day01-AICB_Ngày_1.pdf" data-pdf-name="day01-AICB_Ngày_1.pdf">
+                        <span>📘</span>
+                        <span>day01-AICB_Ngày_1.pdf</span>
+                        <small>Slide PDF</small>
+                        <span class="check-icon">✓</span>
+                    </div>
+                    <div class="file-item" data-pdf-url="/vlearn-pack/slides/d1-slide-hackathon.pdf" data-pdf-name="d1-slide-hackathon.pdf">
+                        <span>📄</span>
+                        <span>d1-slide-hackathon.pdf</span>
+                        <small>Slide PDF</small>
+                    </div>
+                    <div class="file-item" data-pdf-url="/vlearn-pack/slides/d2-slide-hackathon.pdf" data-pdf-name="d2-slide-hackathon.pdf">
+                        <span>📄</span>
+                        <span>d2-slide-hackathon.pdf</span>
+                        <small>Slide PDF</small>
+                    </div>
+                </div>
             </div>
             <div class="day-group">
                 <div class="day-header">▷ Day02 <small>1 TÀI LIỆU</small></div>
@@ -49,29 +67,8 @@
             <div class="day-group">
                 <div class="day-header">▷ Day04 <small>3 TÀI LIỆU</small></div>
             </div>
-            <div class="day-group active">
-                <div class="day-header">▽ Day05 <span class="badge-studying">STUDYING</span></div>
-                <div class="file-list">
-                    <div class="file-item active">
-                        <span>📘</span>
-                        <span>day05-ai-product-thinking-...</span>
-                        <small>44p</small>
-                        <span class="check-icon">✓</span>
-                    </div>
-                    <div class="file-item">
-                        <span>📄</span>
-                        <span>day05-lecture-slides-batch...</span>
-                        <small>39p</small>
-                    </div>
-                    <div class="file-item">
-                        <span>📄</span>
-                        <span>day05-slide-batch03-C401...</span>
-                        <small>62p</small>
-                    </div>
-                </div>
-            </div>
             <div class="day-group">
-                <div class="day-header">▷ Day06 <small>1 TÀI LIỆU</small></div>
+                <div class="day-header">▷ Day05 <small>3 TÀI LIỆU</small></div>
             </div>
         </aside>
 
@@ -85,7 +82,11 @@
                     <button class="tool-btn upload-btn" id="btn-upload-slide">⬆️ Tải PDF</button>
                     <input type="file" id="slide-file-input" accept="application/pdf,.pdf" hidden>
                 </div>
-                <span class="page-count-badge" id="page-count-badge">Trang 4 / 44</span>
+                <div class="pagination-bar">
+                    <button class="page-arrow" id="btn-prev-page" title="Trang trước">‹</button>
+                    <span>Trang <strong id="current-page-num">1</strong> / <span id="total-pages-num">1</span></span>
+                    <button class="page-arrow" id="btn-next-page" title="Trang sau">›</button>
+                </div>
                 <div class="tool-group">
                     <button class="tool-btn">−</button>
                     <span style="font-size:12px; color:#475569;">100%</span>
