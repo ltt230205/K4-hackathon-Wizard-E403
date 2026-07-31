@@ -1,6 +1,6 @@
 # Kết quả đo lượt 1 — Golden Set (20 case)
 
-- **Thời gian đo:** 7/31/2026, 10:48:03 AM
+- **Thời gian đo:** 7/31/2026, 11:43:00 AM
 - **Model:** gpt-4o-mini / gemini-1.5-flash
 - **Tổng số case:** 20
 - **Số case Đạt:** 20/20
