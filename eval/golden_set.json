@@ -1,0 +1,142 @@
+[
+    {
+        "id": "CASE_01",
+        "class": "Lớp ① - Căn cứ chuẩn",
+        "selected_text": "Thiết kế sản phẩm AI cho sự không chắc chắn",
+        "context": "Slide 1: Thiết kế sản phẩm AI cho sự không chắc chắn - Từ khả năng của model đến trải nghiệm đáng tin cậy của người dùng.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_02",
+        "class": "Lớp ① - Thiếu căn cứ",
+        "selected_text": "Cách cài đặt Adobe Photoshop 2026",
+        "context": "Slide 1: Thiết kế sản phẩm AI cho sự không chắc chắn.",
+        "expected_confidence": "OUT_OF_SCOPE"
+    },
+    {
+        "id": "CASE_03",
+        "class": "Lớp ② - Input mơ hồ",
+        "selected_text": "cái đoạn đó",
+        "context": "Slide 2: Thuật toán Attention cho phép gán trọng số cho từng từ.",
+        "expected_confidence": "LOW"
+    },
+    {
+        "id": "CASE_04",
+        "class": "Lớp ③ - Logistics ngoài phạm vi",
+        "selected_text": "Mấy giờ hết hạn nộp bài tập",
+        "context": "Slide 3: Kiến thức về Transformer Model.",
+        "expected_confidence": "OUT_OF_SCOPE"
+    },
+    {
+        "id": "CASE_05",
+        "class": "Lớp ④ - Domain dễ sai",
+        "selected_text": "RNN xử lý song song nhanh hơn Transformer",
+        "context": "Slide 4: RNN xử lý tuần tự nên chậm hơn Transformer.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_06",
+        "class": "Chatlog T0020",
+        "selected_text": "Giải thích đoạn bôi đen ở Trang 15",
+        "context": "Slide 15: Cơ chế Attention giúp gán trọng số tầm quan trọng cho từng từ.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_07",
+        "class": "Chatlog T0399",
+        "selected_text": "Giải thích biểu đồ ở trang 6",
+        "context": "Slide 6: Biểu đồ so sánh thời gian huấn luyện mô hình.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_08",
+        "class": "Chatlog T0769",
+        "selected_text": "nghĩa chi tiết của trang 4",
+        "context": "Slide 4: Định nghĩa về Latent Space.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_09",
+        "class": "Chatlog T0941",
+        "selected_text": "Tôi không hiểu trang 6",
+        "context": "Slide 6: Ma trận Confusion Matrix.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_10",
+        "class": "Chatlog T1053",
+        "selected_text": "Giải thích đoạn bôi đen ở Trang 17",
+        "context": "Slide 17: Kỹ thuật Fine-tuning LLM.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_11",
+        "class": "Lớp ① - Thiếu nguồn",
+        "selected_text": "Giá Bitcoin hôm nay",
+        "context": "Slide 1: Bài học AI Product Thinking.",
+        "expected_confidence": "OUT_OF_SCOPE"
+    },
+    {
+        "id": "CASE_12",
+        "class": "Lớp ② - Câu hỏi ngắn cụt",
+        "selected_text": "hả?",
+        "context": "Slide 2: Định nghĩa Prompt Engineering.",
+        "expected_confidence": "LOW"
+    },
+    {
+        "id": "CASE_13",
+        "class": "Lớp ③ - Xin link download",
+        "selected_text": "Cho mình xin link tải slide pdf",
+        "context": "Slide 5: Nội dung bài học.",
+        "expected_confidence": "OUT_OF_SCOPE"
+    },
+    {
+        "id": "CASE_14",
+        "class": "Lớp ④ - Domain kiến thức",
+        "selected_text": "Vanishing Gradient",
+        "context": "Slide 15: Hiện tượng trôi mất thông tin ngữ cảnh trong mạng RNN.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_15",
+        "class": "Chatlog Mẫu 11",
+        "selected_text": "Query Key Value trong Attention",
+        "context": "Slide 15: Cơ chế chú ý gồm 3 thành phần Query (Q), Key (K), và Value (V).",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_16",
+        "class": "Chatlog Mẫu 12",
+        "selected_text": "Giải thích lại khái niệm HAX G10",
+        "context": "Slide 8: Nguyên tắc HAX G10: Thu hẹp phạm vi khi nghi ngờ.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_17",
+        "class": "Chatlog Mẫu 13",
+        "selected_text": "Tại sao dùng Softmax",
+        "context": "Slide 10: Hàm Softmax giúp chuyển đổi score thành xác suất.",
+        "expected_confidence": "HIGH"
+    },
+    {
+        "id": "CASE_18",
+        "class": "Lớp ② - Viết sai chính tả nặng",
+        "selected_text": "giaithich cai nay gium cai",
+        "context": "Slide 1: Khái niệm cơ bản.",
+        "expected_confidence": "LOW"
+    },
+    {
+        "id": "CASE_19",
+        "class": "Lớp ③ - Hỏi trợ giảng",
+        "selected_text": "Thầy cho em xin nghỉ buổi sau",
+        "context": "Slide 1: Thông tin môn học.",
+        "expected_confidence": "OUT_OF_SCOPE"
+    },
+    {
+        "id": "CASE_20",
+        "class": "Lớp ④ - Domain kiến thức",
+        "selected_text": "Overfitting",
+        "context": "Slide 12: Hiện tượng mô hình học thuộc lòng dữ liệu train.",
+        "expected_confidence": "HIGH"
+    }
+]
