@@ -4028,5 +4028,1513 @@
       ],
       "fallback_message": "Từ 'Nội' bạn chọn quá ngắn và chưa rõ ngữ cảnh. Bạn đang muốn tìm hiểu về 'Nội dung bài học' (Trang 3) hay ví dụ 'Hà Nội' trong cơ chế Next-Token Prediction (Trang 38)? Hãy bôi đen cụm từ đầy đủ hơn để mình hỗ trợ tốt nhất nhé!"
     }
+  },
+  {
+    "timestamp": "2026-07-31T09:27:33.623Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "AI & LLM",
+    "confidence": "LOW",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 9688,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "AI & LLM",
+        "why_user_may_choose_it": "Học viên muốn hiểu khái niệm cơ bản nhất về AI (Trí tuệ nhân tạo) và LLM (Mô hình ngôn ngữ lớn) ngay khi bắt đầu khóa học.",
+        "context_match": "Khớp với tiêu đề của slide giới thiệu 'AI & LLM Foundation', nhưng slide chỉ là trang bìa nên chưa có nội dung chi tiết đi kèm.",
+        "risk_if_answer_directly": "Nếu trả lời quá sâu vào kỹ thuật, học viên có thể bị ngợp vì đây mới là trang mở đầu của khóa học cơ bản."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Mặc dù cụm từ rất ngắn, đây là chủ đề cốt lõi của bài học. Việc giải thích tổng quan giúp định hình tư duy cho học viên mới bắt đầu.",
+        "level_signal": "Học viên bôi đen tiêu đề chung chung ngay trang đầu tiên, biểu hiện của mức độ mới bắt đầu tiếp cận.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "AI (Trí tuệ nhân tạo) là công nghệ giúp máy tính có khả năng suy nghĩ và học hỏi như con người. LLM (Mô hình ngôn ngữ lớn) là một nhánh của AI, chuyên về việc hiểu và tạo ra ngôn ngữ tự nhiên (như ChatGPT).",
+        "layer2_example": "Hãy tưởng tượng AI giống như một chiếc xe tự hành (có thể tự đưa ra quyết định lái xe), còn LLM giống như một trợ lý ảo siêu giỏi văn chương, có thể viết email, dịch thuật và trò chuyện với bạn.",
+        "layer3_grounding": "Dựa trên slide tiêu đề 'AI & LLM Foundation' tại VinUniversity, đây là bài học nền tảng (Phase 1 ∙ Tuần 1) nhằm giới thiệu các khái niệm cơ bản nhất trước khi đi sâu vào kỹ thuật."
+      },
+      "beginner_note": "Đừng lo lắng nếu bạn chưa biết gì về lập trình hay công nghệ. Khóa học này được thiết kế từ mức độ nền tảng (Foundation) dành cho người mới bắt đầu.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "AI viết tắt của từ tiếng Anh nào?",
+          "options": [
+            {
+              "text": "Artificial Intelligence",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Automated Internet"
+            },
+            {
+              "text": "Advanced Integration",
+              "is_correct": false
+            }
+          ],
+          "explanation": "AI là viết tắt của Artificial Intelligence, nghĩa là Trí tuệ nhân tạo."
+        },
+        {
+          "question": "LLM viết tắt của từ tiếng Anh nào?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Large Language Model"
+            },
+            {
+              "is_correct": false,
+              "text": "Low Level Machine"
+            },
+            {
+              "text": "Logic Learning Method",
+              "is_correct": false
+            }
+          ],
+          "explanation": "LLM là viết tắt của Large Language Model, nghĩa là Mô hình ngôn ngữ lớn."
+        },
+        {
+          "question": "ChatGPT hay Claude được xếp vào nhóm công nghệ nào dưới đây?",
+          "options": [
+            {
+              "text": "LLM (Large Language Model)",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Hệ điều hành máy tính"
+            },
+            {
+              "text": "Phần cứng máy tính",
+              "is_correct": false
+            }
+          ],
+          "explanation": "ChatGPT và Claude là các mô hình ngôn ngữ lớn (LLM) chuyên xử lý và tạo văn bản tự nhiên."
+        },
+        {
+          "question": "Mục tiêu chính của khóa học 'AI & LLM Foundation' ở tuần đầu tiên là gì?",
+          "options": [
+            {
+              "text": "Xây dựng nền tảng cơ bản về AI và LLM",
+              "is_correct": true
+            },
+            {
+              "text": "Lập trình một robot tự hành hoàn chỉnh",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Thiết kế chip bán dẫn thế hệ mới"
+            }
+          ],
+          "explanation": "Dựa vào tiêu đề slide 'AI & LLM Foundation - Ngày 1 - Nền tảng', mục tiêu là xây dựng kiến thức cơ bản, nền tảng."
+        },
+        {
+          "question": "Đâu là một ví dụ về ứng dụng của LLM trong thực tế?",
+          "options": [
+            {
+              "text": "Tự động soạn thảo email dựa trên gợi ý",
+              "is_correct": true
+            },
+            {
+              "text": "Sửa chữa phần cứng máy tính bị hỏng",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Lọc bụi mịn trong không khí"
+            }
+          ],
+          "explanation": "LLM chuyên xử lý ngôn ngữ, nên việc soạn thảo văn bản/email là ứng dụng điển hình nhất của nó."
+        }
+      ],
+      "fallback_message": "Cụm từ bạn chọn 'AI & LLM' là tiêu đề chung của bài học. Để học hiệu quả nhất, bạn nên bôi đen các khái niệm cụ thể hơn ở các slide tiếp theo nhé!"
+    }
+  },
+  {
+    "timestamp": "2026-07-31T09:28:44.737Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "ủa AI hiện đạ",
+    "confidence": "LOW",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 10592,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "ủa AI hiện đạ",
+        "why_user_may_choose_it": "Học viên có thể đã vô tình kéo chuột lệch hoặc bôi đen thiếu khi đang muốn tìm hiểu về cụm từ 'LLM — Trái tim của AI hiện đại'.",
+        "context_match": "Đoạn bôi đen 'ủa AI hiện đạ' là một phần bị cắt vụn của dòng chữ 'LLM — Trái tim của AI hiện đại' ở mục số 2 trên slide.",
+        "risk_if_answer_directly": "Nếu giải thích trực tiếp cụm từ vô nghĩa 'ủa AI hiện đạ', học viên sẽ không hiểu được bức tranh toàn cảnh và có thể gặp khó khăn trong việc tiếp thu kiến thức chuẩn của slide."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen bị lỗi font hoặc cắt cụt ('ủa AI hiện đạ' thay vì 'LLM — Trái tim của AI hiện đại'). Agent quyết định giải thích dựa trên cụm từ đúng dự đoán trên slide và hướng dẫn học viên cách chọn từ chính xác hơn.",
+        "level_signal": "Học viên bôi đen một đoạn văn bản bị cắt cụt (typo/fragment) ngay tại slide mục lục giới thiệu bài học.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Có vẻ bạn đã bôi đen nhầm một đoạn chữ bị cắt cụt. Cụm từ đầy đủ trên slide là 'LLM — Trái tim của AI hiện đại'. Đây là phần giới thiệu về Mô hình ngôn ngữ lớn (LLM) - công nghệ cốt lõi của làn sóng AI ngày nay.",
+        "layer2_example": "Hãy tưởng tượng LLM giống như bộ não của một trợ lý ảo. Khi bạn dùng ChatGPT để viết email hay dịch thuật, chính LLM là thực thể đang xử lý và tạo ra những câu chữ đó cho bạn.",
+        "layer3_grounding": "Dựa vào mục số 2 trong slide Trang 3 ('Nội dung bài học'), chủ đề 'LLM — Trái tim của AI hiện đại' sẽ là nội dung lý thuyết quan trọng tiếp theo ngay sau phần 'Bức tranh AI 2026'."
+      },
+      "beginner_note": "LLM (Large Language Model - Mô hình ngôn ngữ lớn) là công nghệ nền tảng đứng sau các AI giao tiếp như ChatGPT, Claude, giúp máy tính hiểu và phản hồi ngôn ngữ tự nhiên như con người.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Tiêu đề chính xác của mục số 2 trong nội dung bài học trên slide là gì?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "LLM — Trái tim của AI hiện đại"
+            },
+            {
+              "text": "LLM — Công cụ vẽ tranh tự động",
+              "is_correct": false
+            },
+            {
+              "text": "LLM — Trí tuệ nhân tạo tổng hợp",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Mục số 2 trên slide ghi rõ tiêu đề là 'LLM — Trái tim của AI hiện đại'."
+        },
+        {
+          "question": "Cụm từ viết tắt 'LLM' có nghĩa là gì?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Large Language Model (Mô hình ngôn ngữ lớn)"
+            },
+            {
+              "text": "Logic Learning Machine (Máy học logic)",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Low Level Model (Mô hình cấp thấp)"
+            }
+          ],
+          "explanation": "LLM viết tắt của Large Language Model, dịch sang tiếng Việt là Mô hình ngôn ngữ lớn."
+        },
+        {
+          "question": "Tại sao LLM lại được ví là 'Trái tim của AI hiện đại'?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Vì nó là công nghệ cốt lõi giúp AI hiểu và tạo ra ngôn ngữ tự nhiên như con người"
+            },
+            {
+              "is_correct": false,
+              "text": "Vì nó giúp máy tính khởi động nhanh hơn"
+            },
+            {
+              "text": "Vì nó là phần cứng nằm bên trong thùng máy tính",
+              "is_correct": false
+            }
+          ],
+          "explanation": "LLM được ví như trái tim vì nó là công nghệ cốt lõi xử lý ngôn ngữ, giúp các ứng dụng AI hiện đại có thể hiểu và trò chuyện với con người."
+        },
+        {
+          "question": "Khi muốn hỏi AI Tutor về một khái niệm trên slide, cách bôi đen nào dưới đây là tốt nhất?",
+          "options": [
+            {
+              "text": "Bôi đen trọn vẹn cụm từ hoặc câu có nghĩa (ví dụ: 'LLM — Trái tim của AI hiện đại')",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Bôi đen nửa chừng, cắt đôi chữ (ví dụ: 'ủa AI hiện đạ')"
+            },
+            {
+              "is_correct": false,
+              "text": "Bôi đen ngẫu nhiên không cần nhìn chữ"
+            }
+          ],
+          "explanation": "Bôi đen trọn vẹn cụm từ có nghĩa giúp AI Tutor hiểu đúng ngữ cảnh và đưa ra lời giải thích chính xác nhất cho bạn."
+        },
+        {
+          "question": "Theo lộ trình bài học trên slide, chủ đề nào sẽ được học ngay sau phần 'LLM — Trái tim của AI hiện đại'?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Token Economy"
+            },
+            {
+              "text": "Vibe Coding",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Gọi API lần đầu"
+            }
+          ],
+          "explanation": "Theo danh sách mục lục ở slide 3, 'Token Economy' là mục số 3, ngay sau phần học về LLM."
+        }
+      ],
+      "fallback_message": "Hình như bạn đã bôi đen chưa trọn vẹn cụm từ ('ủa AI hiện đạ'). Có thể bạn đang muốn tìm hiểu về 'LLM — Trái tim của AI hiện đại'. Bạn hãy thử bôi đen lại chính xác cụm từ này để nhận được giải thích chi tiết hơn nhé! Dưới đây là một số câu hỏi nhanh giúp bạn làm quen với bài học."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T09:41:45.068Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "ó streaming respon",
+    "confidence": "LOW",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 12476,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "ó streaming respon",
+        "why_user_may_choose_it": "Học viên muốn tìm hiểu về khái niệm 'streaming response' được đề cập trong mục tiêu bài học nhưng thao tác bôi đen bị lỗi/thiếu ký tự.",
+        "context_match": "Khớp một phần với mục tiêu số 5 của slide: 'Xây dựng chatbot đơn giản có streaming response'.",
+        "risk_if_answer_directly": "Nếu giải thích trực tiếp cụm từ lỗi 'ó streaming respon' mà không chuẩn hóa lại thành 'streaming response', câu trả lời sẽ bị cụt ngủn và thiếu tính hệ thống."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Mặc dù đoạn bôi đen bị khuyết ký tự do lỗi thao tác (ó streaming respon), ngữ cảnh slide rất rõ ràng về mục tiêu 'streaming response'. Agent sẽ chủ động chuẩn hóa và giải thích khái niệm này.",
+        "level_signal": "Học viên quan tâm đến cơ chế truyền tải dữ liệu của chatbot (streaming), một khái niệm kỹ thuật quan trọng trong phát triển ứng dụng LLM.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Streaming response (phản hồi dạng luồng) là kỹ thuật truyền tải dữ liệu mà chatbot hiển thị câu trả lời dần dần từng từ một ngay khi chúng được tạo ra, thay vì bắt bạn phải đợi toàn bộ câu trả lời hoàn thành rồi mới hiển thị một lúc.",
+        "layer2_example": "Hãy tưởng tượng bạn đang xem một video trên YouTube. Thay vì phải đợi tải xong 100% video mới bắt đầu xem (non-streaming), bạn có thể vừa tải vừa xem ngay lập tức (streaming). Trong chatbot, việc nhận từng từ (token) giúp giảm thời gian chờ đợi cảm nhận (perceived latency), tạo cảm giác mượt mà như có người đang gõ máy trả lời bạn. Lỗi phổ biến là lập trình viên không xử lý luồng dữ liệu bất đồng bộ ở giao diện, khiến ứng dụng vẫn bị đơ cho đến khi nhận đủ toàn bộ văn bản.",
+        "layer3_grounding": "Nội dung này căn cứ vào Mục tiêu số 5 trên slide trang 5: 'Xây dựng chatbot đơn giản có streaming response'. Đây là một tính năng tiêu chuẩn khi tích hợp API của OpenAI hoặc Anthropic nhằm tối ưu hóa trải nghiệm người dùng (UX)."
+      },
+      "beginner_note": "Để làm quen với streaming trong Python, bạn sẽ cần tìm hiểu về khái niệm Generator và từ khóa 'yield', hoặc lập trình bất đồng bộ (async/await) khi gọi API.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Lợi ích lớn nhất của việc triển khai 'streaming response' đối với trải nghiệm người dùng (UX) là gì?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Giảm thời gian chờ đợi cảm nhận (perceived latency) của người dùng."
+            },
+            {
+              "text": "Giảm tổng chi phí API call dựa trên token economy.",
+              "is_correct": false
+            },
+            {
+              "text": "Tăng tốc độ xử lý của mô hình LLM ở phía server.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Streaming giúp hiển thị kết quả ngay khi có những token đầu tiên, làm giảm thời gian chờ đợi cảm nhận (perceived latency) của người dùng, dù tổng thời gian tạo ra toàn bộ câu trả lời không đổi."
+        },
+        {
+          "question": "Từ khóa nào trong Python thường được dùng để tạo ra một generator hỗ trợ truyền dữ liệu dạng stream?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "return"
+            },
+            {
+              "is_correct": true,
+              "text": "yield"
+            },
+            {
+              "is_correct": false,
+              "text": "import"
+            }
+          ],
+          "explanation": "Trong Python, từ khóa 'yield' được sử dụng để biến một hàm bình thường thành một generator, cho phép trả về từng phần dữ liệu (chunk) một cách tuần tự mà không cần giữ toàn bộ dữ liệu trong bộ nhớ."
+        },
+        {
+          "question": "Khi gọi API của OpenAI bằng thư viện Python, tham số nào cần được thiết lập để nhận phản hồi dạng streaming?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "streaming=True"
+            },
+            {
+              "is_correct": false,
+              "text": "response_format='stream'"
+            },
+            {
+              "text": "stream=True",
+              "is_correct": true
+            }
+          ],
+          "explanation": "Để kích hoạt tính năng streaming khi gọi API của OpenAI, bạn cần truyền tham số 'stream=True' vào cấu hình request."
+        },
+        {
+          "question": "Đơn vị dữ liệu nhỏ nhất được truyền về liên tục từ API của LLM trong chế độ streaming là gì?",
+          "options": [
+            {
+              "text": "Các mảnh nhỏ (chunks) chứa token.",
+              "is_correct": true
+            },
+            {
+              "text": "Toàn bộ câu văn hoàn chỉnh.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Các file âm thanh nén."
+            }
+          ],
+          "explanation": "Trong cơ chế streaming của LLM, dữ liệu được gửi về dưới dạng các mảnh nhỏ (chunks), mỗi mảnh thường chứa một hoặc một vài token (từ hoặc cụm từ nhỏ)."
+        },
+        {
+          "question": "Thách thức kỹ thuật lớn nhất khi lập trình viên triển khai streaming response ở phía Client (Frontend) là gì?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Chi phí API sẽ đắt gấp đôi so với thông thường."
+            },
+            {
+              "is_correct": true,
+              "text": "Phải quản lý kết nối liên tục và cập nhật giao diện (UI) bất đồng bộ phức tạp hơn."
+            },
+            {
+              "text": "Mô hình LLM sẽ dễ bị mất ngữ cảnh (context) hơn.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Khi dùng streaming, kết nối phải được duy trì liên tục (thường qua Server-Sent Events - SSE) và giao diện phải cập nhật liên tục mỗi khi có chunk mới, đòi hỏi việc xử lý bất đồng bộ phức tạp hơn so với việc nhận một gói JSON tĩnh duy nhất."
+        }
+      ],
+      "fallback_message": "Có vẻ bạn đã bôi đen thiếu một vài ký tự trong cụm từ 'streaming response' ở mục tiêu số 5. Dưới đây là giải thích chi tiết về khái niệm này để giúp bạn chuẩn bị tốt nhất cho bài học."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T09:58:24.633Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": ", API key (OpenAI",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 12860,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "\", API key (OpenAI\"",
+        "why_user_may_choose_it": "Học viên muốn biết API key là gì, tại sao nó lại là một phần chuẩn bị bắt buộc bên cạnh Python và VS Code, và nó liên quan thế nào đến các mục tiêu thực hành trong bài học.",
+        "context_match": "Khớp trực tiếp với phần yêu cầu chuẩn bị công cụ ở cuối slide trang 5: 'Python 3.10+, VS Code/Cursor, API key (OpenAI)'.",
+        "risk_if_answer_directly": "Nếu chỉ hướng dẫn các bước kỹ thuật tạo key mà không giải thích bản chất 'API key là gì' và 'tại sao cần bảo mật', học viên beginner có thể vô tình làm lộ key hoặc không hiểu mối liên hệ của nó với chi phí (token economy) được nhắc đến trong mục tiêu bài học."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Cụm từ bôi đen là một công cụ bắt buộc để thực hành các mục tiêu trong slide (gọi API, xây dựng chatbot). Giải thích khái niệm này giúp học viên tự tin chuẩn bị trước khi vào phần code thực tế.",
+        "level_signal": "Học viên bôi đen phần công cụ chuẩn bị 'API key (OpenAI)' ở cuối slide mục tiêu, cho thấy họ đang chuẩn bị môi trường thực hành hoặc muốn hiểu rõ điều kiện cần thiết để bắt đầu bài học.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "API key (OpenAI) giống như một chiếc 'chìa khóa' hay mật khẩu cá nhân. Nó giúp ứng dụng của bạn (như chatbot bạn sẽ học cách xây dựng) có thể kết nối, 'nói chuyện' và sử dụng trí tuệ nhân tạo của OpenAI một cách hợp pháp.",
+        "layer2_example": "Hãy tưởng tượng OpenAI là một nhà máy cung cấp điện năng (trí tuệ nhân tạo), còn ứng dụng của bạn là một thiết bị điện. API key chính là chiếc phích cắm có gắn mã định danh tài khoản của riêng bạn. Khi bạn cắm phích vào ổ (gọi API), điện sẽ chạy và nhà máy sẽ ghi nhận lượng điện bạn đã tiêu thụ để tính hóa đơn vào cuối tháng. Nếu bạn vô tình để lộ chiếc phích cắm này (ví dụ: đăng mã nguồn lên GitHub công khai), người khác có thể cắm nhờ và bạn sẽ là người phải trả tiền điện.",
+        "layer3_grounding": "Dựa trên slide 'Mục tiêu bài học', API key (OpenAI) nằm trong phần yêu cầu chuẩn bị kỹ thuật (cùng với Python 3.10+ và VS Code/Cursor). Công cụ này là bắt buộc để bạn thực hiện Mục tiêu số 2 (Ước tính chi phí dựa trên token economy), Mục tiêu số 3 (Sử dụng LLM từ third-party) và Mục tiêu số 5 (Xây dựng chatbot đơn giản có streaming response)."
+      },
+      "beginner_note": "Để chuẩn bị tốt nhất, bạn hãy truy cập platform.openai.com, tạo tài khoản và tạo một API key thử nghiệm. Hãy nhớ lưu key này vào một file bảo mật trên máy tính của bạn và không bao giờ chia sẻ nó công khai.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "API Key của OpenAI có vai trò chính là gì trong việc phát triển ứng dụng AI?",
+          "options": [
+            {
+              "text": "Là một thư viện Python dùng để tối ưu hóa tốc độ xử lý của chatbot.",
+              "is_correct": false
+            },
+            {
+              "text": "Là chuỗi ký tự định danh giúp xác thực quyền truy cập và tính phí khi ứng dụng của bạn gọi dịch vụ của OpenAI.",
+              "is_correct": true
+            },
+            {
+              "text": "Là giao diện đồ họa giúp người dùng nhập câu hỏi cho AI.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "API Key đóng vai trò là thông tin xác thực (credential) để hệ thống của OpenAI biết ai đang gửi yêu cầu và có quyền truy cập hay không."
+        },
+        {
+          "question": "Tại sao việc bảo mật API Key lại cực kỳ quan trọng?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Người khác có thể dùng trộm key của bạn để gọi API, khiến bạn phải trả những khoản chi phí phát sinh ngoài ý muốn."
+            },
+            {
+              "is_correct": false,
+              "text": "Máy tính của bạn sẽ ngay lập tức bị nhiễm virus từ OpenAI."
+            },
+            {
+              "text": "Mã nguồn Python của bạn trên máy cá nhân sẽ bị xóa sạch.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Nếu lộ API Key, kẻ xấu có thể sử dụng key đó để gọi API liên tục, dẫn đến việc tài khoản của bạn bị trừ tiền hoặc cạn kiệt hạn mức (quota) rất nhanh."
+        },
+        {
+          "question": "Dựa vào slide mục tiêu, API Key (OpenAI) được yêu cầu chuẩn bị để phục vụ trực tiếp cho hoạt động nào?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Tự host mô hình mã nguồn mở (self-host open model)."
+            },
+            {
+              "is_correct": true,
+              "text": "Sử dụng LLM từ third-party (OpenAI) và xây dựng chatbot có streaming response."
+            },
+            {
+              "text": "Cài đặt trình soạn thảo VS Code hoặc Cursor.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Theo slide, API key (OpenAI) là công cụ chuẩn bị để gọi mô hình từ bên thứ ba (third-party) như OpenAI và xây dựng chatbot đơn giản. Việc tự host mô hình mở (self-host open model) thường chạy trên máy cá nhân hoặc server riêng và không cần API key của OpenAI."
+        },
+        {
+          "question": "Khi tạo mới một API Key trên trang quản trị của OpenAI, hành động nào sau đây là đúng đắn nhất?",
+          "options": [
+            {
+              "text": "Sao chép và lưu trữ nó ngay lập tức ở một nơi an toàn vì OpenAI sẽ không hiển thị lại lần thứ hai.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Chia sẻ ngay lên các diễn đàn công nghệ để nhờ mọi người kiểm tra hộ xem key có hoạt động không."
+            },
+            {
+              "text": "Chụp ảnh màn hình và đăng lên mạng xã hội để lưu trữ đám mây.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Vì lý do bảo mật, OpenAI chỉ hiển thị toàn bộ chuỗi ký tự của API Key một lần duy nhất khi bạn vừa tạo xong. Nếu bạn đóng cửa sổ đó mà chưa lưu, bạn sẽ không thể xem lại được nữa và phải tạo key mới."
+        },
+        {
+          "question": "Chi phí khi sử dụng API Key của OpenAI được tính toán dựa trên yếu tố nào (liên quan đến Mục tiêu số 2 trên slide)?",
+          "options": [
+            {
+              "text": "Tính theo số giờ bạn mở phần mềm VS Code/Cursor để viết code.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Tính dựa trên số lượng token (token economy) được gửi đi và nhận về qua mỗi lượt gọi API."
+            },
+            {
+              "text": "Tính cố định theo số lượng chatbot mà bạn tạo ra, không quan trọng người dùng nhắn bao nhiêu tin.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Mục tiêu số 2 trên slide đề cập đến việc 'Ước tính chi phí API call dựa trên token economy'. Chi phí sử dụng API của OpenAI được tính trực tiếp dựa trên số lượng token (từ hoặc cụm từ được mã hóa) ở cả đầu vào (input) và đầu ra (output)."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:10:52.706Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "g respons",
+    "confidence": "LOW",
+    "route": "Ask to reselect",
+    "level": "Beginner",
+    "latency_ms": 11062,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "g respons",
+        "why_user_may_choose_it": "Học viên muốn tìm hiểu về khái niệm 'streaming response' nhưng thao tác chuột bị trượt dẫn đến bôi đen thiếu ký tự.",
+        "context_match": "Khớp một phần với cụm từ 'streaming response' ở mục tiêu số 5 trên slide.",
+        "risk_if_answer_directly": "Nếu giải thích trực tiếp từ 'g respons' mà không định vị lại cụm từ gốc, câu trả lời sẽ bị vô nghĩa hoặc lạc đề."
+      },
+      "agent_decision": {
+        "routing": "Ask to reselect",
+        "reason": "Đoạn bôi đen 'g respons' bị cắt cụt, nhiều khả năng là do thao tác bôi đen lỗi của cụm từ 'streaming response'. Agent sẽ hướng dẫn học viên chọn lại đồng thời giải thích ngắn gọn về khái niệm bị khuyết này.",
+        "level_signal": "Học viên bôi đen một phần của cụm từ 'streaming response' trong slide giới thiệu mục tiêu bài học cơ bản về LLM. Điều này cho thấy học viên đang ở bước đầu tiếp cận các khái niệm lập trình chatbot cơ bản.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Đoạn bạn chọn 'g respons' có vẻ là phần bị khuyết của cụm từ 'streaming response' (phản hồi dạng luồng) ở mục tiêu số 5. Đây là kỹ thuật truyền dữ liệu từ LLM về ứng dụng theo từng phần nhỏ ngay khi chúng được tạo ra, thay vì đợi toàn bộ câu trả lời hoàn thành.",
+        "layer2_example": "Hãy tưởng tượng khi bạn chat với ChatGPT, câu trả lời không xuất hiện đùng một cái sau 10 giây chờ đợi, mà các chữ sẽ 'chạy' ra từ từ như có người đang gõ. Đó chính là trải nghiệm của 'streaming response'. Nếu không có streaming, người dùng sẽ phải nhìn màn hình trống và chờ đợi rất lâu, dễ lầm tưởng ứng dụng bị treo.",
+        "layer3_grounding": "Trong slide mục tiêu bài học (Trang 5), mục số 5 có ghi: 'Xây dựng chatbot đơn giản có streaming response'. Đây là một tính năng quan trọng giúp tối ưu hóa trải nghiệm người dùng (UX) khi gọi API từ các bên thứ ba như OpenAI hay Anthropic."
+      },
+      "beginner_note": "Khi lập trình chatbot với LLM, streaming response thường được hiện thực hóa thông qua cơ chế Server-Sent Events (SSE) để truyền dữ liệu liên tục từ server về client.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "'Streaming response' trong ứng dụng chatbot có nghĩa là gì?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Trả về toàn bộ câu trả lời cùng một lúc sau khi xử lý xong."
+            },
+            {
+              "is_correct": true,
+              "text": "Trả về câu trả lời dần dần từng phần (từng token/từ) ngay khi được tạo ra."
+            },
+            {
+              "is_correct": false,
+              "text": "Phát video trực tiếp từ chatbot cho người dùng."
+            }
+          ],
+          "explanation": "Streaming response giúp gửi các phần của câu trả lời (token) về phía người dùng ngay khi LLM vừa tạo ra, giúp người dùng đọc được ngay mà không cần đợi toàn bộ văn bản hoàn thành."
+        },
+        {
+          "question": "Lợi ích lớn nhất của việc sử dụng 'streaming response' đối với trải nghiệm người dùng (UX) là gì?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Giảm lượng dữ liệu truyền tải qua mạng."
+            },
+            {
+              "is_correct": true,
+              "text": "Giảm thời gian chờ đợi cảm nhận (perceived latency) của người dùng."
+            },
+            {
+              "is_correct": false,
+              "text": "Giúp chatbot đưa ra câu trả lời chính xác hơn."
+            }
+          ],
+          "explanation": "Bằng cách hiển thị chữ ngay lập tức, người dùng cảm thấy hệ thống phản hồi nhanh hơn, giảm cảm giác sốt ruột khi chờ đợi (giảm perceived latency)."
+        },
+        {
+          "question": "Theo slide mục tiêu bài học, công cụ/ngôn ngữ nào sau đây KHÔNG được yêu cầu chuẩn bị sẵn?",
+          "options": [
+            {
+              "text": "Python 3.10+",
+              "is_correct": false
+            },
+            {
+              "text": "VS Code/Cursor",
+              "is_correct": false
+            },
+            {
+              "text": "Java JDK 17",
+              "is_correct": true
+            }
+          ],
+          "explanation": "Slide yêu cầu Python 3.10+, VS Code/Cursor, và API key (OpenAI). Java không nằm trong danh sách công cụ chuẩn bị."
+        },
+        {
+          "question": "Khái niệm 'next-token prediction' liên quan trực tiếp đến mục tiêu nào trong slide?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Hiểu cách LLM hoạt động."
+            },
+            {
+              "text": "Ước tính chi phí API call.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Xây dựng chatbot đơn giản."
+            }
+          ],
+          "explanation": "Mục tiêu số 1 của bài học là 'Hiểu cách LLM hoạt động (Transformer, token, next-token prediction)'."
+        },
+        {
+          "question": "Khi bôi đen bị thiếu ký tự dẫn đến từ vô nghĩa như 'g respons', hành động nào sau đây là tốt nhất để học tập hiệu quả?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Bôi đen lại đầy đủ cụm từ 'streaming response' để AI giải thích chính xác nhất."
+            },
+            {
+              "text": "Bỏ qua và tự đoán nghĩa dựa trên các từ xung quanh.",
+              "is_correct": false
+            },
+            {
+              "text": "Chụp ảnh màn hình và gửi lại mà không cần bôi đen.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Việc bôi đen đầy đủ và chính xác giúp AI hiểu đúng ngữ cảnh và đưa ra câu trả lời chuẩn xác nhất cho bạn."
+        }
+      ],
+      "fallback_message": "Có vẻ như bạn đã bôi đen chưa đầy đủ cụm từ (chỉ nhận được 'g respons'). VLearn đoán bạn đang muốn tìm hiểu về 'streaming response' (phản hồi dạng luồng) ở mục tiêu số 5. Bạn có thể bôi đen lại chính xác cụm từ này để nhận được giải thích chi tiết hơn nhé!"
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:12:45.569Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "AI: Máy thực hiện tác vụ “thông min",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 10742,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "AI: Máy thực hiện tác vụ “thông min",
+        "why_user_may_choose_it": "Học viên muốn làm rõ định nghĩa cơ bản nhất của AI trước khi đi sâu vào các khái niệm phức tạp hơn phía sau như ML, DL, hay LLM.",
+        "context_match": "Khớp hoàn toàn với dòng đầu tiên trong phần định nghĩa chi tiết của slide 6: 'AI: Máy thực hiện tác vụ “thông minh”'.",
+        "risk_if_answer_directly": "Nếu chỉ giải thích AI là gì một cách chung chung mà không đặt nó vào bức tranh tổng thể (Taxonomy) của slide, học viên sẽ không hiểu được mối quan hệ giữa AI, ML, DL và LLM, từ đó khó tiếp thu phần trọng tâm của khóa học là Agentic AI."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen là định nghĩa cơ bản nhất về AI trong sơ đồ phân tầng. Việc giải thích cần đi từ gốc rễ và giúp học viên thấy được bức tranh toàn cảnh trước khi đi sâu vào các tầng chi tiết hơn.",
+        "level_signal": "Học viên chọn định nghĩa cơ bản nhất ở đầu slide (AI), cho thấy họ đang bắt đầu tiếp cận khái niệm từ nền tảng.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Trí tuệ nhân tạo (AI) là thuật ngữ rộng nhất, chỉ việc máy tính hoặc hệ thống được lập trình để thực hiện các công việc đòi hỏi trí thông minh của con người, ví dụ như nhận diện khuôn mặt, dịch thuật, hoặc đưa ra quyết định.",
+        "layer2_example": "Hãy tưởng tượng một bộ lọc email rác. Ở mức độ AI cơ bản (luật cứng), nó chỉ quét các từ khóa cố định như 'trúng thưởng', 'quà tặng' để chặn. Nhưng khi tiến lên Machine Learning hay LLM, nó có thể tự hiểu ngữ cảnh của toàn bộ email để phân loại chính xác hơn. Điểm dễ nhầm lẫn là nhiều người nghĩ mọi AI đều tự học được, nhưng thực tế AI cổ điển (như robot chơi cờ bằng luật lập trình sẵn) không hề tự học từ dữ liệu mới.",
+        "layer3_grounding": "Theo sơ đồ phân tầng (AI Taxonomy) ở trang 6 của slide, AI là vòng tròn ngoài cùng bao bọc tất cả các công nghệ khác bao gồm Machine Learning (ML), Deep Learning (DL), Generative AI và LLM. Slide định nghĩa ngắn gọn AI là 'Máy thực hiện tác vụ thông minh'. Đây là bước đệm để khóa học dẫn dắt bạn đi sâu vào LLM và Agentic AI."
+      },
+      "beginner_note": "Để học tốt các phần sau, bạn nên nhớ rằng AI là khái niệm bao trùm rộng lớn nhất. Khi nghe nói về ChatGPT hay LLM, chúng thực chất là những nhánh con nằm rất sâu bên trong AI. Hãy luôn tự hỏi: 'Hệ thống này có tự học từ dữ liệu không?' để phân biệt giữa AI truyền thống (chạy bằng luật cứng) và Machine Learning.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Theo slide 6, khái niệm nào rộng nhất và bao trùm các khái niệm còn lại trong sơ đồ phân tầng?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "AI (Artificial Intelligence)"
+            },
+            {
+              "is_correct": false,
+              "text": "ML (Machine Learning)"
+            },
+            {
+              "is_correct": false,
+              "text": "DL (Deep Learning)"
+            },
+            {
+              "text": "LLM (Large Language Model)",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Theo sơ đồ phân tầng (AI Taxonomy) ở slide 6, AI là khái niệm rộng nhất, bao trùm tất cả các khái niệm còn lại như ML, DL, GenAI và LLM."
+        },
+        {
+          "question": "Định nghĩa nào sau đây đúng nhất về AI theo nội dung slide?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Máy thực hiện tác vụ “thông minh”"
+            },
+            {
+              "text": "Học từ dữ liệu, không cần lập trình tường minh",
+              "is_correct": false
+            },
+            {
+              "text": "Neural networks nhiều tầng",
+              "is_correct": false
+            },
+            {
+              "text": "Foundation Model chuyên ngôn ngữ",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide định nghĩa trực tiếp: 'AI: Máy thực hiện tác vụ “thông minh”'."
+        },
+        {
+          "question": "Một chương trình máy tính lọc email rác chỉ dựa trên danh sách từ khóa cố định do con người nhập vào được xếp vào nhóm nào?",
+          "options": [
+            {
+              "text": "AI truyền thống (Rule-based AI)",
+              "is_correct": true
+            },
+            {
+              "text": "Machine Learning (ML)",
+              "is_correct": false
+            },
+            {
+              "text": "Deep Learning (DL)",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Generative AI"
+            }
+          ],
+          "explanation": "Vì chương trình chỉ chạy theo các quy tắc cố định được lập trình sẵn mà không có khả năng tự học hay rút kinh nghiệm từ dữ liệu mới, nó thuộc nhóm AI truyền thống (luật cứng)."
+        },
+        {
+          "question": "Khóa học này tập trung vào công nghệ nào để hướng tới xây dựng Agentic AI?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "LLM (Large Language Model)"
+            },
+            {
+              "is_correct": false,
+              "text": "Machine Learning truyền thống"
+            },
+            {
+              "text": "Deep Learning cơ bản",
+              "is_correct": false
+            },
+            {
+              "text": "AI phần cứng",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide ghi rõ: 'Khóa học này tập trung vào LLM -> xây dựng Agentic AI'."
+        },
+        {
+          "question": "Điểm khác biệt cốt lõi của Machine Learning (ML) so với AI truyền thống là gì?",
+          "options": [
+            {
+              "text": "Khả năng tự học từ dữ liệu mà không cần lập trình tường minh từng bước",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Không cần sử dụng máy tính để hoạt động"
+            },
+            {
+              "is_correct": false,
+              "text": "Chỉ xử lý được dữ liệu dạng văn bản"
+            },
+            {
+              "text": "Là khái niệm rộng hơn và bao trùm cả AI",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide định nghĩa 'ML: Học từ dữ liệu, không cần lập trình tường minh'. Đây là điểm khác biệt lớn so với AI truyền thống vốn phụ thuộc hoàn toàn vào các quy tắc do con người viết sẵn."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:26:16.740Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Nội dung bài học1.Bức tranh AI 20262.LLM — Trái tim của AI hiện đại3.Token Econ",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 12081,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "Nội dung bài học1.Bức tranh AI 20262.LLM — Trái tim của AI hiện đại3.Token Econ",
+        "why_user_may_choose_it": "Học viên muốn nhanh chóng nắm bắt các khái niệm cốt lõi sẽ được học trong chương trình và hiểu mối liên quan giữa chúng trước khi đi sâu vào chi tiết.",
+        "context_match": "Khớp hoàn toàn với phần đầu của mục lục bài học tại Slide 3/67.",
+        "risk_if_answer_directly": "Nếu chỉ giải thích định nghĩa thô cứng mà không liên kết chúng thành một lộ trình học tập, học viên sẽ khó thấy được mối quan hệ logic giữa xu hướng (2026), công cụ (LLM) và chi phí (Token)."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Học viên đang tiếp cận những khái niệm nền tảng đầu tiên của bài học, cần một bức tranh tổng thể rõ ràng và dễ hiểu trước khi đi sâu vào kỹ thuật.",
+        "level_signal": "Học viên bôi đen phần mục lục đầu khóa học để tìm hiểu tổng quan lộ trình và các khái niệm cốt lõi ban đầu.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Đoạn bạn chọn là 3 chủ đề đầu tiên trong lộ trình học: giúp bạn nắm bắt xu hướng công nghệ AI đến năm 2026, hiểu về Mô hình ngôn ngữ lớn (LLM) - bộ não của AI hiện tại, và cách tối ưu chi phí vận hành thông qua khái niệm Token.",
+        "layer2_example": "Hãy hình dung việc học AI giống như việc bạn chuẩn bị vận hành một chiếc xe điện thông minh:\n1. 'Bức tranh AI 2026' giúp bạn biết bản đồ đường đi và luật giao thông trong tương lai gần.\n2. 'LLM' chính là động cơ điện mạnh mẽ của xe, bạn cần hiểu nguyên lý hoạt động của nó để điều khiển hiệu quả.\n3. 'Token Economy' giống như việc quản lý pin và chi phí sạc điện. Nếu không biết một chuyến đi tiêu tốn bao nhiêu điện (token), bạn rất dễ làm xe hết pin giữa đường hoặc tốn quá nhiều chi phí không đáng có.",
+        "layer3_grounding": "Nội dung này nằm ở Slide 3 trong tổng số 67 trang của bài giảng 'AICB ∙ Ngày 1' do giảng viên VinUni biên soạn. Đây là phần thiết lập nền tảng lý thuyết trước khi lớp học chuyển sang các phần thực hành kỹ thuật như 'Gọi API lần đầu' và 'Vibe Coding' ở nửa sau chương trình."
+      },
+      "beginner_note": "Để chuẩn bị tốt cho các phần sau, bạn nên chú ý kỹ khái niệm 'Token' ở phần 3, vì đây là đơn vị cơ bản quyết định cả chi phí vận hành lẫn giới hạn ghi nhớ của AI khi bạn thực hành gọi API.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Thuật ngữ 'LLM' trong mục 2 của slide viết tắt của từ gì và có vai trò gì?",
+          "options": [
+            {
+              "text": "Large Language Model - Mô hình ngôn ngữ lớn đóng vai trò xử lý và tạo văn bản",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Logic Language Machine - Máy ngôn ngữ logic giúp dịch thuật tự động"
+            },
+            {
+              "text": "Low Level Model - Mô hình cấp thấp dùng để xử lý phần cứng AI",
+              "is_correct": false
+            }
+          ],
+          "explanation": "LLM viết tắt của Large Language Model (Mô hình ngôn ngữ lớn), được ví như 'trái tim' hay bộ não xử lý ngôn ngữ của các hệ thống AI hiện đại."
+        },
+        {
+          "question": "Khái niệm 'Token Economy' ở mục 3 liên quan trực tiếp đến vấn đề nào sau đây khi làm việc với AI?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Là một loại tiền điện tử mới dùng để mua bản quyền AI"
+            },
+            {
+              "is_correct": true,
+              "text": "Là cách quản lý chi phí, dung lượng và tối ưu hóa lượng dữ liệu (token) gửi tới AI"
+            },
+            {
+              "text": "Là nền kinh tế ảo chỉ dành riêng cho các lập trình viên chuyên nghiệp",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Token Economy là khái niệm liên quan đến cách tính toán chi phí, tài nguyên và giới hạn dữ liệu đầu vào/đầu ra khi sử dụng các mô hình AI."
+        },
+        {
+          "question": "Theo lộ trình trên slide, sau khi học xong 3 phần lý thuyết đầu tiên, học viên sẽ tiếp tục học những nội dung nào?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Gọi API lần đầu, Vibe Coding và Thực hành"
+            },
+            {
+              "is_correct": false,
+              "text": "Kiểm tra lý thuyết và thi cuối kỳ"
+            },
+            {
+              "is_correct": false,
+              "text": "Thảo luận nhóm về đạo đức AI"
+            }
+          ],
+          "explanation": "Theo thứ tự trong slide mục lục, sau các phần lý thuyết (1, 2, 3) sẽ là các phần thực hành thực tế bao gồm 'Gọi API lần đầu', 'Vibe Coding' và 'Thực hành'."
+        },
+        {
+          "question": "Chủ đề nào trong các phần bạn đã chọn giúp người học có cái nhìn tổng quan về xu hướng phát triển của AI trong tương lai?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "LLM — Trái tim của AI hiện đại"
+            },
+            {
+              "is_correct": false,
+              "text": "Token Economy"
+            },
+            {
+              "is_correct": true,
+              "text": "Bức tranh AI 2026"
+            }
+          ],
+          "explanation": "Chủ đề 'Bức tranh AI 2026' được thiết kế để cung cấp tầm nhìn dài hạn, xu hướng công nghệ và những thay đổi của AI trong tương lai gần."
+        },
+        {
+          "question": "Để chuẩn bị cho phần 'Token Economy', bạn hiểu 'Token' trong ngữ cảnh AI nghĩa là gì?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Là các đơn vị từ hoặc cụm ký tự nhỏ nhất mà AI dùng để chia nhỏ và hiểu văn bản"
+            },
+            {
+              "text": "Là các mật mã bảo mật để đăng nhập vào hệ thống AI",
+              "is_correct": false
+            },
+            {
+              "text": "Là các thiết bị phần cứng dùng để tăng tốc độ xử lý của máy tính",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Trong công nghệ LLM, token là các cụm ký tự hoặc từ nhỏ nhất mà AI dùng để chia nhỏ văn bản nhằm xử lý và tính toán chi phí."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:27:48.659Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Economy",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 621,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "Economy",
+        "why_user_may_choose_it": "Đây là cụm có khả năng gây khó hiểu vì liên quan đến cách thiết kế AI khi không chắc chắn.",
+        "context_match": "Có căn cứ trực tiếp trong slide trang 4.",
+        "risk_if_answer_directly": "Nếu không phân tầng, người học có thể nhớ ví dụ nhưng không hiểu điều kiện áp dụng."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn chọn đủ cụ thể để giải thích theo 3 tầng.",
+        "level_signal": "Người học chọn một khái niệm trung tâm thay vì hỏi chung chung.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Economy là cách để AI chỉ tự xử lý khi đủ chắc chắn, còn trường hợp rủi ro thì thu hẹp phạm vi hoặc chuyển cho người dùng.",
+        "layer2_example": "Giống xe tự lái: đường rõ thì xe tự chạy, gặp sương mù dày thì yêu cầu người lái tiếp quản.",
+        "layer3_grounding": "Slide trang 4 nêu rằng khi cost-of-error cao, hệ thống nên dùng Conditional Automation và HAX G10 để tránh xử lý thiếu căn cứ."
+      },
+      "beginner_note": "Điểm cần nhớ: AI không phải lúc nào cũng nên tự động 100%. Thiết kế tốt là biết khi nào cần dừng, hỏi lại hoặc chuyển giao.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Áp dụng: Khi cost-of-error cao, AI nên tự động hóa theo cách nào?",
+          "options": [
+            {
+              "text": "Chỉ tự làm case chắc chắn và chuyển giao khi thiếu căn cứ",
+              "is_correct": true
+            },
+            {
+              "text": "Luôn tự động hóa 100%",
+              "is_correct": false
+            },
+            {
+              "text": "Bỏ qua mức độ tin cậy",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Conditional Automation giảm rủi ro khi hậu quả sai số cao."
+        },
+        {
+          "question": "Áp dụng: Vì sao Agent cần xem context slide trước khi trả lời?",
+          "options": [
+            {
+              "text": "Để tránh bịa kiến thức ngoài bài học",
+              "is_correct": true
+            },
+            {
+              "text": "Để trả lời dài hơn",
+              "is_correct": false
+            },
+            {
+              "text": "Để bỏ qua đoạn người học chọn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Căn cứ slide giúp Agent biết nội dung nào được phép khẳng định."
+        },
+        {
+          "question": "Áp dụng: LOW confidence thường xảy ra khi nào?",
+          "options": [
+            {
+              "text": "Đoạn chọn quá ngắn hoặc thiếu ngữ cảnh",
+              "is_correct": true
+            },
+            {
+              "text": "Slide có căn cứ trực tiếp",
+              "is_correct": false
+            },
+            {
+              "text": "Câu trả lời đã chắc chắn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Đoạn mơ hồ nên được hỏi lại hoặc yêu cầu chọn rõ hơn."
+        },
+        {
+          "question": "Áp dụng: Tầng grounding trong câu trả lời dùng để làm gì?",
+          "options": [
+            {
+              "text": "Chỉ ra căn cứ cụ thể trên slide",
+              "is_correct": true
+            },
+            {
+              "text": "Kể chuyện ngoài bài học",
+              "is_correct": false
+            },
+            {
+              "text": "Thay thế ví dụ minh họa",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Grounding nối câu trả lời với nguồn học tập."
+        },
+        {
+          "question": "Áp dụng: Nếu chọn một khái niệm ngoài phạm vi bài học, Agent nên làm gì?",
+          "options": [
+            {
+              "text": "Nói rõ ngoài phạm vi và gợi ý chọn lại",
+              "is_correct": true
+            },
+            {
+              "text": "Bịa một lời giải thích nghe hợp lý",
+              "is_correct": false
+            },
+            {
+              "text": "Đánh dấu HIGH confidence",
+              "is_correct": false
+            }
+          ],
+          "explanation": "OUT_OF_SCOPE cần từ chối an toàn để người học không học sai."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:36:26.425Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "HÃY SUY NGHĨ...“Bạn đang dùng AI",
+    "confidence": "LOW",
+    "route": "Ask to reselect",
+    "level": "Beginner",
+    "latency_ms": 1129,
+    "ai_response": {
+      "confidence_level": "LOW",
+      "selection_analysis": {
+        "selected_text": "HÃY SUY NGHĨ...“Bạn đang dùng AI",
+        "why_user_may_choose_it": "Đây là cụm có khả năng gây khó hiểu vì liên quan đến cách thiết kế AI khi không chắc chắn.",
+        "context_match": "Có liên quan chủ đề nhưng chưa khớp nguyên văn với context slide.",
+        "risk_if_answer_directly": "Nếu không phân tầng, người học có thể nhớ ví dụ nhưng không hiểu điều kiện áp dụng."
+      },
+      "agent_decision": {
+        "routing": "Ask to reselect",
+        "reason": "Agent nên giải thích thận trọng và khuyến khích chọn lại nếu cần căn cứ chắc hơn.",
+        "level_signal": "Người học chọn một khái niệm trung tâm thay vì hỏi chung chung.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "HÃY SUY NGHĨ...“Bạn đang dùng AI là cách để AI chỉ tự xử lý khi đủ chắc chắn, còn trường hợp rủi ro thì thu hẹp phạm vi hoặc chuyển cho người dùng.",
+        "layer2_example": "Giống xe tự lái: đường rõ thì xe tự chạy, gặp sương mù dày thì yêu cầu người lái tiếp quản.",
+        "layer3_grounding": "Slide trang 4 nêu rằng khi cost-of-error cao, hệ thống nên dùng Conditional Automation và HAX G10 để tránh xử lý thiếu căn cứ."
+      },
+      "beginner_note": "Điểm cần nhớ: AI không phải lúc nào cũng nên tự động 100%. Thiết kế tốt là biết khi nào cần dừng, hỏi lại hoặc chuyển giao.",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Nhận biết: Khi đoạn bôi đen chưa đủ rõ, hành động tốt nhất là gì?",
+          "options": [
+            {
+              "text": "Bôi đen lại một cụm đầy đủ hơn",
+              "is_correct": true
+            },
+            {
+              "text": "Yêu cầu AI đoán ý",
+              "is_correct": false
+            },
+            {
+              "text": "Bỏ qua context slide",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Chọn lại giúp Agent có đủ căn cứ để phân tầng chính xác."
+        },
+        {
+          "question": "Nhận biết: Vì sao Agent cần xem context slide trước khi trả lời?",
+          "options": [
+            {
+              "text": "Để tránh bịa kiến thức ngoài bài học",
+              "is_correct": true
+            },
+            {
+              "text": "Để trả lời dài hơn",
+              "is_correct": false
+            },
+            {
+              "text": "Để bỏ qua đoạn người học chọn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Căn cứ slide giúp Agent biết nội dung nào được phép khẳng định."
+        },
+        {
+          "question": "Nhận biết: LOW confidence thường xảy ra khi nào?",
+          "options": [
+            {
+              "text": "Đoạn chọn quá ngắn hoặc thiếu ngữ cảnh",
+              "is_correct": true
+            },
+            {
+              "text": "Slide có căn cứ trực tiếp",
+              "is_correct": false
+            },
+            {
+              "text": "Câu trả lời đã chắc chắn",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Đoạn mơ hồ nên được hỏi lại hoặc yêu cầu chọn rõ hơn."
+        },
+        {
+          "question": "Nhận biết: Tầng grounding trong câu trả lời dùng để làm gì?",
+          "options": [
+            {
+              "text": "Chỉ ra căn cứ cụ thể trên slide",
+              "is_correct": true
+            },
+            {
+              "text": "Kể chuyện ngoài bài học",
+              "is_correct": false
+            },
+            {
+              "text": "Thay thế ví dụ minh họa",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Grounding nối câu trả lời với nguồn học tập."
+        },
+        {
+          "question": "Nhận biết: Nếu chọn một khái niệm ngoài phạm vi bài học, Agent nên làm gì?",
+          "options": [
+            {
+              "text": "Nói rõ ngoài phạm vi và gợi ý chọn lại",
+              "is_correct": true
+            },
+            {
+              "text": "Bịa một lời giải thích nghe hợp lý",
+              "is_correct": false
+            },
+            {
+              "text": "Đánh dấu HIGH confidence",
+              "is_correct": false
+            }
+          ],
+          "explanation": "OUT_OF_SCOPE cần từ chối an toàn để người học không học sai."
+        }
+      ],
+      "fallback_message": "Agent chưa thấy căn cứ nguyên văn hoàn toàn, nên giải thích thận trọng."
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:39:51.655Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Từ LLM đến AI AgentsLevel 0 — Core reasoning engineLLM suy luận dựa trên kiến thứcnội tại của chính nó, không sử dụngcông cụ bên ngoài.Level 2 — Strategic Problem-SolverLLM agent lập kế hoạch nhiều bước.Sử dụng nhiều công cụ và chuỗi suyluận để xử lý bài toán phức tạp.Level 1 — Connected SolverLLM trở thành agent, có khả năng kếtnối với công",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Beginner",
+    "latency_ms": 14805,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "Từ LLM đến AI AgentsLevel 0 — Core reasoning engineLLM suy luận dựa trên kiến thứcnội tại của chính nó, không sử dụngcông cụ bên ngoài.Level 2 — Strategic Problem-SolverLLM agent lập kế hoạch nhiều bước.Sử dụng nhiều công cụ và chuỗi suyluận để xử lý bài toán phức tạp.Level 1 — Connected SolverLLM trở thành agent, có khả năng kếtnối với công",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ lộ trình phát triển từ một mô hình ngôn ngữ lớn (LLM) thông thường lên các cấp độ Agent thông minh khác nhau để áp dụng vào thực tế hoặc phân loại các công nghệ AI hiện nay.",
+        "context_match": "Đoạn bôi đen khớp hoàn toàn với nội dung định nghĩa các cấp độ tiến hóa của AI Agent trên Slide 10, chỉ bị khuyết một vài chữ cuối do thao tác bôi đen chưa hết ('kết nối với công' thay vì 'kết nối với công cụ ngoài').",
+        "risk_if_answer_directly": "Nếu giải thích trực tiếp bằng các thuật ngữ kỹ thuật như 'API', 'chuỗi suy luận', 'multi-agent' mà không phân tầng, người học ở mức độ Beginner có thể thấy mơ hồ và khó hình dung sự khác biệt thực tế giữa các cấp độ này khi ứng dụng vào đời sống."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen chứa các khái niệm định nghĩa cơ bản về các cấp độ của Agent. Giải thích theo hướng tiếp cận cho người mới bắt đầu sẽ giúp học viên dễ dàng phân biệt các mốc tiến hóa này.",
+        "level_signal": "Học viên chọn phần lớn nội dung giới thiệu về các cấp độ tiến hóa của AI Agent từ Level 0 đến Level 2, thể hiện mong muốn nắm bắt bức tranh tổng quan và phân biệt các khái niệm nền tảng này.",
+        "proficiency_level": "Beginner"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Nội dung này mô tả hành trình tiến hóa của AI: từ một mô hình ngôn ngữ lớn (LLM) chỉ biết trả lời bằng kiến thức có sẵn trong đầu (Level 0), dần dần được tích hợp thêm công cụ bên ngoài như tìm kiếm web, gọi API (Level 1), biết tự lên kế hoạch giải quyết việc khó (Level 2), và cuối cùng là nhiều AI tự hợp tác với nhau (Level 3).",
+        "layer2_example": "Hãy tưởng tượng bạn thuê một trợ lý ảo:\n- Level 0: Trợ lý chỉ trả lời dựa trên những gì họ nhớ trong đầu, không được dùng điện thoại hay internet.\n- Level 1: Trợ lý biết dùng Google để tra cứu thông tin mới nhất hoặc dùng máy tính bỏ túi để tính tiền giúp bạn.\n- Level 2: Bạn giao một việc lớn như 'Lập kế hoạch tổ chức sự kiện'. Trợ lý tự chia việc này thành 5 bước, tự đi tìm nhà hàng, tự tính ngân sách và xử lý khi có phát sinh.\n- Level 3: Một nhóm gồm trợ lý thiết kế, trợ lý nội dung và trợ lý tài chính tự họp với nhau để hoàn thành sự kiện cho bạn mà bạn không cần can thiệp sâu.",
+        "layer3_grounding": "Dựa trên Slide 10 'Từ LLM đến AI Agents', tiến trình này được chia làm 4 cấp độ rõ rệt từ Level 0 đến Level 3. Đoạn bạn chọn bao gồm định nghĩa của Level 0 (suy luận nội tại, không công cụ), Level 1 (kết nối công cụ ngoài, API - bị cắt một chút ở cuối từ 'công'), và Level 2 (lập kế hoạch nhiều bước, chuỗi suy luận). Slide cũng giới thiệu thêm Level 3 là sự phối hợp của nhiều Agent chuyên biệt."
+      },
+      "beginner_note": "Mẹo nhỏ để dễ hình dung: Hãy coi LLM (Level 0) là 'bộ não' thuần túy, còn AI Agent (từ Level 1 trở lên) là 'bộ não được trang bị thêm tay chân và công cụ'. Khi phân tích một ứng dụng AI, bạn hãy tự hỏi: 'Nó chỉ đang trả lời bằng trí nhớ (Level 0), biết dùng công cụ (Level 1), hay biết tự lên kế hoạch thực hiện (Level 2)?'",
+      "proficiency_level": "Beginner",
+      "quiz_items": [
+        {
+          "question": "Theo slide, điểm khác biệt cốt lõi giúp LLM tiến hóa từ Level 0 lên Level 1 (Connected Solver) là gì?",
+          "options": [
+            {
+              "text": "Khả năng kết nối với công cụ bên ngoài, truy xuất dữ liệu và gọi API.",
+              "is_correct": true
+            },
+            {
+              "text": "Khả năng tự động nâng cấp mã nguồn của chính nó mà không cần con người.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Khả năng hoạt động hoàn toàn ngoại tuyến (offline) không cần internet."
+            }
+          ],
+          "explanation": "Level 1 (Connected Solver) được định nghĩa là có khả năng kết nối với công cụ bên ngoài, truy xuất dữ liệu, tìm kiếm và gọi API để giải quyết vấn đề thay vì chỉ dùng kiến thức nội tại."
+        },
+        {
+          "question": "Một AI Agent có khả năng tự chia nhỏ một yêu cầu phức tạp của người dùng thành nhiều bước thực hiện và tự động hoàn thành từng bước thì thuộc cấp độ nào?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Level 0"
+            },
+            {
+              "text": "Level 1",
+              "is_correct": false
+            },
+            {
+              "text": "Level 2",
+              "is_correct": true
+            }
+          ],
+          "explanation": "Level 2 (Strategic Problem-Solver) có đặc trưng là khả năng lập kế hoạch nhiều bước và sử dụng chuỗi suy luận để xử lý các bài toán phức tạp."
+        },
+        {
+          "question": "Cấp độ 'Collaborative AI Agents' (Level 3) được định nghĩa như thế nào trên slide?",
+          "options": [
+            {
+              "text": "Một LLM duy nhất tự suy luận bằng kiến thức nội tại.",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Nhiều agent LLM chuyên biệt phối hợp làm việc với nhau."
+            },
+            {
+              "text": "Agent chỉ kết nối với một công cụ tìm kiếm duy nhất.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Level 3 (Collaborative AI Agents) là cấp độ cao nhất trên slide, nơi nhiều agent chuyên biệt phối hợp làm việc với nhau để giải quyết vấn đề phức tạp."
+        },
+        {
+          "question": "Nếu một chatbot chỉ trả lời câu hỏi dựa trên dữ liệu cũ đã được nạp sẵn trong mô hình và không thể truy cập internet để cập nhật thông tin mới, nó đang ở cấp độ nào?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Level 0 — Core reasoning engine"
+            },
+            {
+              "is_correct": false,
+              "text": "Level 1 — Connected Solver"
+            },
+            {
+              "is_correct": false,
+              "text": "Level 2 — Strategic Problem-Solver"
+            }
+          ],
+          "explanation": "Chatbot này chỉ sử dụng kiến thức nội tại được huấn luyện sẵn, không dùng công cụ ngoài hay tra cứu internet, tương ứng với định nghĩa của Level 0 (Core reasoning engine)."
+        },
+        {
+          "question": "Khi bạn tích hợp thêm công cụ dự báo thời tiết qua API vào một LLM để nó trả lời được nhiệt độ hôm nay, hệ thống này đã đạt đến cấp độ nào?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Level 0"
+            },
+            {
+              "is_correct": true,
+              "text": "Level 1"
+            },
+            {
+              "is_correct": false,
+              "text": "Level 3"
+            }
+          ],
+          "explanation": "Khi tích hợp API thời tiết, LLM đã có khả năng kết nối với công cụ bên ngoài để truy xuất dữ liệu thực tế, đây là đặc trưng của Level 1 (Connected Solver)."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:41:25.495Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Self-Attention: Mỗi token “nhìn” tấtcả token khác trong contex",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 16826,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "Self-Attention: Mỗi token “nhìn” tấtcả token khác trong contex",
+        "why_user_may_choose_it": "Học viên muốn hiểu rõ bản chất của cơ chế 'Self-Attention' - từ khóa quan trọng nhất tạo nên cuộc cách mạng Transformer nhưng thường khó hình dung đối với người mới.",
+        "context_match": "Khớp hoàn toàn. Đoạn bôi đen là dòng đầu tiên giải thích chi tiết về các thành phần của Transformer trên Slide 16.",
+        "risk_if_answer_directly": "Nếu giải thích quá sâu vào toán học (ma trận Q, K, V) ngay lập tức, học viên có thể bị ngợp. Ngược lại, nếu chỉ giải thích hời hợt, học viên sẽ không thấy được sự khác biệt giữa Transformer và các mô hình cũ."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Đoạn bôi đen nằm trực tiếp trên slide 16, giải thích cơ chế cốt lõi của Transformer. Agent sẽ giải thích chi tiết theo 3 tầng để làm rõ bản chất của việc 'nhìn' này và cung cấp bộ câu hỏi trắc nghiệm để kiểm tra mức độ hiểu bài.",
+        "level_signal": "Học viên bôi đen định nghĩa cốt lõi của Self-Attention, một khái niệm nền tảng nhưng dễ gây mơ hồ về mặt bản chất vận hành. Điều này cho thấy học viên đang ở mức bắt đầu tiếp cận kiến trúc Transformer sâu hơn.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Self-Attention là cơ chế cốt lõi giúp mô hình AI hiểu được mối quan hệ giữa các từ trong một câu. Thay vì đọc từng từ một cách cô lập hoặc tuần tự, mô hình cho phép mỗi từ liên kết và 'nhìn' vào tất cả các từ khác xung quanh nó để tự xác định ý nghĩa chính xác nhất theo ngữ cảnh.",
+        "layer2_example": "Hãy so sánh hai câu: 'Con **báo** đang săn mồi' và 'Bản **báo** cáo tài chính'. Từ 'báo' ở câu đầu tiên sẽ 'nhìn' và liên kết mạnh với từ 'săn mồi' để hiểu nó là một con vật. Trong khi đó, từ 'báo' ở câu thứ hai sẽ liên kết chặt chẽ với 'cáo' và 'tài chính' để hiểu đây là một văn bản. Nhờ Self-Attention, mô hình không bị nhầm lẫn nghĩa của từ khi ngữ cảnh thay đổi.",
+        "layer3_grounding": "Dựa trên Slide 16, cơ chế này được mô tả là 'Mỗi token nhìn tất cả token khác trong context'. Điều này giúp khắc phục nhược điểm của các kiến trúc cũ (như RNN) vốn phải xử lý từng từ một cách tuần tự. Tuy nhiên, slide chỉ giới thiệu khái niệm ở mức trực quan; thực tế toán học đằng sau quá trình 'nhìn' này được thực hiện thông qua việc tính toán độ tương đồng giữa các vector Query, Key và Value của từng token."
+      },
+      "beginner_note": "Để dễ hình dung, bạn có thể nghĩ Self-Attention giống như việc đọc một câu và dùng bút dạ quang để nối các từ có liên quan mật thiết với nhau. Nếu muốn đi sâu hơn, bạn hãy tìm hiểu cách các ma trận Query, Key, và Value tương tác để tạo ra điểm số Attention này nhé!",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Điểm khác biệt cốt lõi của cơ chế Self-Attention so với các mô hình tuần tự cũ (như RNN) là gì?",
+          "options": [
+            {
+              "text": "Nó chỉ cho phép các từ đứng cạnh nhau tương tác với nhau.",
+              "is_correct": false
+            },
+            {
+              "text": "Nó cho phép mỗi token kết nối trực tiếp và 'nhìn' tất cả các token khác trong context cùng một lúc, hỗ trợ tính toán song song.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Nó loại bỏ hoàn toàn bước Embedding và Position."
+            }
+          ],
+          "explanation": "Self-Attention cho phép xử lý đồng thời toàn bộ ngữ cảnh thay vì phải duyệt qua từng từ một cách tuần tự như các kiến trúc cũ (RNN/LSTM), giúp tăng tốc độ tính toán nhờ khả năng song song hóa."
+        },
+        {
+          "question": "Trong câu 'Ngân hàng Nhà nước vừa ban hành chính sách mới', cơ chế Self-Attention sẽ giúp từ 'Ngân hàng' liên kết mạnh nhất với những từ nào để xác định đúng ngữ nghĩa?",
+          "options": [
+            {
+              "text": "Từ 'vừa' và 'mới'",
+              "is_correct": false
+            },
+            {
+              "text": "Từ 'Nhà nước' và 'chính sách'",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Chỉ chú ý đến chính từ 'Ngân hàng'"
+            }
+          ],
+          "explanation": "Các từ 'Nhà nước' và 'chính sách' mang lại ngữ cảnh rõ ràng nhất để xác định 'Ngân hàng' ở đây là một tổ chức tài chính/pháp lý chứ không phải là bờ sông hay khái niệm khác."
+        },
+        {
+          "question": "Theo slide 16, kiến trúc Transformer nào sử dụng cơ chế đọc từ trái sang phải để dự đoán token tiếp theo và sinh văn bản?",
+          "options": [
+            {
+              "text": "Encoder-Decoder (BERT, T5)",
+              "is_correct": false
+            },
+            {
+              "is_correct": true,
+              "text": "Decoder-only (GPT, Claude, Gemini)"
+            },
+            {
+              "is_correct": false,
+              "text": "Chỉ có Feed-Forward Network"
+            }
+          ],
+          "explanation": "Slide 16 ghi rõ: 'Decoder-only (GPT, Claude, Gemini) đọc trái -> phải để dự đoán token tiếp và sinh văn bản.'"
+        },
+        {
+          "question": "Tại sao cơ chế Self-Attention lại cần phải kết hợp với thông tin 'Position' (Vị trí) ở bước đầu vào như sơ đồ trên slide?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Vì Self-Attention xử lý tất cả các từ song song nên không tự biết được thứ tự trước sau của các từ trong câu nếu không có thông tin vị trí."
+            },
+            {
+              "is_correct": false,
+              "text": "Để giảm bớt số lượng token cần xử lý trong context."
+            },
+            {
+              "text": "Để tăng tốc độ xử lý của Feed-Forward Network.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Vì Self-Attention xử lý tất cả các từ cùng một lúc (song song), nó không có cơ chế tự nhận biết thứ tự trước sau của từ. Do đó, cần có Position Embedding để cung cấp thông tin vị trí cho mô hình."
+        },
+        {
+          "question": "Cụm từ 'Multi-Head' đi kèm với Attention trong slide 16 có ý nghĩa gì?",
+          "options": [
+            {
+              "is_correct": false,
+              "text": "Để chia nhỏ văn bản thành nhiều phần và xử lý trên các máy tính khác nhau."
+            },
+            {
+              "text": "Cho phép mô hình có nhiều 'góc nhìn' song song để nắm bắt các mối quan hệ ngữ cảnh khác nhau đồng thời.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Để dịch văn bản ra nhiều ngôn ngữ khác nhau cùng một lúc."
+            }
+          ],
+          "explanation": "Slide 16 định nghĩa ngắn gọn: 'Multi-Head: Nhiều góc nhìn song song'. Điều này giúp mô hình cùng lúc học được nhiều loại quan hệ ngữ nghĩa và cú pháp khác nhau giữa các từ."
+        }
+      ],
+      "fallback_message": ""
+    }
+  },
+  {
+    "timestamp": "2026-07-31T10:46:14.940Z",
+    "model": "gemini-3.5-flash",
+    "selected_text": "Self-Attention: Mỗi token “nhìn” tấtcả token khác trong contex",
+    "confidence": "HIGH",
+    "route": "Explain",
+    "level": "Intermediate",
+    "latency_ms": 14898,
+    "ai_response": {
+      "confidence_level": "HIGH",
+      "selection_analysis": {
+        "selected_text": "Self-Attention: Mỗi token “nhìn” tấtcả token khác trong contex",
+        "why_user_may_choose_it": "Học viên muốn hiểu bản chất của cơ chế 'Self-Attention' - từ khóa quan trọng nhất tạo nên cuộc cách mạng Transformer nhưng thường khó hình dung cụ thể.",
+        "context_match": "Khớp hoàn toàn với dòng đầu tiên giải thích về các thành phần của Transformer trên slide 16.",
+        "risk_if_answer_directly": "Nếu giải thích ngay bằng công thức toán học (Query, Key, Value) sẽ khiến người học bị ngợp. Cần giải thích trực quan trước rồi mới liên hệ thực tế và đối chiếu slide."
+      },
+      "agent_decision": {
+        "routing": "Explain",
+        "reason": "Khái niệm Self-Attention là trọng tâm của slide 16, có đầy đủ thông tin bổ trợ trong ngữ cảnh để giải thích từ cơ bản đến nâng cao.",
+        "level_signal": "Học viên chọn khái niệm cốt lõi của Transformer (Self-Attention) và quan tâm đến cơ chế hoạt động bên trong của mô hình ngôn ngữ lớn.",
+        "proficiency_level": "Intermediate"
+      },
+      "explanation_layers": {
+        "layer1_simple": "Self-Attention là cơ chế cốt lõi giúp mô hình AI hiểu được mối quan hệ giữa các từ trong một câu. Thay vì đọc từng từ một cách cô lập hoặc tuần tự, cơ chế này cho phép mỗi từ 'chú ý' và liên kết với tất cả các từ khác xung quanh nó để xác định đúng ngữ cảnh.",
+        "layer2_example": "Hãy so sánh hai câu: 'Con *báo* đang săn mồi' và 'Tôi viết bản *báo* cáo'. Từ 'báo' ở câu đầu liên kết mạnh với 'săn mồi' (chỉ con vật), còn ở câu sau liên kết với 'cáo' và 'viết' (chỉ văn bản). Self-Attention giúp mô hình tự động 'nhìn' các từ xung quanh để giải mã chính xác nghĩa của từ 'báo' trong từng trường hợp cụ thể, tránh nhầm lẫn ngữ nghĩa.",
+        "layer3_grounding": "Theo Slide 16, Self-Attention nằm trong khối xử lý chính của Transformer (N layers). Slide nêu rõ: 'Mỗi token nhìn tất cả token khác trong context'. Điều này có nghĩa là phạm vi tính toán của Self-Attention bao phủ toàn bộ chiều dài ngữ cảnh đầu vào, giúp mô hình xử lý song song cực tốt thay vì phải duyệt tuần tự như các kiến trúc cũ (RNN/LSTM). Tuy nhiên, slide chưa đề cập đến chi phí tính toán tăng theo bình phương độ dài chuỗi (O(N^2)) của cơ chế này."
+      },
+      "beginner_note": "Để dễ hình dung, Self-Attention giống như việc bạn đọc một câu và tự động liên kết các từ liên quan lại với nhau (ví dụ: từ 'nó' liên kết với danh từ đứng trước) để hiểu toàn bộ ý nghĩa thay vì dịch từng từ một cách máy móc.",
+      "proficiency_level": "Intermediate",
+      "quiz_items": [
+        {
+          "question": "Cơ chế Self-Attention giải quyết điểm yếu lớn nào của các kiến trúc tuần tự cũ như RNN hay LSTM?",
+          "options": [
+            {
+              "text": "Khả năng xử lý song song toàn bộ ngữ cảnh cùng lúc thay vì phải duyệt qua từng từ theo thứ tự.",
+              "is_correct": true
+            },
+            {
+              "is_correct": false,
+              "text": "Giảm kích thước của bộ nhớ nhúng (Embedding) đi nhiều lần."
+            },
+            {
+              "is_correct": false,
+              "text": "Loại bỏ hoàn toàn việc sử dụng các hàm kích hoạt phi tuyến trong mạng."
+            }
+          ],
+          "explanation": "RNN phải xử lý tuần tự từng từ một, gây nghẽn cổ chai và khó học các mối quan hệ xa. Self-Attention cho phép tất cả các token 'nhìn' nhau đồng thời, giúp song song hóa quá trình huấn luyện cực kỳ hiệu quả."
+        },
+        {
+          "question": "Theo slide 16, điểm khác biệt cốt lõi về hướng đọc ngữ cảnh giữa kiến trúc Encoder-Decoder và Decoder-only là gì?",
+          "options": [
+            {
+              "text": "Encoder-Decoder hiểu ngữ cảnh 2 chiều, trong khi Decoder-only đọc từ trái sang phải để dự đoán token tiếp theo.",
+              "is_correct": true
+            },
+            {
+              "text": "Encoder-Decoder chỉ đọc từ phải sang trái, còn Decoder-only đọc hai chiều.",
+              "is_correct": false
+            },
+            {
+              "is_correct": false,
+              "text": "Cả hai đều đọc hai chiều nhưng Decoder-only có thêm lớp Feed-Forward phức tạp hơn."
+            }
+          ],
+          "explanation": "Slide ghi rõ: 'Encoder-Decoder (BERT, T5) hiểu ngữ cảnh 2 chiều... Decoder-only (GPT, Claude, Gemini) đọc trái -> phải để dự đoán token tiếp và sinh văn bản.'"
+        },
+        {
+          "question": "Trong cơ chế Self-Attention, cụm từ 'mỗi token nhìn tất cả token khác' có nghĩa là gì?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Mỗi từ trong câu đều được tính toán mức độ liên quan (trọng số attention) với mọi từ khác trong cùng ngữ cảnh đầu vào."
+            },
+            {
+              "text": "Mỗi từ chỉ liên kết với từ ngay trước và ngay sau nó để tiết kiệm bộ nhớ.",
+              "is_correct": false
+            },
+            {
+              "text": "Mô hình sẽ dịch chuyển các từ để chúng đứng cạnh nhau trong không gian vector.",
+              "is_correct": false
+            }
+          ],
+          "explanation": "'Nhìn' ở đây là cách nói ẩn dụ cho việc tính toán sự tương quan ngữ nghĩa (trọng số attention) giữa token hiện tại với tất cả các token khác trong cùng một ngữ cảnh đầu vào."
+        },
+        {
+          "question": "Tại sao ngày nay kiến trúc Decoder-only (như GPT, Claude) lại chiếm ưu thế hơn so với Encoder-Decoder?",
+          "options": [
+            {
+              "is_correct": true,
+              "text": "Nhờ khả năng scale (mở rộng quy mô) tốt hơn khi tăng kích thước mô hình và dữ liệu huấn luyện."
+            },
+            {
+              "is_correct": false,
+              "text": "Vì chúng không cần sử dụng cơ chế Self-Attention phức tạp."
+            },
+            {
+              "is_correct": false,
+              "text": "Vì chúng xử lý văn bản nhanh hơn gấp 10 lần ở mọi kích thước so với Encoder-Decoder."
+            }
+          ],
+          "explanation": "Slide chỉ ra xu hướng hiện nay: 'Ngày nay Decoder-only thắng thế nhờ scale tốt hơn' (khả năng mở rộng quy mô về tham số và dữ liệu hiệu quả hơn)."
+        },
+        {
+          "question": "Thành phần nào trong Transformer (Slide 16) giúp dòng Gradient truyền đi dễ dàng hơn trong quá trình huấn luyện các mạng rất sâu?",
+          "options": [
+            {
+              "text": "Residual connections (Kết nối tắt / tàn dư)",
+              "is_correct": true
+            },
+            {
+              "text": "Feed-Forward Network (Mạng truyền thẳng)",
+              "is_correct": false
+            },
+            {
+              "text": "Embedding + Position (Nhúng và Vị trí)",
+              "is_correct": false
+            }
+          ],
+          "explanation": "Slide ghi rõ: 'Residual connections: Gradient chảy dễ dàng', giúp giải quyết hiện tượng tiêu biến gradient (vanishing gradient) khi huấn luyện các mạng nơ-ron có rất nhiều lớp (N layers)."
+        }
+      ],
+      "fallback_message": ""
+    }
   }
 ]

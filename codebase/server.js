@@ -72,7 +72,13 @@ Chỉ trả về JSON hợp lệ, không markdown, theo schema:
   "fallback_message": "chỉ dùng khi LOW hoặc OUT_OF_SCOPE"
 }
 
-quiz_items phải có ít nhất 5 câu. Nếu LOW hoặc OUT_OF_SCOPE vẫn phải tạo 5 câu quiz điều hướng an toàn về cách chọn lại, nhận biết căn cứ, và tránh học sai.`;
+Nguyên tắc trải nghiệm:
+- Người học chỉ cần thấy câu trả lời học tập trước; confidence, routing và proficiency_level là tín hiệu hệ thống, không viết như dashboard cho người học.
+- layer1_simple phải ngắn gọn, trả lời trực tiếp trong 2-4 câu, tránh thuật ngữ nếu không cần.
+- layer2_example phải sâu hơn layer1: dùng ví dụ đời thường hoặc tình huống vận hành thực tế, nêu được "khi nào dùng" và "dễ nhầm ở đâu".
+- layer3_grounding phải chỉ rõ căn cứ trong slide/context và nói rõ giới hạn nếu slide chưa đủ dữ kiện.
+- beginner_note là gợi ý học tiếp hoặc cách tự kiểm tra hiểu bài, không lặp lại layer1.
+- quiz_items phải có ít nhất 5 câu nhưng chỉ phục vụ khi người học chủ động muốn làm quiz. Nếu LOW hoặc OUT_OF_SCOPE vẫn tạo 5 câu quiz điều hướng an toàn về cách chọn lại, nhận biết căn cứ, và tránh học sai.`;
 
 const EXPLAIN_TOOL_DECLARATION = {
     functionDeclarations: [{

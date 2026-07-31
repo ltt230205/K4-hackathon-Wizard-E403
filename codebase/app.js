@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tooltip = document.getElementById('selection-tooltip');
     const btnAskTooltip = document.getElementById('btn-ask-tooltip');
     const chatStream = document.getElementById('dynamic-chat-stream');
-    const btnPresetHappy = document.getElementById('btn-preset-happy');
-    const btnPresetLow = document.getElementById('btn-preset-low');
     const btnUploadSlide = document.getElementById('btn-upload-slide');
     const slideFileInput = document.getElementById('slide-file-input');
     const uploadStatus = document.getElementById('upload-status');
@@ -328,14 +326,63 @@ document.addEventListener('DOMContentLoaded', () => {
         return 30;
     }
 
+    function getLevelMeta(level) {
+        if (level === 'Advanced') {
+            return {
+                className: 'advanced',
+                title: 'Advanced',
+                summary: 'Người học đã nắm chắc ý chính. AI có thể đẩy câu hỏi lên mức phân tích và vận dụng.'
+            };
+        }
+        if (level === 'Intermediate') {
+            return {
+                className: 'intermediate',
+                title: 'Intermediate',
+                summary: 'Người học hiểu khung nội dung, cần thêm ví dụ và điều kiện áp dụng để tránh nhầm.'
+            };
+        }
+        return {
+            className: 'beginner',
+            title: 'Beginner',
+            summary: 'Người học đang cần giải thích ngắn gọn, ít thuật ngữ và có ví dụ gắn với slide.'
+        };
+    }
+
+    function getConfidenceMeta(confidence, percent) {
+        if (confidence === 'HIGH') {
+            return {
+                label: 'Đủ căn cứ từ slide',
+                nextAction: 'Trả lời trực tiếp, sau đó kiểm tra bằng 5 câu quiz.',
+                percent
+            };
+        }
+        if (confidence === 'LOW') {
+            return {
+                label: 'Cần nói rõ giới hạn',
+                nextAction: 'Giải thích có cảnh báo và tránh bổ sung nội dung ngoài slide.',
+                percent
+            };
+        }
+        return {
+            label: 'Ngoài phạm vi slide',
+            nextAction: 'Hỏi lại người học hoặc yêu cầu chọn đoạn khác có căn cứ hơn.',
+            percent
+        };
+    }
+
     function renderAgentCard(text, data) {
         const confidence = data.confidence_level || 'LOW';
         const percent = confidencePercent(confidence);
         const level = data.agent_decision?.proficiency_level || data.proficiency_level || 'Beginner';
+        const levelMeta = getLevelMeta(level);
+        const confidenceMeta = getConfidenceMeta(confidence, percent);
         const isHigh = confidence === 'HIGH';
         const card = document.createElement('div');
-        card.className = `ai-card-wrapper ${isHigh ? '' : 'low-confidence'}`;
+        card.className = `ai-card-wrapper learner-answer ${isHigh ? '' : 'low-confidence'}`;
         card.dataset.topic = text;
+        card.dataset.systemLevel = level;
+        card.dataset.confidence = confidence;
+        card.dataset.confidencePercent = String(percent);
 
         card.innerHTML = `
             <div class="grounding-tag ${isHigh ? 'success' : 'warning'}">
@@ -345,7 +392,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="confidence-bar-inner ${isHigh ? 'success-bar' : 'warning-bar'}" style="width:${percent}%;"></div>
             </div>
 
-            <div class="agent-section">
+            <div class="answer-main">
+                <div class="answer-kicker">Giải thích nhanh</div>
+                <div class="answer-title">${escapeHtml(data.selection_analysis?.selected_text || text)}</div>
+                <div class="answer-body">${escapeHtml(data.explanation_layers?.layer1_simple || data.beginner_note || 'AI chưa có đủ nội dung để giải thích chắc chắn từ slide này.')}</div>
+                ${data.fallback_message ? `<div class="answer-note"><strong>Lưu ý:</strong> ${escapeHtml(data.fallback_message)}</div>` : ''}
+            </div>
+
+            <div class="level-summary-card ${levelMeta.className}">
+                <div class="level-summary-top">
+                    <div>
+                        <div class="summary-kicker">Level hiện tại</div>
+                        <div class="summary-level">${escapeHtml(levelMeta.title)}</div>
+                    </div>
+                    <div class="summary-score">${confidenceMeta.percent}%</div>
+                </div>
+                <div class="summary-line">${escapeHtml(levelMeta.summary)}</div>
+                <div class="summary-metrics">
+                    <span>${escapeHtml(confidenceMeta.label)}</span>
+                    <span>${escapeHtml(data.agent_decision?.routing || 'Explain')}</span>
+                </div>
+                <div class="summary-next">${escapeHtml(confidenceMeta.nextAction)}</div>
+            </div>
+
+            <details class="agent-details">
+                <summary>Vì sao AI chọn cách trả lời này?</summary>
+            <div class="agent-section compact">
                 <div class="section-title">Vì sao bạn có thể chọn đoạn này?</div>
                 <div class="decision-grid">
                     <div><strong>Đoạn chọn</strong><span>${escapeHtml(data.selection_analysis?.selected_text || text)}</span></div>
@@ -355,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
-            <div class="agent-section">
+            <div class="agent-section compact">
                 <div class="section-title">Agent phân tầng để trả lời hợp lý</div>
                 <div class="route-card">
                     <div><strong>Quyết định:</strong> ${escapeHtml(data.agent_decision?.routing)}</div>
@@ -365,14 +437,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
+            </details>
+
+            ${renderDeepExplanation(data)}
             ${renderExplanationLayers(data)}
             ${renderFallbackIfNeeded(data)}
             ${renderQuiz(data.quiz_items || [], level)}
+            <details class="system-details">
+                <summary>Đánh giá hệ thống</summary>
+                <div class="system-diagnostics">
+                    <span>${escapeHtml(confidenceMeta.label)} (${confidenceMeta.percent}%)</span>
+                    <span>Level dự đoán: ${escapeHtml(levelMeta.title)}</span>
+                    <span>Route: ${escapeHtml(data.agent_decision?.routing || 'Explain')}</span>
+                </div>
+                <div class="system-reason">${escapeHtml(data.agent_decision?.reason || levelMeta.summary)}</div>
+            </details>
         `;
 
         chatStream.appendChild(card);
         bindQuizEvents(card, text);
         scrollToBottom();
+    }
+
+    function renderDeepExplanation(data) {
+        const layers = data.explanation_layers || {};
+        if (!layers.layer2_example && !layers.layer3_grounding && !data.beginner_note) return '';
+
+        return `
+            <details class="deep-explanation">
+                <summary>Muốn hiểu sâu hơn?</summary>
+                <div class="deep-explanation-body">
+                    ${layers.layer2_example ? `<div class="deep-block"><strong>Ví dụ dễ hình dung</strong><span>${escapeHtml(layers.layer2_example)}</span></div>` : ''}
+                    ${layers.layer3_grounding ? `<div class="deep-block"><strong>Căn cứ từ slide</strong><span>${escapeHtml(layers.layer3_grounding)}</span></div>` : ''}
+                    ${data.beginner_note ? `<div class="deep-block"><strong>Gợi ý học tiếp</strong><span>${escapeHtml(data.beginner_note)}</span></div>` : ''}
+                </div>
+            </details>
+        `;
     }
 
     function renderExplanationLayers(data) {
@@ -405,6 +505,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderQuiz(quizItems, level) {
         const items = quizItems.slice(0, Math.max(5, quizItems.length));
         return `
+            <div class="quiz-launcher">
+                <div class="quiz-launcher-copy">
+                    <strong>Muốn kiểm tra nhanh?</strong>
+                    <span>Làm 5 câu quiz để hệ thống tự điều chỉnh câu hỏi tiếp theo.</span>
+                </div>
+                <button class="start-quiz-btn" type="button">Làm quiz 5 câu</button>
+            </div>
+            <div class="quiz-content hidden">
             <div class="check-container level-quiz" data-quiz-round="1" data-adaptive-level="${escapeHtml(level)}">
                 <div class="check-header">
                     <span class="check-q">Quiz tối thiểu 5 câu theo level</span>
@@ -431,19 +539,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="quiz-score-panel hidden"></div>
             </div>
+            </div>
         `;
     }
 
     function bindQuizEvents(scope, topic) {
-        const quizItems = scope.querySelectorAll('.interactive-quiz-item');
-        const scorePanel = scope.querySelector('.quiz-score-panel');
-        const stopButton = scope.querySelector('.stop-quiz-btn');
+        const startQuizButton = scope.querySelector('.start-quiz-btn');
 
-        stopButton?.addEventListener('click', () => stopQuiz(scope, quizItems, scorePanel));
+        startQuizButton?.addEventListener('click', () => {
+            const quizContent = scope.querySelector('.quiz-content');
+            quizContent?.classList.remove('hidden');
+            startQuizButton.closest('.quiz-launcher')?.classList.add('hidden');
+        });
+
+        const quizScopes = scope.matches?.('.level-quiz')
+            ? [scope]
+            : [...scope.querySelectorAll('.level-quiz')];
+        quizScopes.forEach(quizScope => bindSingleQuiz(quizScope, topic));
+    }
+
+    function bindSingleQuiz(quizScope, topic) {
+        if (!quizScope || quizScope.dataset.bound === 'true') return;
+        quizScope.dataset.bound = 'true';
+
+        const quizItems = quizScope.querySelectorAll('.interactive-quiz-item');
+        const scorePanel = quizScope.querySelector('.quiz-score-panel');
+        const stopButton = quizScope.querySelector('.stop-quiz-btn');
+
+        stopButton?.addEventListener('click', () => stopQuiz(quizScope, quizItems, scorePanel));
 
         quizItems.forEach(item => {
-            if (item.dataset.bound === 'true') return;
-            item.dataset.bound = 'true';
             const buttons = item.querySelectorAll('.opt-btn');
             const result = item.querySelector('.quiz-result-area');
 
@@ -461,8 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${isCorrect ? 'Đúng.' : 'Chưa đúng.'} ${escapeHtml(button.dataset.explain || '')}
                         </div>
                     `;
-                    updateQuizScore(quizItems, scorePanel, scope, topic);
-                    scrollToBottom();
+                    updateQuizScore(quizItems, scorePanel, quizScope, topic);
                 });
             });
         });
@@ -504,7 +628,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         scorePanel.classList.remove('hidden');
         if (answered < items.length) {
-            scorePanel.innerHTML = `Đã trả lời ${answered}/${items.length} câu. Đúng ${correct}/${answered}. Hoàn thành tất cả câu để nhận đánh giá level.`;
+            scorePanel.innerHTML = `Đã trả lời ${answered}/${items.length} câu. Đúng ${correct}/${answered}. Hoàn thành đủ 5 câu để nhận nhận xét.`;
             return;
         }
 
@@ -512,6 +636,7 @@ document.addEventListener('DOMContentLoaded', () => {
         learnerProfile.level = assessment.nextLevel;
         learnerProfile.completedSets += 1;
         learnerProfile.lastScore = `${correct}/${items.length}`;
+        scope.classList.add('completed');
 
         scorePanel.className = `quiz-score-panel assessment ${assessment.className}`;
         scorePanel.innerHTML = `
@@ -522,16 +647,21 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="assessment-level">${assessment.level}</div>
             <div class="assessment-body">${assessment.message}</div>
             <div class="assessment-next">${assessment.nextStep}</div>
-            <div class="adaptive-state">Level dùng cho câu hỏi tiếp theo: <strong>${assessment.nextLevel}</strong></div>
+            <button class="next-quiz-btn" type="button">Làm tiếp 5 câu mới</button>
         `;
 
-        if (scope.dataset.nextGenerated !== 'true') {
+        const nextQuizButton = scorePanel.querySelector('.next-quiz-btn');
+        nextQuizButton?.addEventListener('click', () => {
+            if (scope.dataset.nextGenerated === 'true') return;
             scope.dataset.nextGenerated = 'true';
             const nextQuiz = renderAdaptiveNextQuiz(topic, assessment.nextLevel, learnerProfile.completedSets + 1);
             scope.insertAdjacentHTML('afterend', nextQuiz);
             const nextScope = scope.nextElementSibling;
             bindQuizEvents(nextScope, topic);
-        }
+            nextQuizButton.disabled = true;
+            nextQuizButton.textContent = 'Đã mở bộ câu hỏi mới';
+            nextScope?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
     }
 
     function getLearnerAssessment(correct, total) {
@@ -760,9 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerAIAskFlow(currentSelectedText || getSelectedText());
         window.getSelection().removeAllRanges();
     });
-    btnPresetHappy?.addEventListener('click', () => triggerAIAskFlow('Conditional Automation'));
-    btnPresetLow?.addEventListener('click', () => triggerAIAskFlow('Generative Adversarial Networks (GANs)'));
-    sendBtn?.addEventListener('click', () => triggerAIAskFlow(input.value || 'Conditional Automation'));
+    sendBtn?.addEventListener('click', () => triggerAIAskFlow(input.value || currentSelectedText || getSelectedText()));
     btnUploadSlide?.addEventListener('click', () => slideFileInput?.click());
     slideFileInput?.addEventListener('change', event => {
         const file = event.target.files?.[0];
