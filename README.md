@@ -5,6 +5,16 @@
 - Thời lượng: **1,5 ngày** (một ngày build + một buổi demo)
 - Nhóm: **4-5 người** · zone tối đa 5 nhóm · thi theo lớp
 
+## Thành viên & phân công
+
+| Thành viên | Mã HV | Phân công chính |
+|---|---:|---|
+| Lê Trí Tùng | 2A202601458 | Lead spec, chốt problem statement, canvas và điều phối demo |
+| Nguyễn Quốc Bảo | 2A202601726 | Mining chatlog, tổng hợp evidence, xây golden set và theo dõi kết quả eval |
+| Nguyễn Thùy Trang | 2A202601294 | JTBD, phỏng vấn willing users, validation log và tổng hợp feedback CP5 |
+| Đỗ Thị Thanh Loan | 2A202601654 | UX flow, prototype sketch/mock, kiểm tra trải nghiệm người học |
+| Vũ Xuân Anh | 2A202602010 | Prompt system, AI call thật, tool call, trace/log và tích hợp Gemini |
+
 ## Bắt đầu từ đâu?
 
 1. Đọc **`01-de-bai.md`** để chọn hướng và hiểu tiêu chí.
