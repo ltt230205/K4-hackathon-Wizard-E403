@@ -62,3 +62,4 @@ Loại: [x] Tối ưu tính năng có sẵn  [ ] Tính năng mới
 | Thời điểm | Đổi gì | Vì sao (trỏ về feedback/case nào) |
 |---|---|---|
 | 2026-07-30 | Tạo bản nháp spec.md từ cp1-canvas.md + jtbd-worksheet.md, §1 hoàn thiện | Chuẩn bị cho CP4, phần §1 thuộc phân công Trang |
+| 2026-07-31 | Ghi nhận: 2/5 người thử validation (Vũ Đình Huy, Nguyễn Cao Quang Anh) báo AI chưa nói rõ ràng khi thiếu căn cứ; Vũ Đình Huy chỉ đích danh case logistics bị gắn nhầm LOW thay vì OUT_OF_SCOPE | Từ `validation/cp5-session-log.md` — nên rà lại rule phân loại LOW/OUT_OF_SCOPE trước demo |
