@@ -17,7 +17,7 @@ Loại: [x] Tối ưu tính năng có sẵn  [ ] Tính năng mới
     3. `T0399/C0023/U0257`: hỏi "Giải thích biểu đồ đc bôi đỏ" ở **trang 6**; tutor trả lời bằng nội dung **trang 71** (so sánh phong cách 3 model) — tự thừa nhận "kết quả tra cứu trang 6 hiện đang trả về nội dung của trang 71". Ví dụ cite sai nguồn cụ thể.
     4. `T0941/C0498/U0126`: học viên bôi đen trang 5, viết "TÔI KHÔNG HIỂU TRANG 6"; tutor trả lời trích **trang 71** — case cite lệch trang thứ hai, cho thấy đây không phải sự cố đơn lẻ.
     5. `T0769/C0021/U0355`: "giải thích nghĩa chi tiết của trang 4" — tutor trả lời "hệ thống tìm kiếm không tìm thấy nội dung cụ thể cho trang 4... bạn có thể cung cấp nội dung hoặc tiêu đề" — ví dụ xử lý đúng khi thiếu nguồn (hỏi lại thay vì bịa), nhóm muốn hành vi này nhất quán hơn.
-  - **Khảo sát willing users (đang tiến hành):** xem `validation/willing-users-interview-log.md` — kết quả sẽ cập nhật vào bảng này khi hoàn tất 3 phỏng vấn.
+  - **Khảo sát willing users** (log đầy đủ trong `validation/willing-users-interview-log.md`): 3/3 người phỏng vấn (Nguyễn Thành Tài, Vương Nguyệt Bình, Nguyễn Xuân Tới) xác nhận từng bôi đen hỏi tutor và **không chắc chắn 100% mình đã hiểu đúng** sau khi tutor trả lời; cả 3 đều đồng ý trả lời thêm 1 câu kiểm tra hiểu, với điều kiện câu hỏi phải thật ngắn.
 
 ## §2. Impact & quyết định chọn
 *(Bảng impact đầy đủ + ứng viên đã loại: xem `cp1-canvas.md` mục "Bảng impact nhanh" — sẽ chuyển vào đây bản chốt trước 23:59 N1. Phụ trách: Bảo + Tùng.)*
